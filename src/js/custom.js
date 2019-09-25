@@ -1,0 +1,51 @@
+/*
+ * Custom scripts library
+ *
+ * @version 1.0.5
+ */
+ 
+document.addEventListener("DOMContentLoaded", function() {
+
+/*
+	// Adding class after full DOM loading for applying CSS animation
+	$('#main-header').addClass('visible');
+	$.when( $('#dom-preloader').find('i').removeClass('fa-spin').end().delay(500).fadeOut('slow') )
+	.done( function() { 
+		$('body').fadeIn();
+		$('#dom-preloader').remove(); 
+	});		
+
+	// inView.js appearance effect on scrolling from screen bottom
+	inView('.someSelector')
+		.on('enter', el => {
+			el.style.opacity =1;
+		})
+		.on('exit', el => {
+			el.style.opacity = 0.5;
+		});	
+*/
+
+
+	//Adding an agent to HTML selector
+	var deviceAgent = navigator.userAgent.toLowerCase();
+	if (deviceAgent.match(/(iphone|ipod|ipad)/)) {
+		$("html").addClass("ios");
+		$("html").addClass("mobile");
+	}
+	if (navigator.userAgent.search("MSIE") >= 0) {
+		$("html").addClass("ie");
+	}
+	else if (navigator.userAgent.search("Chrome") >= 0) {
+		$("html").addClass("chrome");
+	}
+	else if (navigator.userAgent.search("Firefox") >= 0) {
+		$("html").addClass("firefox");
+	}
+	else if (navigator.userAgent.search("Safari") >= 0 && navigator.userAgent.search("Chrome") < 0) {
+		$("html").addClass("safari");
+	}
+	else if (navigator.userAgent.search("Opera") >= 0) {
+		$("html").addClass("opera");
+	}
+
+});
