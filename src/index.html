@@ -5,33 +5,50 @@
 	<title>Start HTML project</title>
 	<meta name="description" content="Startup HTML template">
 	<meta name="viewport" content="width=device-width">
-	<meta property="og:image" content="img/@1x/preview.jpg">
+<!-- 	<meta property="og:image" content="img/@1x/preview.jpg"> -->
 	<link rel="icon" href="img/favicon.png">
     <link rel="stylesheet" href="css/vendors.min.css"> <!-- Подключаем CSS готовых библиотек-->
     <link rel="stylesheet" href="css/main.css"> <!-- Подключаем CSS -->
 </head>
 <body>
- 
-	<!-- Custom HTML / Remove before use -->
-
-	<div class="container">
-
-		<div class="parent"> <!-- Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/ -->
-			<img class="lazy img-responsive img"
-			src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
-			data-src="img/@1x/preview.jpg"
-			data-srcset="img/@1x/preview.jpg 1x, img/@2x/preview.jpg 2x"
-			alt="Start HTML Template">
+ 	<div id="site-header">
+		<div id="header-container" class="container">
+			<div id="logo"> <!-- Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/ -->
+				<img class="lazy img-responsive img"
+				src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+				data-src="img/@1x/preview.jpg"
+				data-srcset="img/@1x/preview.jpg 1x, img/@2x/preview.jpg 2x"
+				alt="Start HTML Template">
+			</div>
 		</div>
-		<br>
-		<h2>Welcome to startup HTML template!</h2>
-		<p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit. <em>Ad distinctio animi</em>, dolorum eaque praesentium unde aliquid, mollitia itaque voluptate quos modi et incidunt tempora fugiat voluptatum quia esse dolor repellat.</p>
-		<br>
-		<div class="grid">
-			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis quo vero molestias, esse doloribus corrupti, nemo minus ullam tempore tenetur magni aut quos soluta sit adipisci eius expedita amet non.</div>
-			<div>Lorem Ipsum - это текст-"рыба", часто используемый в печати и вэб-дизайне. Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века.</div>
-		</div>
+ 	</div>
 
+	<div id="main">
+		<div id="main-container" class="container">
+			<section id="content">
+				<article id="members">
+					<header id="members-header"><h1 class="title">Члены гильдии</h1></header>
+					<div id="members-content"></div>
+				</article>
+				<article id="documents">
+					<header id="documents-header"><h1 class="title">Документы</h1></header>
+					<div id="documents-content"></div>
+				</article>
+				<article id="news">
+					<header id="news-header"><h1 class="title">Новости</h1></header>
+					<div id="news-content"></div>
+				</article>
+				<article id="about">
+					<header id="about-header"><h1 class="title">О гильдии</h1></header>
+					<div id="about-content"></div>
+				</article>
+				<article id="contacts">
+					<header id="contacts-header"><h1 class="title">Контакты</h1></header>
+					<div id="contacts-content"></div>
+				</article>
+			</section>
+			<div id="sidebar"></div>
+		</div>
 	</div>
 
 	<script src="js/vendors.min.js"></script>

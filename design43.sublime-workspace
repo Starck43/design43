@@ -1,0 +1,433 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"gloab",
+				"global"
+			],
+			[
+				"var",
+				"mdi-view-array"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/index.html",
+			"settings":
+			{
+				"buffer_size": 1995,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"sas",
+				"Set Syntax: AppleScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/PROJECTS/WEB/design43.ru",
+		"/F/PROJECTS/WEB/design43.ru/src"
+	],
+	"file_history":
+	[
+		"/F/PROJECTS/WEB/design43.ru/gulpfile.js",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/jcarousel/jcarousel.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/_footer.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/js/custom.js",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/jcarousel/_vars.sass",
+		"/C/dev/Sublime Text 3/Data/Packages/Gulp/Gulp.sublime-settings",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/jcarousel/_jcarousel-controls.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/_fonts.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/imagelightbox/imagelightbox.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/footer.php",
+		"/F/PROJECTS/WEB/start-web-project/src/plugins/imageGallery/gallerylightbox.controls.js",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/single-projects.php",
+		"/F/PROJECTS/WEB/start-web-project/src/js/_vendors.js",
+		"/F/PROJECTS/WEB/start-web-project/src/plugins/imageGallery/gallerylightbox.js",
+		"/F/PROJECTS/WEB/start-web-project/src/plugins/imageLightbox/imagelightbox.controls.js",
+		"/F/PROJECTS/WEB/start-web-project/src/plugins/imageLightbox/imagelightbox.js",
+		"/F/PROJECTS/WEB/start-web-project/src/plugins/imageLightbox/imagelightbox.css",
+		"/F/PROJECTS/WEB/start-web-project/src/css/_vendors.css",
+		"/F/PROJECTS/WEB/start-web-project/gulpfile.js",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/post-thumbnails.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/meta-controls.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/main-header.php",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/jcarousel/_jcarousel-pagination.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/projects_layout.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/archive.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/page-projects.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/customizer.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/sidebar.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/breadcrumbs.php",
+		"/C/Users/Starck/AppData/Roaming/Sublime Merge/Packages/User/Commit Message.sublime-settings",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/template-parts/single-projects.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/template-parts/projects-page.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/template-parts/single-project.php",
+		"/C/dev/Sublime Text 3/Data/Packages/PHP Completions Kit/README.md",
+		"/C/dev/Sublime Text 3/Data/Packages/User/phpfmt.sublime-settings",
+		"/C/dev/Sublime Text 3/Data/Packages/User/Gist.sublime-settings",
+		"/F/PROJECTS/WEB/start-web-project/src/js/lazy/lazy.js",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/defaults.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/theme-functions.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/template-parts/page-projects.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/functions.php",
+		"/F/PROJECTS/WEB/start-web-project/src/js/viewport.js",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/js/media-upload.js",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/_mixins.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/_vars.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/jcarousel/_jcarousel.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/sass/main.sass",
+		"/F/PROJECTS/WEB/start-web-project/src/js/visible-on-scroll.js",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/entry.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/page.php",
+		"/F/PROJECTS/WEB/start-web-project/src/js/bgparallax.js",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/header.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/inc/hide-title.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/index.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/tag.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/single.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/search.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/category.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/author.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/attachment.php",
+		"/F/PROJECTS/WEB/start-web-project/src/wp-content/themes/starck-theme/404.php",
+		"/C/xampp/domains/start-web-project/src/sass/_vars.sass",
+		"/C/xampp/domains/start-web-project/src/sass/_mixins.sass",
+		"/C/xampp/domains/start-web-project/src/sass/main.sass",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/404.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/archive.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/attachment.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/author.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/category.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/comments.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/entry.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/entry-content.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/entry-footer.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/entry-meta.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/entry-summary.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/footer.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/tag.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/single.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/sidebar.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/search.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/page.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/nav-below-single.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/nav-below.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/index.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/header.php",
+		"/C/xampp/domains/start-web-project/src/wp-content/themes/starck-theme/style.css",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/src/sass/_vars.sass",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/src/sass/_mixins.sass",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/src/sass/main.sass",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/src/wp-content/themes/starck-theme/header.php",
+		"/F/PROJECTS/WEB/atrium43.ru/src/sass/_mixins.sass",
+		"/F/PROJECTS/WEB/atrium43.ru/src/wp-content/themes/starck-theme/header.php",
+		"/F/PROJECTS/WEB/atrium43.ru/src/sass/_vars.sass",
+		"/F/PROJECTS/WEB/atrium43.ru/src/sass/main.sass",
+		"/F/PROJECTS/WEB/atrium43.ru/src/wp-content/themes/starck-theme/index.php",
+		"/F/PROJECTS/WEB/atrium43.ru/gulpfile.js",
+		"/C/Users/Starck/YandexDisk/Projects/Start-WP-Template/src/css/vendors.css",
+		"/C/Users/Starck/AppData/Local/Temp/_tc/understrap/gulpfile.js",
+		"/C/Users/Starck/YandexDisk/Projects/Start-WP-Template/src/sass/_fonts.sass",
+		"/C/Users/Starck/YandexDisk/Projects/Start-WP-Template/src/sass/main.sass",
+		"/C/Users/Starck/YandexDisk/Sublime Text 3/Data/Packages/User/FTPSync.sublime-settings",
+		"/C/Users/Starck/YandexDisk/Sublime Text 3/Data/Packages/CleanCSS/CleanCSS.sublime-settings",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/readme.md",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/wp-install.js",
+		"/C/Users/saloo/Projects/WP-Dev-Template/WP-Dev-Template/download_wp.js",
+		"/C/Users/saloo/YandexDisk/Projects/Start-WP-Template/readme.md",
+		"/C/Users/saloo/YandexDisk/Projects/Start-WP-Template/gulpfile.js",
+		"/E/Мои документы/YandexDisk/Projects/newProjectTemplate/readme.md",
+		"/C/Users/saloo/YandexDisk/Projects/newProjectTemplate/gulpfile.js",
+		"/C/Users/saloo/Downloads/HTML5-agragregra-template-master/gulpfile.js",
+		"/C/Users/saloo/YandexDisk/Projects/newProjectTemplate/src/index.html",
+		"/C/Users/saloo/Downloads/HTML5-agragregra-template-master/app/index.html",
+		"/C/Users/saloo/YandexDisk/Projects/newProject/app/sass/main.sass",
+		"/C/Users/saloo/YandexDisk/Projects/newProject/app/js/common.js",
+		"/C/Users/saloo/YandexDisk/Projects/newProject/gulpfile.js",
+		"/C/Users/saloo/YandexDisk/Projects/newProject/package.json",
+		"/C/Users/saloo/YandexDisk/Projects/newProject/app/index.html",
+		"/C/Users/saloo/YandexDisk/Projects/newProject/app/css/main.css",
+		"/C/Users/saloo/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/header.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/content-product_cat.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/header.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/footer.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/templates/theme-parts/entry/search.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/templates/theme-parts/content-no-results.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/templates/theme-parts/loop-search.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/single-product/price.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/archive-product.php",
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/ftpsync.settings"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1995,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								98,
+								98
+							]
+						],
+						"settings":
+						{
+							"color_helper.box_height": 20,
+							"color_helper.color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"allowed_colors":
+								[
+									"rgb",
+									"gray",
+									"hsl",
+									"hwb",
+									"graya",
+									"rgba",
+									"hsla",
+									"webcolors",
+									"hex",
+									"hex_compressed",
+									"hwba",
+									"hexa",
+									"hexa_compressed"
+								],
+								"compress_hex_output": true,
+								"current_ext": ".html",
+								"current_syntax": "HTML/HTML",
+								"enabled": true,
+								"last_updated": 1569482335.28,
+								"scan_completion_scopes":
+								[
+								],
+								"scan_scopes":
+								[
+									"meta.declaration-list.css -support.type.property-name.css -comment -string",
+									"meta.property-value.css -comment -string",
+									"meta.value.css -comment -string",
+									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
+									"meta.tag.any.html meta.attribute-with-value.style.html"
+								],
+								"use_hex_argb": false
+							},
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 70.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.gulp_output":
+	{
+		"height": 209.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "design43.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\saloo\\YandexDisk\\Проекты\\Сайт\\phlox-artservice\\header.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"E:\\Мои документы\\YandexDisk\\Проекты\\artservice43.ru\\artservice43.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 354.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

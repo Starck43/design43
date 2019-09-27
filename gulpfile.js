@@ -17,15 +17,15 @@ var gulp 		 = require('gulp'),
     rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     imagemin     = require('imagemin'), // Подключаем библиотеку для работы с изображениями
     imgCompress  = require('imagemin-jpeg-recompress'), // Подключаем библиотеку для работы с изображениями
-    //pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 
 var path = {
         src: 'src/', // Здесь хранятся исходные данные
-        dest: 'src/' // Путь до скомпилированных файлов. 
+        dest: 'src/wp-content/themes/starck-theme/' // Путь до дочерней темы WP. 
 	}
 var site = {
-		http: 'design43' // здесь нужно указать адрес рабочего сайта, удаленного или локального
+		http: '43design' // здесь нужно указать адрес рабочего сайта, удаленного или локального
 }
 
 gulp.task('message', async function() { // Вывод любой информации в консоль
@@ -70,16 +70,14 @@ gulp.task('vendors-styles', function() { // таск обработает все
 
 // Скрипт запускается только вручную
 gulp.task('css-compress', async function() {
-    gulp.src(path.src+'css/main.css') // Сжимаем библиотеки
+    gulp.src(path.dest+'css/main.css') // Сжимаем библиотеки
     .pipe(cleanCSS({level:2})) // Сжимаем CSS файл
     .pipe(rename({suffix: '.min'})) // Добавляем суффикс .min
     .pipe(gulp.dest(path.dest+'css'))
 });
 
 gulp.task('scripts', function() {
-    return gulp.src([
-			path.src+'js/custom.js'
-		])
+    return gulp.src([path.src+'js/custom*.js'])
     //.pipe(sourcemaps.init()) // Инициализируем sourcemap
     .pipe(concat('custom.min.js')) // Объединяем в один файл
     //.pipe(uglify()) // Сжимаем JS файл
@@ -92,8 +90,7 @@ gulp.task('scripts', function() {
 gulp.task('vendors-scripts', function() {
     return gulp.src([ // Берем нужные библиотеки вендорных скриптов
 			//'node_modules/jquery/dist/jquery.min.js', // jQuery plug-in (npm i --save jquery)
-			path.src+'js/_vendors.js', // Vendors scripts.
-			'!'+path.src+'js/*.min.js',
+			path.src+'js/*.js', // Vendors scripts.
 			'!'+path.src+'js/custom*.js'
 		])
     .pipe(jsRequires({ // подключаем внешние скрипты, если они прописаны в заголовке файлов через @requires
@@ -105,8 +102,8 @@ gulp.task('vendors-scripts', function() {
 	.pipe(browserSync.reload({ stream: true }))  // Обновляем страницу после изменения своего скрипта
 });
 
-gulp.task('html', function() {
-    return gulp.src(path.dest+'**/*.html')
+gulp.task('php', function() {
+    return gulp.src([path.dest+'**/*.html', path.dest+'**/*.php'])
         .pipe(browserSync.reload({ stream: true }))
 });
 
@@ -144,7 +141,7 @@ gulp.task('watch', function() { //таск слежения изменений �
     gulp.watch([path.src+'css/*.css', '!'+path.src+'css/main.css'], gulp.parallel('vendors-styles')); // Наблюдение за вендорными css файлами в папке _src
     gulp.watch([path.src+'js/custom.js'], gulp.parallel('scripts')); // Наблюдение за главным JS файлом
     gulp.watch([path.src+'js/**/*.js', '!'+path.src+'js/custom*.js', path.src+'plugins/**/*.js'], gulp.parallel('vendors-scripts')); // Наблюдение за сторонней библиотекой JS файлов
-    gulp.watch([path.dest+'**/*.html'], gulp.parallel('html')); // Наблюдение за HTML файлами в корне проекта
+    gulp.watch([path.dest+'**/*.html', path.dest+'**/*.php'], gulp.parallel('php')); // Наблюдение за HTML файлами в корне проекта
 });
 
 
@@ -166,3 +163,5 @@ gulp.task('rsync', function() {
 
 //Дефолтный таск для запуска процессов слежения за изменениями кода. Выполняется командой Gulp без параметров
 gulp.task('default', gulp.parallel('vendors-styles', 'vendors-scripts', 'browser-sync', 'watch'));
+
+
