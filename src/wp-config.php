@@ -12,7 +12,8 @@
  */
 /** определяем директорию wp-content **/
 define( 'WP_CONTENT_DIR', __DIR__ .'/wp-content');
-define( 'WP_CONTENT_URL',  "//{$_SERVER['HTTP_HOST']}/wp-content" );
+//define( 'WP_CONTENT_URL',  "//{$_SERVER['HTTP_HOST']}/wp-content" );
+define( 'WP_CONTENT_URL',  "http://localhost/43design/src/wp-content" );
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */

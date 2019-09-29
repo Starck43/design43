@@ -4,22 +4,6 @@
 	height: $header-height
 	background-color: $header-bg
 
-	#top-bar
-		background-color: $top-bar-bg
-		display: flex
-		padding: 
-			left: 0
-			right: 0
-		
-		.widget
-			width: 100%
-			margin:  0 $gutter-20 / 2 auto
-			&:nth-child(n)
-				text-align: center
-			&:first-child
-				text-align: left
-			&:last-child
-				text-align: right
 										
 	#header-container
 		display: flex
@@ -34,12 +18,12 @@
 										
 	#branding
 		display: flex
-		width: $logo-width
 		margin: $gutter-20/2 0 auto
 
 
 		&.align-center
-			margin-bottom: $gutter-20/2
+			margin: $gutter-20/2 auto
+			
 			a
 				justify-content: center
 
@@ -61,24 +45,31 @@
 		#branding-logo
 			margin: auto 0
 			//padding: 0 $gutter-20/2
-			width: auto 
+			width: $logo-width
 
 			img
 				@extend %img
 
 		#branding-title
-			margin: auto 0
-			padding: 0 $gutter-20/2
+			margin: auto 0 -20px
+			padding: 0 $gutter-20
+			color: $branding-link-color 
+			width: $logo-width * 1.6
 			a
 				display: flex
+				color: $branding-link-color 
 
 			.site-title
 				margin: 0
-				line-height: 1
-				font-size: 2em
-				text-transform: uppercase
+				line-height: $base-line-height
+				font-size: 1.6em
+				font-weight: normal
+				letter-spacing: 1.2px
+				//text-transform: uppercase
 			.site-description
-				font-size: 1em 
+				font-size: 1em
+				letter-spacing: 0.5px
+				margin-top:  $base-line-height * 0.2
 
 	&.nav-below-logo
 		height: #{strip-units($header-height) + strip-units($nav-height)}px

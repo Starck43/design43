@@ -2,10 +2,10 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php esc_attr( bloginfo( 'charset' ) ); ?>" />
-	<meta name="description" content="Starter web template for Wordpress">
+	<meta name="description" content="Гильдия дизайнеров Кировской области">
 	<meta name="viewport" content="width=device-width" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="icon" href="img/favicon.png">
+	<link rel="icon" href="img/favicon.ico">
 	<?php wp_head(); ?>
 </head>
 

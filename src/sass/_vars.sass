@@ -5,28 +5,34 @@ $grid-breakpoints: (xs: 320px, sm: 576px, md: 768px, lg: 992px, xl: 1200px)
 
 // sizes
 $container_max-w: 1000px
-$header-height: 100px
-$logo-width: 25%
-$sidebar-width: 25%
+$top-bar-height: 0px
+$header-height: 200px
+$logo-width: 120px
+$sidebar-width: 0%
 $content-width: 100% - $sidebar-width
 $nav-height: 50px
 $icon-size: 30px
 $gutter-20: 20px
 $gutter-30: 30px
+$gutter: $gutter-30 //Bootstrap compatible gutter
 
 //colors
-$theme-color: #69c
+$theme-color: rgba(41,147,133, 1)
 $body-bg: white
-$header-bg: white
-$main-bg: darken(white, 5%)
-$content-bg: transparent
-$sidebar-bg: $main-bg
 $nav-bg: $theme-color
-$footer-bg: $theme-color
+$header-bg: black
+$main-bg: $body-bg
+$main-2-bg: darken(white, 5%)
+$content-bg: transparent
+$top-bar-bg: transparent
+$sidebar-bg: $main-bg
+$footer-bg: $body-bg
+$branding-link-color: white
 $base-border-color: #555
 $base-text-color: #333
-$page-title-color: orange
+$page-title-color: $theme-color
 $nav-bg: $header-bg
+$menu-icon-color: white
 $menu-link-color: $theme-color
 $link-color: $theme-color
 $link-color-hover: lighten($link-color, 10%) //darken($link-color, 20%)
@@ -50,23 +56,23 @@ $burger-menu-font-size: 1.5em
 $burger-submenu-font-size: $burger-menu-font-size * 0.8
 
 h1 
-	font: normal bold 2em/1.1 $base-font-family
-	margin: 0 0 0.5em 0
+	font: normal bold 2.2em/1.2 $base-font-family
+	margin: 0 0 1em 0
 	color: $page-title-color 
 
 
 h2  
-	font: normal bold 1.75em/1.1 $base-font-family
+	font: normal normal 1.6em/1.2 $base-font-family
 	margin: 1em 0
 
 
 h3 
-	font: normal bold 1.5em/1.1 $base-font-family
+	font: normal bold 1.4em/1.2 $base-font-family
 	margin: 0 0 0.5em 0
 
 
 h4 
-	font: normal bold 1.33em/1.1 $base-font-family
+	font: normal bold 1.3em/1.2 $base-font-family
 	margin: 0 0 0.5em 0
 
 

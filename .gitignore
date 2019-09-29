@@ -2,5 +2,10 @@
 /.git/
 /**/Thumbs.db
 /**/*.DS_Store
-/resource/
+/resources/
 /src/wordpress/
+/src/wp-config.php
+src/wp-content/uploads/
+/gulpfile.js
+/*.sublime-project
+/*.sublime-workspace

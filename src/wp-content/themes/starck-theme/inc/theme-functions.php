@@ -26,7 +26,7 @@ function add_custom_admin_styles() {
 			text-align: center;
 			font-size: 12px;
 		}
-		.postbox-gallery-caption, .postbox-gallery-caption-link {padding-top: 20px;}
+		.postbox-gallery-caption, .postbox-gallery-caption-link {display: block; padding-top: 20px;}
 	</style>';
 }
 
@@ -81,7 +81,7 @@ function starck_setup() {
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
-	add_theme_support( 'post-thumbnails', array('projects') );
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'quote', 'link', 'status' ) );
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 	add_theme_support( 'align-wide' );
@@ -89,7 +89,6 @@ function starck_setup() {
 	//add_theme_support( 'woocommerce' );
 
 	add_image_size( 'category-thumb', 300, 9999 ); // 450 в ширину и без ограничения в высоту
-	add_image_size( 'portfolio', 600, 9999 ); // 450 в ширину и без ограничения в высоту
 	add_image_size( 'mini-thumbnail', 100, 100, true ); // Кадрирование изображения
 	set_post_thumbnail_size( 300, 300 ); // размер миниатюры поста по умолчанию
 
@@ -102,7 +101,6 @@ function starck_setup() {
 	) );
 
 }
-
 
 add_filter( 'document_title_separator', 'starck_document_title_separator' );
 function starck_document_title_separator( $sep ) {
