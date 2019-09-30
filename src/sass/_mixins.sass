@@ -3,7 +3,8 @@
 	@font-face
 		font-family: $f-name
 		font-style: $f-style
-		font-weight: $f-weight
+		@if $f-weight != 0
+			font-weight: $f-weight
 		font-display: auto
 		src: url($f-url) format('woff2')
 

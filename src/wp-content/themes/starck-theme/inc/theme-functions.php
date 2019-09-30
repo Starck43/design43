@@ -5,6 +5,7 @@ define( 'STARCK_VERSION', '1.0.5' );
 add_action('admin_head', 'add_custom_admin_styles');
 function add_custom_admin_styles() {
 	echo '<style>
+		.wp-block {max-width: 1100px}
 		.column-post_thumb {width: 80px;}
 		#gallery-image .button {margin: 5px 0 20px;}
 		.postbox-gallery-block {cursor: pointer;}

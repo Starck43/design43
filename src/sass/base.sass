@@ -42,6 +42,17 @@ a
 li
 	list-style-type: none /* Убираем глобально маркеры */
 
+table
+	tbody
+		vertical-align: baseline
+		tr:first-child
+			background-color: darken(white, 5%) 
+		td
+			padding: 10px
+			&:last-child
+				text-align: right
+				width: 150px 
+				min-width: 100px 
 %img
 	width: 100%
 	height: auto
@@ -124,7 +135,7 @@ html
 	-webkit-font-smoothing: antialiased
 
 body
-	@include font-settings(Roboto, $base-text-color, 1rem, normal, 300, $base-line-height)
+	@include font-settings(Roboto, $base-text-color, 1rem, normal, 0, $base-line-height)
 	position: relative
 	display: flex
 	flex-direction: column
