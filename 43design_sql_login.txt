@@ -1,0 +1,8 @@
+43design.ru
+
+MySQL
+Host: localhost
+User: artservice_43
+Pass: yD7)aX5.
+Db: artservice_43
+phpMyAdmin: https://www.ihead.ru/servers/s38.ihead.ru/pma/

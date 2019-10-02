@@ -9,20 +9,24 @@
 
 input, textarea
 	width: 100%
+	margin-top: 3px
+	padding: 5px 10px
 	border-radius: 3px 
 	border: 1px solid $base-border-color 
 	outline: none
-	&:focus:required:invalid
-		border-color: red
+	@include font-settings(false, $button-text-color, $base-font-size, false, 300, 1.3)
+	&:focus
+		border-color: $theme-color
 	
 input[type="checkbox"]
 	width: auto
 input
-	line-height: 25px
+	line-height: 30px
 	
 .search-submit
 	visibility: hidden	
-	
+button
+	border: none 	
 .button,
 input[type="submit"]
 	$button-h: 40px !global
@@ -138,6 +142,42 @@ input[type="submit"]
 
 .fa-long-arrow-alt-up:before
 	content: "\f30c"
-	
+
 .fa-search::before
 	content: "\f002"
+
+.wpforms-container
+	max-width: 600px
+	@include push--auto
+	text-align: left
+
+	.wpforms-one-half, .wpforms-field
+		margin-bottom: 20px
+	
+	.wpforms-field
+		clear: both
+
+	.wpforms-one-half
+		width: 48%
+		float: right
+		&.wpforms-first
+			float: left
+			
+	.wpforms-sublabel-hide, .wpforms-field-hp
+		display: none
+
+	label
+		font-weight: bold
+
+	textarea
+		height: 150px
+
+	.wpforms-required-label
+		color: red
+		
+	.wpforms-confirmation-container
+		padding: 20px
+		border: 1px solid #bbb
+		border-radius: 3px
+		p
+			margin: 1em 0 

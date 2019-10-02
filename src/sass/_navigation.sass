@@ -6,26 +6,6 @@
 	height: $nav-height
 	align-items: center
 	//margin-top: auto
-
-	&:not(.burger)
-		li.menu-item-has-children
-			ul.sub-menu
-				position: absolute
-				display: table
-				top: 100%
-				margin-top: 5px 
-				padding: 0 20px
-				opacity: 0
-				border: 1px solid $menu-link-color
-				border-radius: 3px 
-				background-color: transparentize($nav-bg, 0.05)
-				transition: all 150ms ease-in-out
-				z-index: -1	
-							
-			&.collapsed
-				ul.sub-menu
-					opacity: 1
-					z-index: 2
 				
 	ul.menu
 		display: flex
@@ -158,25 +138,11 @@
 						&::before
 							border-color: #FFF 
 					
-				ul.sub-menu
-					display: flex
-					padding: 0
-					height: 0
-					opacity: 0
-					transition: all 150ms ease-in-out
-					a
-						font-size: $burger-submenu-font-size
-						font-weight: normal
 
 				&.collapsed
 					a
 						margin-bottom: 0
 							
-					ul.sub-menu
-						display: table
-						@include animation(sub-menu, 250ms ease-in both, In, 0, 80px )
-						margin-bottom: auto
-						height: 100%
 			
 			>li:not(:last-child)::after
 				content: ''
