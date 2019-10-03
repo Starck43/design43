@@ -17,7 +17,7 @@ var gulp 		 = require('gulp'),
     rename       = require('gulp-rename'), // Подключаем библиотеку для переименования файлов
     imagemin     = require('imagemin'), // Подключаем библиотеку для работы с изображениями
     imgCompress  = require('imagemin-jpeg-recompress'), // Подключаем библиотеку для работы с изображениями
-    pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
+    //pngquant     = require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
     autoprefixer = require('gulp-autoprefixer');// Подключаем библиотеку для автоматического добавления префиксов
 
 var path = {
@@ -59,7 +59,7 @@ gulp.task('vendors-styles', function() { // таск обработает все
             path.src+'css/*.css', 
             '!'+path.src+'css/main.css',
             '!'+path.src+'css/style.css',
-            '!'+path.src+'css/*.min.css',
+            '!'+path.src+'css/vendors.min.css',
 		])
 	.pipe(postcss([ cssImport ])) // Импортируем стили, прописанные через команду @import в начале файла
 	.pipe(concat('vendors.min.css')) // Объединяем все найденные файлы в один
@@ -127,9 +127,9 @@ gulp.task('img', function() {
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
     browserSync({ // Определяем параметры сервера.
         //server: { baseDir: path.src },  // Нельзя подключать одновремено с proxy
-		//host: site.http,
+		host: site.http,
 		proxy: site.http,
-        // tunnel: true, tunnel: 'projectname', // Demonstration page: http://projectname.localtunnel.me
+        //tunnel: true, tunnel: 'starck', // Demonstration page: http://projectname.localtunnel.me
         notify: false, // Отключаем уведомления
         online: false, // Work offline without internet connection
 		open: false, // open browser on start 

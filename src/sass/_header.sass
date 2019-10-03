@@ -19,8 +19,12 @@
 										
 	#branding
 		display: flex
-		margin: $gutter-20/2 auto
+		margin: $gutter-20
+		width: $logo-width
 
+		img
+			@extend %img
+			
 		&.align-center
 			margin: auto
 			padding-bottom: $nav-height
@@ -42,36 +46,6 @@
 			#branding-title
 				@include push--auto 
 
-			
-		#branding-logo
-			margin: auto 0
-			//padding: 0 $gutter-20/2
-			width: $logo-width
-
-			img
-				@extend %img
-
-		#branding-title
-			margin: auto 0 -20px $gutter-20
-			color: $branding-link-color 
-			width: $logo-width
-			font-size: 2.2em
-			a
-				display: flex
-				color: $branding-link-color 
-
-			.site-title
-				margin: 0
-				line-height: $base-line-height
-				font-size: 1em
-				font-weight: normal
-				letter-spacing: 1.2px
-				//text-transform: uppercase
-			.site-description
-				font-size: 0.625em
-				letter-spacing: 0.5px
-				margin-top:  $base-line-height * 0.2
-
 	&.nav-below-logo
 		//height: #{strip-units($header-height) + strip-units($nav-height)}px
 		#header-container
@@ -86,6 +60,7 @@
 	&.nav-inline-logo
 		#header-content
 			display: flex
+			margin: auto
 			flex-wrap: wrap
 			flex: auto
 
@@ -110,5 +85,12 @@
 			.widget
 				float: left
 
+.home
+	#header-nav
+		margin-right: auto
+	#site-header
+		#branding
+			display: none
+			
 @import navigation
 // <!-- End Header -->

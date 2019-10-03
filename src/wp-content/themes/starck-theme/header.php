@@ -46,13 +46,6 @@
 				<?php
 				}
 				?>
-				<!-- header title -->
-				<div id="branding-title">
-					<h1 class="site-title">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
-					</h1>
-					<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-				</div>
 			</section>
 
 			<section id="header-content"  <?php printf('class="align-%1$s %2$s"',
@@ -69,14 +62,7 @@
 			</section>
 		</div>
 		<!-- end header container -->
-		
-		<?php 
-		if ( starck_get_option( 'scroll_up' ) ) {
-			?>
-			<div id="scroll-up" alt="Пролистать"><i class="icon fa fa-long-arrow-alt-down"></i></div>
-			<?php 
-		}
-		?>
+
 	</header>
 
 	<?php 

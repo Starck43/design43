@@ -7,7 +7,7 @@
 document.addEventListener("DOMContentLoaded", function() {
 
 	// Adding class after full DOM loading for applying CSS animation
-	$('#main-header').addClass('visible');
+	//$('#main-header').addClass('visible');
 	$.when( $('#dom-preloader').find('i').removeClass('fa-spin').end().delay(500).fadeOut('slow') )
 	.done( function() { 
 		$('body').fadeIn();
@@ -24,7 +24,13 @@ document.addEventListener("DOMContentLoaded", function() {
 			//el.style.opacity = 0;
 			//el.classList.remove('visible');
 		});	
-
+	inView('#main-header')
+		.on('exit', el => {
+			//el.style.opacity = 0;
+			el.classList.add('hidden');
+			$('#branding').show();
+			$('#header-nav').css('margin-right','unset');
+		});	
 		//var lazyLoadInstance = new LazyLoad({
 			//elements_selector: ".lazy"
 		//});
@@ -34,10 +40,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		//addVisibleClass(document.body.querySelectorAll('#copyright'));
 
 		$('.back-to-top').topBtnToggle({
-			scrollTrigger: 800,
+			scrollTrigger: 900,
 			//debug: true,
 		});
-
+		if ( $('#scroll-up').length > 0 ) 
+			$('#scroll-up').fadeOut(200).remove();
+//		if ( $('#main-header').has('show') && $(window).scrollTop() > 0 ) 
+//			 $('#main-header').removeClass('show').addClass('hide');
 	});
 
 	$('.back-to-top').on('click', function (e) {		
@@ -50,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		var mc = document.body.querySelector('#main-container');
 		mc.scrollIntoView({block: "start", behavior: "smooth"});
 		$('#scroll-up').fadeOut(200).remove();
+		//$('#main-header').removeClass('show');
 	});
 
 	var burger = $('#nav-menu').on('click', function (e) {
