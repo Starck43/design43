@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	} else {
 
-		// Fallback
-/*
+
 		lazyImages.forEach(function(lazyImage) {
 			lazyImage.src = lazyImage.dataset.src;
 			lazyImage.srcset = lazyImage.dataset.srcset;
@@ -73,6 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			lazyBackgroundData.style.backgroundImage = 'url(' + lazyBackgroundData.dataset.bg + ')';
 		});
 
-*/	}
+	}
 
 });

@@ -1,29 +1,30 @@
 // Header styles
 #site-header
-	width: 100% 
-	height: $header-height
+	position: relative
+	display: block
 	background-color: $header-bg
 
 										
 	#header-container
 		display: flex
-		justify-content: space-between
+		width: 100% 
+		height: $header-height
 
 	
-	&.branding-right
+	.branding-right
 		flex-direction: row-reverse
 		
-	&.branding-center
+	.branding-center
 		flex-direction: column
 										
 	#branding
 		display: flex
-		margin: $gutter-20/2 0 auto
-
+		margin: $gutter-20/2 auto
 
 		&.align-center
-			margin: $gutter-20/2 auto
-			
+			margin: auto
+			padding-bottom: $nav-height
+
 			a
 				justify-content: center
 
@@ -51,10 +52,10 @@
 				@extend %img
 
 		#branding-title
-			margin: auto 0 -20px
-			padding: 0 $gutter-20
+			margin: auto 0 -20px $gutter-20
 			color: $branding-link-color 
-			width: $logo-width * 1.6
+			width: $logo-width
+			font-size: 2.2em
 			a
 				display: flex
 				color: $branding-link-color 
@@ -62,22 +63,22 @@
 			.site-title
 				margin: 0
 				line-height: $base-line-height
-				font-size: 1.6em
+				font-size: 1em
 				font-weight: normal
 				letter-spacing: 1.2px
 				//text-transform: uppercase
 			.site-description
-				font-size: 1em
+				font-size: 0.625em
 				letter-spacing: 0.5px
 				margin-top:  $base-line-height * 0.2
 
 	&.nav-below-logo
-		height: #{strip-units($header-height) + strip-units($nav-height)}px
+		//height: #{strip-units($header-height) + strip-units($nav-height)}px
 		#header-container
 			flex-wrap: wrap-reverse
 
 	&.nav-above-logo
-		height: #{strip-units($header-height) + strip-units($nav-height)}px
+		//height: #{strip-units($header-height) + strip-units($nav-height)}px
 		#header-container
 			flex-wrap: wrap
 

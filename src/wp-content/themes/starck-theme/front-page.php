@@ -101,7 +101,7 @@
 		<div id="contacts">
 			<header id="contacts-header"><h1 class="title">Обратная связь</h1></header>
 			<div id="contacts-content"><!-- Связаться с нами можно по электронной почте: <a href="mailto:43design@mail.ru">43design@mail.ru</a> -->
-				<?php echo do_shortcode('[wpforms id="5" title="false" description="false"]'); ?>
+				<?php echo do_shortcode('[wpforms id="40" title="false" description="false"]'); ?>
 			</div>
 		</div>
 	</section>

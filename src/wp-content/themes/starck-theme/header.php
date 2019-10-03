@@ -26,7 +26,7 @@
 		<?php if ( 'enabled' === starck_get_option( 'top_bar_layout_setting' ) ) starck_get_top_bar(); ?>
 
 		<!-- header-container -->
-		<div id="header-container" class="<?php echo 'container branding-' . starck_get_option( 'branding_alignment' ); ?>">
+		<div id="header-container" class="<?php echo 'branding-' . starck_get_option( 'branding_alignment' ); ?>">
 			<?php
 			$nav_position = starck_get_option( 'nav_position_setting' );
 			if ( in_array($nav_position, ['above', 'below']) ) {
@@ -69,6 +69,14 @@
 			</section>
 		</div>
 		<!-- end header container -->
+		
+		<?php 
+		if ( starck_get_option( 'scroll_up' ) ) {
+			?>
+			<div id="scroll-up" alt="Пролистать"><i class="icon fa fa-long-arrow-alt-down"></i></div>
+			<?php 
+		}
+		?>
 	</header>
 
 	<?php 

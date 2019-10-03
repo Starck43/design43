@@ -25,16 +25,16 @@ document.addEventListener("DOMContentLoaded", function() {
 			//el.classList.remove('visible');
 		});	
 
-		var lazyLoadInstance = new LazyLoad({
-			elements_selector: ".lazy"
-		});
+		//var lazyLoadInstance = new LazyLoad({
+			//elements_selector: ".lazy"
+		//});
 	
 	$(window).scroll(function() {
 		//addVisibleClass(document.body.querySelectorAll('article')); //viewport.js
 		//addVisibleClass(document.body.querySelectorAll('#copyright'));
 
 		$('.back-to-top').topBtnToggle({
-			scrollTrigger: 400,
+			scrollTrigger: 800,
 			//debug: true,
 		});
 
@@ -46,6 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
 		$('html,body').animate({scrollTop: 0}, 700);		
 	});
 
+	$('#scroll-up').on('click', function (e) {
+		var mc = document.body.querySelector('#main-container');
+		mc.scrollIntoView({block: "start", behavior: "smooth"});
+		$('#scroll-up').fadeOut(200).remove();
+	});
 
 	var burger = $('#nav-menu').on('click', function (e) {
 		burger.toggleClass('active');
