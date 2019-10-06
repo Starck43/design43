@@ -14,19 +14,20 @@ function show_compact_header() {
 	$('#header-nav').removeClass('align-center').addClass('align-right');
 }
 
-var scrollup = $('#scroll-up');
-
 var remove_header = function(el) {
+if ( document.readyState == 'interactive' ) {
 	var main_header = this.querySelector("#main-header");
+	var scrollup = $('#scroll-up');
 	if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header') ) {
 		hide_compact_header();
 		main_header.classList.add("visible");
 		scrollup.fadeIn(300);
 		sessionStorage.setItem('main-header', main_header.id);
-		document.removeEventListener('load', remove_header, true);
-	} $('#main-header').remove();
+		//document.removeEventListener('load', remove_header, true);
+	} main_header.remove();
 }
-document.addEventListener('load', remove_header, true);
+}
+document.addEventListener('readystatechange', remove_header, true);
 
 
 document.addEventListener("DOMContentLoaded", function() {
