@@ -4,38 +4,46 @@
  * @version 1.0.5
  */
 
-
-
-var remove_header = function(el) {
-	//window.name = null; 
-	if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header')) {
-		$('#branding').hide();
-		$('#header-nav').removeClass('align-right').addClass('align-center');
-		//sessionStorage.removeItem('main-header');
-		document.removeEventListener('load', remove_header, true);
-	} else $('#main-header').remove();
+function hide_compact_header() {
+	$('#branding').hide();
+	$('#header-nav').removeClass('align-right').addClass('align-center');
+	
 }
-document.addEventListener('load', remove_header, true);
-
-function show_narrow_header() {
+function show_compact_header() {
 	$('#branding').show(200);
 	$('#header-nav').removeClass('align-center').addClass('align-right');
 }
 
+var scrollup = $('#scroll-up');
+
+var remove_header = function(el) {
+	var main_header = this.querySelector("#main-header");
+	if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header') ) {
+		hide_compact_header();
+		main_header.classList.add("visible");
+		scrollup.fadeIn(300);
+		sessionStorage.setItem('main-header', main_header.id);
+		document.removeEventListener('load', remove_header, true);
+	} $('#main-header').remove();
+}
+document.addEventListener('load', remove_header, true);
+
 
 document.addEventListener("DOMContentLoaded", function() {
 	
+/*
 var elem = main.querySelector("#main-header");
 if (elem) {
 	if (sessionStorage.getItem('main-header') == elem.id) {
 		elem.classList.remove();
-		//show_narrow_header();
+		//show_compact_header();
 	} else {
-		sessionStorage.setItem('main-header', elem.id);
+		//sessionStorage.setItem('main-header', elem.id);
 		//window.name = 'no-main-header';
 		elem.classList.add("visible");
 	}
 }
+*/
 	//$('body').fadeIn(200);
 	// Adding class after full DOM loading for applying CSS animation
 /*	$.when( $('#dom-preloader').find('i').removeClass('fa-spin').end().delay(500).fadeOut('slow') )
@@ -48,20 +56,16 @@ if (elem) {
 		.on('enter', el => {
 			//el.style.opacity = 0.5;
 			el.classList.add('visible');
-		})
-		.on('exit', el => {
-			//el.style.opacity = 0;
-			//el.classList.remove('visible');
 		});
 
 	inView('#main-header')
 		.on('exit', el => {
 			//el.style.opacity = 0;
-			$.when( el.classList.remove('visible') ).done( function() {
-				show_narrow_header();
-				el.remove(); //delete main-header
-			});
-		});	
+			el.classList.remove('visible');
+			show_compact_header();
+			el.remove(); //delete main-header
+		});
+
 		//var lazyLoadInstance = new LazyLoad({
 			//elements_selector: ".lazy"
 		//});
@@ -74,8 +78,8 @@ if (elem) {
 			scrollTrigger: 900,
 			//debug: true,
 		});
-		if ( $('#scroll-up').length > 0 ) 
-			$('#scroll-up').fadeOut(200).remove();
+		if ( scrollup.length > 0 ) 
+			scrollup.fadeOut(200).remove();
 //		if ( $('#main-header').has('show') && $(window).scrollTop() > 0 ) 
 //			 $('#main-header').removeClass('show').addClass('hide');
 	});
@@ -83,10 +87,11 @@ if (elem) {
 	$('a[href^="#"]').on('click', function (e) {	
 		e.preventDefault();
 		var target = $(this).attr('href');
+		var mh = $('#main-header');
 		$(target).removeClass('animate');
-		timer = $('#main-header').hasClass('visible') ? 500 : 0;
+		timer = mh.hasClass('visible') ? 500 : 0;
 		$.when(
-			$('#main-header').removeClass('visible').delay(timer) 
+			mh.removeClass('visible').delay(timer) 
 		).done( function() {
 			var top = $(target).offset().top;
 			$('html, body').animate({scrollTop: top}, 500+top/4);//800 - длительность скроллинга в мс
@@ -126,7 +131,6 @@ if (elem) {
 
 	$( window ).on( 'load resize', function( e ) {
 		if ( $(this).width() < 992 ) {
-			//$('#header-nav').addClass('burger').removeClass('align-center').addClass('align-right');
 			$('#nav-menu').removeClass('hidden');
 		} else {
 			$('#header-nav').removeClass('burger');
