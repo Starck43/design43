@@ -5,7 +5,7 @@
 ?>
 
 	<section id="content">
-		<article id="members">
+		<article id="members" class="animate">
 			<header id="members-header"><h1 class="title">Члены гильдии</h1></header>
 			<div id="members-content" class="row">
 				<div id="member-1" class="member-container col-md-2"><a href="andreevsky">
@@ -66,7 +66,7 @@
 				</a></div>
 			</div>
 		</article>
-		<article id="about">
+		<article id="about" class="animate">
 			<header id="about-header"><h1 class="title">О гильдии</h1></header>
 			<div id="about-content">
 				<p>Создана Гильдия дизайнеров Кировской области при <a href="http://www.vcci.ru">ВЯТСКОЙ ТОРГОВО-ПРОМЫШЛЕННОЙ ПАЛАТЕ</a> (ГДКО при ВТПП).</p>
@@ -84,13 +84,13 @@
 				<div><a href="rozhnev"><h5 class="member-title">Олег Рожнев</h5></a></div>
 			</div>
 		</article>
-		<article id="news">
+		<article id="news" class="animate">
 			<header id="news-header"><h1 class="title">Новости</h1></header>
 			<div id="news-content">
 				<?php get_template_part( 'entry' ); ?>
 			</div>
 		</article>
-		<article id="documents">
+		<article id="documents" class="animate">
 			<header id="documents-header"><h1 class="title">Документы</h1></header>
 			<div id="documents-content">
 				<a href="admission" class="document-link"><h2>Положение о приеме в гильдию дизайнеров кировской области</h2></a>

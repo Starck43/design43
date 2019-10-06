@@ -1,41 +1,44 @@
 						
 // Navigation styles	
 #header-nav
+	position: relative
 	display: flex
-	width: 100%
+	//width: 100%
 	height: $nav-height
-	padding: 0 $gutter-20 
+	padding: 0 $gutter-20
 	align-items: center
-	//margin-top: auto
 				
 	ul.menu
 		display: flex
 		position: relative
-		width: 100%
+		//width: 100%
 		margin: 0
 		padding: 0
 		height: $nav-height
-		background-color: $nav-bg 
+		background-color: $nav-bg
 		
 		li
 			display: flex
-			border-radius: 25px
+			//border-radius: 25px
+			margin-bottom: 5px
 			transition: background 200ms ease
 			&:hover			
-				background: transparentize($theme-color, 0)
+				//background: transparentize($theme-color, 0)
 				//box-shadow: inset 0 0 0 2px $theme-color
 				//box-shadow: 0 0 6px 2px $theme-color
 
 			a
 				position: relative
 				margin: 0 $gutter-20
-				@include font-settings(false, $menu-link-color, $menu-font-size, uppercase, 300, $nav-height)
+				@include font-settings(false, $menu-link-color, $menu-font-size, normal, 300, $nav-height)
 				letter-spacing: 0px
-				color: $menu-icon-color
+				color: $menu-link-color
 				opacity: 0.7
+				border-bottom: 3px solid transparent
 				 
 				&:hover
 					opacity: 1 
+					border-color: $menu-link-color
 							
 
 		&.responsive
@@ -54,11 +57,13 @@
 		margin-left: auto
 		ul.menu
 			justify-content: flex-end
+		&.burger
+			flex-grow: 1
 			
 	&.inline-logo
-		width: auto
+		//width: auto
 		&.burger
-			ul.menu.active
+			ul.menu
 				height: calc-height($header-height, $top-bar-height)
 
 	&.under-header
@@ -68,67 +73,124 @@
 
 	&.burger
 		ul.menu
-			position: absolute
-			left: 0
+			position: fixed
+			//left: 0
 			right: 0
+			//bottom: 0
 			top: $header-height
+			padding: $gutter-20 $gutter-20 * 2 
 			//width: 100%
-			height: 0
-			opacity: 0
 			flex-direction: column
 			align-items: center
-			justify-content: space-evenly
-			background-color: transparentize($theme-color, 0.3)
-			transition: height 500ms ease-out, opacity 300ms ease
+			justify-content: start
+			background-color: transparentize($theme-color, 0.2)
+			transition: transform 300ms ease
 			z-index: 9999
-			box-sizing: border-box
-			border-top: 0px solid transparentize($theme-color , 1)
 			backdrop-filter: blur(10px)
-
+			transform: translateX(100%)
 			li
-				flex-direction: column
-				align-items: center
-				//flex-basis: 100% 
-				flex-grow: 1
-						
-				&.current-menu-item a
-					font-weight: bold
 
 				a
 					margin: auto
+					padding-bottom: 5px 
 					font-size: $burger-menu-font-size
-					line-height: $burger-menu-font-size * 2
-					color: #FFF
+					line-height: $burger-menu-font-size * 2.5
+					//color: $menu-link-color
 					letter-spacing: 1px
-					&::before
-						background-color: #FFF							
 					&:hover
-						&::before
-							border-color: #FFF 
+						border-color: $theme-color
 					
+				&.current-menu-item a
+					font-weight: bold
+
 
 				&.collapsed
 					a
 						margin-bottom: 0
 							
 			
-			>li:not(:last-child)::after
-				content: ''
-				height: 1px
-				width: 30px
-				bottom: 0
-				background-color: #FFF
 
 			&.active
-				opacity: 1
-				height: calc-height($header-height, $nav-height, $top-bar-height)
-				border-top: 3px solid transparentize($theme-color , 0)
+				transform: translateX(0)
 				>li
-					@include animation(menu-items, 300ms ease-in both, In, 0, -80px )
+					display: block
+					//display: flex
+					//flex-direction: column
+					//align-items: center
+					//flex-basis: 100% 
+					//flex-grow: 1
+					//@include animation(menu-items, 300ms ease-in both, In, 0, -80px )
 					//transform: translate(0, -80px)
-					@include animation-delays(4, 700ms, -125ms)
+					//@include animation-delays(4, 700ms, -125ms)
 
+		#site-search-modal
+			right: $icon-size * 3 +5px
+			
+		#nav-menu
+			z-index: 10000
 				
-		.nav-search
-			font-size: $icon-font-size 
+	#nav-search
+		font-size: $icon-font-size
+		
+	#site-search-modal
+		position: absolute
+		display: none
+		//width: 100%
+		//top: 0
+		//bottom: 0
+		left: 0
+		right: $icon-size * 2
+		//transition: opacity 300ms ease
+		//opacity: 0
+		background: $header-bg 
+		z-index: 9999
+
+		#searchform
+			width: 100%
+			height: 100% 
+			margin-right: $icon-size
+
+			input
+				color: #FFF
+				background: transparent 
+				border: none
+				border-bottom: 1px solid 
+				border-radius: 0 
+				padding-right: $icon-size + 5px
+				//border-bottom: 3px solid 
+				&:focus
+					border: none
+					background: transparentize($theme-color, 0)
+					border-radius: 3px 
+
+			&-submit
+				display: none
+				
+		#searchform-close
+			cursor: pointer
+			position: absolute
+			top: 0
+			bottom: 0
+			right: 0
+			width: $icon-size
+			opacity: 0.7
+			&::before,
+			&::after
+				content: ''
+				position: absolute
+				width: $icon-size - 5px
+				top: 50%
+				height: 2px
+				margin-top: -1px 
+				background: #FFF
+				
+			&::before
+				transform: rotate(45deg)
+				
+			&::after
+				transform: rotate(-45deg)
+			&:hover
+				opacity: 1
+
+
 // <!-- End Navigation -->

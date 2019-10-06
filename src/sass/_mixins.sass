@@ -72,13 +72,13 @@
 		0%
 			@if $fade != no-fade
 				opacity: if($fade == Out, 1, 0)
-			@if strip-units($x)+strip-units($y) != 0
+			@if strip-units($x)+strip-units($y)+strip-units($x1)+strip-units($y1) != 0
 				transform: translate($x, $y)
 
 		100%
 			@if $fade != no-fade
 				opacity: if($fade == Out, 0, 1)
-			@if strip-units($x1)+strip-units($y1) != 0
+			@if strip-units($x)+strip-units($y)+strip-units($x1)+strip-units($y1) != 0
 				transform: translate($x1, $y1)
 
 @mixin animation-delays($items, $start-delay:0ms, $between-delay:50ms)

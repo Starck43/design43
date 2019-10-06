@@ -11,7 +11,7 @@
 
 <body <?php body_class(); ?>>
 	<!-- Preloader -->
-	<div id="dom-preloader" class="preloader"><i class="fa fa-spinner fa-spin"></i></div>
+	<!-- <div id="dom-preloader" class="preloader"><i class="fa fa-spinner fa-spin"></i></div> -->
 	<?php
 
 	$custom_header = get_custom_header();

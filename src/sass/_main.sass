@@ -21,6 +21,8 @@ main
 		.site-branding
 			display: flex
 			margin: auto
+			opacity: 0
+			transition: opacity 200ms ease
 			
 			.site-logo
 				width: $logo-big-width
@@ -45,8 +47,16 @@ main
 
 	&.nav-inline-logo
 		#main-header
-			height: calc-height($header-height, $top-bar-height)
-			padding-bottom: $header-height / 2
+			transition: height,padding 0.3s ease-out
+			height: 0
+			
+			&.visible
+				height: calc-height($header-height, $top-bar-height)
+				padding-bottom: $header-height / 2
+				
+				.site-branding
+					transition: opacity 0.5s 0.3s ease-out
+					opacity: 1
 				
 		 
 	#main-container
@@ -77,9 +87,10 @@ main
 			article
 				padding:  $gutter-30 0
 				opacity: 0
-				transition: opacity 2s ease-out
-				&.visible:not(:first-child())
-					@include animation(article, 1s .2s ease-in-out both, In, 0, 300px )
+				transition: opacity 1.5s ease-out
+				&.animate
+					&.visible:not(:first-child())
+						@include animation(article, .8s .2s ease-in-out both, no-fade, 0, 300px )	
 
 				&:nth-child(odd)
 					background-color: $main-bg 
