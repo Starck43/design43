@@ -166,8 +166,10 @@ input[type="submit"]
 		border-color: $theme-color
 	&.show
 		bottom: $btn-size * 1
-	+media-breakpoint-down(xs)
-		left: 10px
+	+media-breakpoint-down(lg)
+		left: $gutter-20
+	+media-breakpoint-down(md)
+		left: $gutter-20 / 2
 /* Font Awesome for a project */
 
 .fa-spinner::before 
@@ -214,10 +216,13 @@ input[type="submit"]
 	max-width: 600px
 	@include push--auto
 	text-align: left
+	padding: $gutter-20 / 2 
 
 	.wpforms-one-half, .wpforms-field
 		margin-bottom: 20px
-	
+		+media-breakpoint-down(xs)	
+			margin-bottom: 15px
+
 	.wpforms-field
 		clear: both
 
@@ -226,7 +231,23 @@ input[type="submit"]
 		float: right
 		&.wpforms-first
 			float: left
-			
+		+media-breakpoint-down(xs)	
+			position: relative
+			width: 100%
+			&:first-child
+				margin-bottom: 30px
+			&.wpforms-first
+				label
+					display: none
+			label
+				position: absolute
+				left: 0
+				top: -$base-font-size
+	.wpforms-field-sublabel
+		display: none
+		+media-breakpoint-down(xs)
+			display: block
+
 	.wpforms-sublabel-hide, .wpforms-field-hp
 		display: none
 

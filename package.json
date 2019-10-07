@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Starck43/design43#readme",
   "devDependencies": {
+    "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",

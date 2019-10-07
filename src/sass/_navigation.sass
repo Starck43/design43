@@ -2,6 +2,7 @@
 // Navigation styles	
 #header-nav
 	position: relative
+	visibility: hidden
 	display: flex
 	//width: 100%
 	height: $nav-height
@@ -64,7 +65,7 @@
 		//width: auto
 		&.burger
 			ul.menu
-				height: calc-height($header-height, $top-bar-height)
+				height: calc-height($header-height/1.5, $top-bar-height)
 
 	&.under-header
 		&.burger
@@ -74,20 +75,25 @@
 	&.burger
 		ul.menu
 			position: fixed
-			//left: 0
-			right: 0
+			//visibility: hidden
+			left: 100%
+			//right: 0
 			//bottom: 0
 			top: $header-height
+			width: max-content
 			padding: $gutter-20 $gutter-20 * 2 
-			//width: 100%
 			flex-direction: column
-			align-items: center
 			justify-content: start
+			align-items: center
 			background-color: transparentize($theme-color, 0.2)
 			transition: transform 300ms ease
 			z-index: 9999
 			backdrop-filter: blur(10px)
-			transform: translateX(100%)
+			transform: translateX(0%)
+			+media-breakpoint-down(xs)
+				top: $header-height / 1.5
+				width: 100%
+				justify-content: space-evenly
 			li
 
 				a
@@ -111,9 +117,10 @@
 			
 
 			&.active
-				transform: translateX(0)
+				transform: translateX(-100%)
 				>li
 					display: block
+					//width: 100% 
 					//display: flex
 					//flex-direction: column
 					//align-items: center

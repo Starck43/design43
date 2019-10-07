@@ -77,7 +77,7 @@
 				<p>Высшим органом Гильдии дизайнеров Кировской области является Общее собрание. В период между общими собраниями управление делами Гильдии осуществляет Совет, который избирается на пять лет.
 				</p>
 				<p><b>В Совет Гильдии входят:</b></p>
-				<div><a href="andreevsky"><h5 class="member-title">Андрей Андреевский</h5></a><span>(Председатель гильдии)</span></div>
+				<div><a href="andreevsky"><h5 class="member-title">Андрей Андреевский</h5></a> <span>(Председатель гильдии)</span></div>
 				<div><a href="atnagulova"><h5 class="member-title">Ольга Атнагулова</h5></a></div>
 				<div><a href="kigel"><h5 class="member-title">Ирина Кигель</h5></a></div>
 				<div><a href="laletin"><h5 class="member-title">Антон Лалетин</h5></a></div>

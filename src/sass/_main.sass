@@ -39,7 +39,7 @@ main
 				margin: auto 20px 0
 				color: #FFF
 				letter-spacing: 0.5px
-				
+
 				h1.site-title
 					margin-bottom: 0.2em
 					font-weight: normal 
@@ -60,7 +60,10 @@ main
 				.site-branding
 					transition: opacity 0.5s 0.3s ease-out
 					opacity: 1
-				
+					+media-breakpoint-down(xs)
+						flex-direction: column
+						.branding-title
+							margin: auto				
 		 
 	#main-container
 		display: flex
@@ -86,7 +89,7 @@ main
 				margin-left: $gutter-20/2
 
 			article
-				padding:  $gutter-30
+				padding:  $gutter-20 $gutter-30 * 2
 				opacity: 0
 				transition: opacity 1.5s ease-out
 				&.animate
@@ -98,8 +101,10 @@ main
 				&:nth-child(even)
 					background-color: $main-2-bg
 					
-				+media-breakpoint-down(xs)
+				+media-breakpoint-down(sm)
 					padding: $gutter-30 / 2
+				+media-breakpoint-down(xs)
+					padding: $gutter-20 / 2
 				img
 					display: block
 					@extend %img
@@ -143,10 +148,6 @@ main
 					width: 100%
 					//margin: 0.6em 0
 					text-align: center
-					+media-breakpoint-down(xs)
-						span
-							display: block
-							margin-bottom: 1.5em
 				
 			#documents-content
 				display: flex
@@ -179,7 +180,10 @@ main
 				text-align: justify
 				a
 					display: inline-block
-
+				+media-breakpoint-down(xs)
+					span
+						display: block
+						margin-bottom: 1.5em
 			#news-content
 				.entry-summary
 					a

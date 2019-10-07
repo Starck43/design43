@@ -17,6 +17,16 @@ function show_compact_header() {
 document.addEventListener('readystatechange', function(el) {
 	if ( document.readyState === 'interactive' ) {
 		var main_header = this.querySelector("#main-header");
+		var navigation = this.querySelector("#header-nav");
+		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if ( width < 992 ) {
+			var burger = this.querySelector("#nav-menu");
+			//navigation.style.visibility = "hidden";
+			$.when(navigation.classList.add('burger'))
+			.done(navigation.style.visibility = "visible");
+			burger.classList.remove('hidden');
+		} else navigation.style.visibility = "visible";
+
 		if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
 			main_header.classList.add("visible");
@@ -117,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		if( e.keyCode == 27 && burger.hasClass('active') ) burger.click(); // close burger menu on esc key
 	});
 
-	$( window ).on( 'load resize', function( e ) {
+	$( window ).on( 'resize', function( e ) {
 		if ( $(this).width() < 992 ) {
 			navigation.addClass('burger');
 			burger.removeClass('hidden');
