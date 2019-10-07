@@ -4,11 +4,17 @@
 	display: block
 	background-color: $header-bg
 
+	+media-breakpoint-down(xs)
+		position: sticky
+		top: 0 
 										
 	#header-container
 		display: flex
 		width: 100% 
 		height: $header-height
+		align-items: center
+		+media-breakpoint-down(xs)
+			height: $header-height/1.5
 
 	
 	.branding-right
@@ -21,6 +27,8 @@
 		display: block
 		margin: $gutter-20
 		width: $logo-width
+		+media-breakpoint-down(xs)
+			width: $logo-width / 1.5
 
 		img
 			@extend %img

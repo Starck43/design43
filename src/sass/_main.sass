@@ -17,6 +17,9 @@ main
 		position: relative
 		display: flex
 		background-color: $header-bg
+		&.visible
+			#scroll-up
+				display: block
 		
 		.site-branding
 			display: flex
@@ -62,9 +65,7 @@ main
 	#main-container
 		display: flex
 		max-width: $container_max-w 
-		padding: 
-			top: $gutter-20*2
-			bottom: $gutter-20*2
+		padding: $gutter-20*2 0
 		//background-color: $main-bg
 		
 		.breadcrumbs
@@ -85,7 +86,7 @@ main
 				margin-left: $gutter-20/2
 
 			article
-				padding:  $gutter-30 0
+				padding:  $gutter-30
 				opacity: 0
 				transition: opacity 1.5s ease-out
 				&.animate
@@ -97,38 +98,85 @@ main
 				&:nth-child(even)
 					background-color: $main-2-bg
 					
+				+media-breakpoint-down(xs)
+					padding: $gutter-30 / 2
+				img
+					display: block
+					@extend %img
+					max-width: max-content
+						
 				.title
 					text-align: center
-					padding: $gutter-20
+					padding: $gutter-20 0
+					+media-breakpoint-down(xs)
+						padding-bottom: 0
 
-				#members-content
-					.member-container
-						margin: $gutter-20 0
-						overflow: hidden
-						
+
+				.member-container
+					margin: $gutter-20 0
+					overflow: hidden
 					img
-						display: block
-						@extend %img
+						margin: auto
 						border-radius: 50%
 						background-color: grey
 						opacity: 0.1
 						transition: opacity 800ms ease-out 
 						&.loaded
 							opacity: 1
-						
+
 					.member-title
-						display: inline-block
-						width: 100%
-						margin: $gutter-20 0
-						text-align: center
+						+media-breakpoint-down(lg)
+							font-size: 1.3em
+						+media-breakpoint-down(md)
+							font-size: 1.2em
+						+media-breakpoint-down(sm)
+							font-size: 1.6em
+						+media-breakpoint-down(xs)
+							font-size: 1.8em
+							
+					+media-breakpoint-up(md)
+						flex: 0 0 20%
+						max-width: 20%
+					
+				.member-title
+					display: inline-block
+					width: 100%
+					//margin: 0.6em 0
+					text-align: center
+					+media-breakpoint-down(xs)
+						span
+							display: block
+							margin-bottom: 1.5em
 				
 			#documents-content
+				display: flex
+				justify-content: center
+				margin: 0 $gutter-30 $gutter-20
+				+media-breakpoint-down(xs)
+					margin: 0 0 $gutter-20
+				 		
 				.document-link
-					display: table
-					@include push--auto
+					width: 100% 
+					margin: 0  $gutter-20 / 2
+					padding: $gutter-20
+					text-align: center
+					background-color: transparentize($main-bg, 0.1)
+					box-shadow: 0 0 10px #eee
+					border-radius: 3px
+					i
+						font-size: 2.2em
+					h2
+						font-size: 1.2em
+						line-height: 1.3
+						color: $base-text-color 
+
+				+media-breakpoint-down(sm)
+					flex-direction: column
+					.document-link
+				 		margin: 10px 0
 
 			#about-content
-				margin: 0 $gutter-30
+				text-align: justify
 				a
 					display: inline-block
 
