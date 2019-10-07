@@ -216,26 +216,6 @@ if ( ! function_exists( 'starck_customize_register' ) ) {
 
 
 
-		$wp_customize->add_setting(
-			'starck_settings[scroll_up]',
-			array(
-				'default' => $defaults['scroll_up'],
-				'type' => 'option',
-				'sanitize_callback' => 'starck_sanitize_checkbox',
-			)
-		);
-
-		$wp_customize->add_control(
-			'starck_settings[scroll_up]',
-			array(
-				'type' => 'checkbox',
-				'label' => __( 'Scroll up button in header', 'starck' ),
-				'section' => 'starck_layout_header',
-				'settings' => 'starck_settings[scroll_up]',
-				'priority' => 30,
-			)
-		);
-
 
 //Navigation
 		$wp_customize->add_section(
@@ -468,6 +448,26 @@ if ( ! function_exists( 'starck_customize_register' ) ) {
 				),
 				'settings' => 'starck_settings[breadcrumbs_setting]',
 				'priority' => 40,
+			)
+		);
+
+		$wp_customize->add_setting(
+			'starck_settings[scroll_up]',
+			array(
+				'default' => $defaults['scroll_up'],
+				'type' => 'option',
+				'sanitize_callback' => 'starck_sanitize_checkbox',
+			)
+		);
+
+		$wp_customize->add_control(
+			'starck_settings[scroll_up]',
+			array(
+				'type' => 'checkbox',
+				'label' => __( 'Scroll up button in header', 'starck' ),
+				'section' => 'starck_layout_content',
+				'settings' => 'starck_settings[scroll_up]',
+				'priority' => 50,
 			)
 		);
 

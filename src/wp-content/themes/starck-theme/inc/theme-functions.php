@@ -6,6 +6,7 @@ add_action('admin_head', 'add_custom_admin_styles');
 function add_custom_admin_styles() {
 	echo '<style>
 		.wp-block {max-width: 1100px}
+		#wpfooter {position: relative}
 		.column-post_thumb {width: 80px;}
 		#gallery-image .button {margin: 5px 0 20px;}
 		.postbox-gallery-block {cursor: pointer;}
@@ -469,8 +470,13 @@ if ( ! function_exists( 'starck_get_navigation' ) ) {
 			<?php
 			wp_nav_menu( $primary_args );
 			//wp_nav_menu( $secondary_args );
-			if ( starck_get_option( 'nav_search_setting' ) )
-				echo '<div id="nav-search" class="icon"><i class="fa fa-search"></i></div>';
+			if ( starck_get_option( 'nav_search_setting' ) ) {
+			?>
+				<div id="site-search-modal"><?php get_search_form(); ?></div>
+
+				<div id="nav-search" class="icon"><i class="fa fa-search"></i></div>
+			<?php
+			}
 
 			$burger_class = sprintf(' class="icon burger-icon%s"', starck_get_option( 'nav_burger' ) ?  '' : ' hidden' );
 			?>
@@ -500,7 +506,7 @@ function starck_back_to_top() {
 	echo trim(preg_replace('/\s{2,}/', ' ', sprintf(
 
 		'<div id="back-to-top">
-			<a title="%1$s" rel="nofollow" href="#" class="back-to-top"><i class="%2$s"></i></a>
+			<a title="%1$s" rel="nofollow" href="/" class="back-to-top"><i class="%2$s"></i></a>
 		</div>',
 		esc_attr__( 'Scroll back to top', 'starck' ),
 		esc_attr( apply_filters( 'starck_back_to_top_icon', 'fa arrow-up' ) )

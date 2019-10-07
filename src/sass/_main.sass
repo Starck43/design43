@@ -13,9 +13,55 @@ main
 		#main-container
 			flex-direction: row-reverse 
 			
+	#main-header
+		position: relative
+		display: flex
+		background-color: $header-bg
+		
+		.site-branding
+			display: flex
+			margin: auto
+			opacity: 0
+			transition: opacity 200ms ease
+			
+			.site-logo
+				width: $logo-big-width
+				height: $logo-big-width + 35px
+				margin-bottom: auto
+				img
+					@extend %img
+			
+			.branding-title
+				width: $logo-big-width  
+				margin: auto 20px 0
+				color: #FFF
+				letter-spacing: 0.5px
+				
+				h1.site-title
+					margin-bottom: 0.2em
+					font-weight: normal 
+					color: #FFF
+					
+				.site-description
+					font-size: 1.33em
 
+	&.nav-inline-logo
+		#main-header
+			transition: height,padding 0.3s ease-out
+			height: 0
+			
+			&.visible
+				height: calc-height($header-height, $top-bar-height)
+				padding-bottom: $header-height / 2
+				
+				.site-branding
+					transition: opacity 0.5s 0.3s ease-out
+					opacity: 1
+				
+		 
 	#main-container
 		display: flex
+		max-width: $container_max-w 
 		padding: 
 			top: $gutter-20*2
 			bottom: $gutter-20*2
@@ -41,9 +87,10 @@ main
 			article
 				padding:  $gutter-30 0
 				opacity: 0
-				transition: opacity 2s ease-out
-				&.visible
-					@include animation(article, 1s .2s ease-in-out both, In, 0, 300px )
+				transition: opacity 1.5s ease-out
+				&.animate
+					&.visible:not(:first-child())
+						@include animation(article, .8s .2s ease-in-out both, no-fade, 0, 300px )	
 
 				&:nth-child(odd)
 					background-color: $main-bg 
@@ -104,10 +151,6 @@ main
 			background-color: $sidebar-bg 
 			border: 1px solid $border-color
 			box-sizing: border-box
-
-	&.nav-inline-logo
-		#main-header
-			height: calc-height($header-height, $top-bar-height)
 
 .entry-content
 	div,p
