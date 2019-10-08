@@ -130,9 +130,9 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
         //server: { baseDir: path.src },  // Нельзя подключать одновремено с proxy
 		host: site.http,
 		proxy: site.http,
-        //tunnel: true, tunnel: 'starck', // Demonstration page: http://projectname.localtunnel.me
+        tunnel: true, tunnel: '43design', // Demonstration page: http://projectname.localtunnel.me
         notify: false, // Отключаем уведомления
-        online: false, // Work offline without internet connection
+        //online: false, // Work offline without internet connection
 		open: false, // open browser on start 
     });
 });

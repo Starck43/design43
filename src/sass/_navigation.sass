@@ -17,11 +17,11 @@
 		padding: 0
 		height: $nav-height
 		background-color: $nav-bg
-		
+		align-items: center
 		li
 			display: flex
 			//border-radius: 25px
-			margin-bottom: 5px
+			//margin-bottom: 5px
 			transition: background 200ms ease
 			&:hover			
 				//background: transparentize($theme-color, 0)
@@ -30,8 +30,8 @@
 
 			a
 				position: relative
-				margin: 0 $gutter-20
-				@include font-settings(false, $menu-link-color, $menu-font-size, normal, 300, $nav-height)
+				margin: 0 $gutter-20 / 1.5
+				padding: 5px 0
 				letter-spacing: 0px
 				color: $menu-link-color
 				opacity: 0.7
@@ -85,7 +85,6 @@
 			padding: $gutter-20 $gutter-20 * 2 
 			flex-direction: column
 			justify-content: start
-			align-items: center
 			background-color: transparentize($theme-color, 0.2)
 			transition: transform 300ms ease
 			z-index: 9999
@@ -96,21 +95,36 @@
 				width: 100%
 				justify-content: space-evenly
 			li
-
+				position: relative
 				a
 					margin: auto
 					padding-bottom: 5px 
 					font-size: $burger-menu-font-size
+					font-weight: 500
 					line-height: $burger-menu-font-size * 2.5
 					//color: $menu-link-color
 					letter-spacing: 1px
 					&:hover
-						border-color: $theme-color
-					
-				&.current-menu-item a
-					font-weight: bold
-
-
+						border: none
+				&::before
+					content: ''
+					position: absolute
+					width: 70px
+					height: 70px
+					left: 50%
+					top: 50%
+					background-color: transparent
+					box-shadow: inset 0 0 10px -3px #fff, 0 0 12px -3px #fff
+					border: 1px solid transparentize(white, 0.3)
+					border-radius: 50%
+					transition: opacity 200ms linear
+					transform: translate(-50%, -50%)
+					//clip-path: circle(50% at center)
+					//background-image: linear-gradient(-30deg, #ddd 50%, transparent 50%)
+					opacity: 0
+				&:hover
+					&::before
+						opacity: 1
 				&.collapsed
 					a
 						margin-bottom: 0
@@ -163,8 +177,8 @@
 				background: transparent 
 				border: none
 				//border-bottom: 1px solid 
-				border-radius: 3px
-				padding-right: $icon-size /2 + 10px
+				border-radius: $button-h / 2
+				padding-right: $icon-size
 				background: transparentize($body-bg, 0.85)
 				&:focus
 					//border: none
@@ -180,8 +194,8 @@
 			top: 0
 			bottom: 0
 			right: 0
-			width: $icon-size / 2
-			margin: 0 5px 
+			width: $icon-size - 5px
+			//margin: 0 5px 
 			opacity: 0.7
 			&::before,
 			&::after

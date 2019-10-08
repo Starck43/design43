@@ -19,7 +19,7 @@ document.addEventListener('readystatechange', function(el) {
 		var main_header = this.querySelector("#main-header");
 		var navigation = this.querySelector("#header-nav");
 		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		if ( width < 992 ) {
+		if ( width < 768 ) {
 			var burger = this.querySelector("#nav-menu");
 			//navigation.style.visibility = "hidden";
 			$.when(navigation.classList.add('burger'))
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	$( window ).on( 'resize', function( e ) {
-		if ( $(this).width() < 992 ) {
+		if ( $(this).width() < 768 ) {
 			navigation.addClass('burger');
 			burger.removeClass('hidden');
 		} else {

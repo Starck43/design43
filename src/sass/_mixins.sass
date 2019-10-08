@@ -48,9 +48,9 @@
 
 @mixin font-settings($font:false, $colour:false, $size:false, $case:false, $weight:false, $lh:false)
 	@if $font
-		font-family: $font + ', ' + $base-font-family
+		font-family: "#{$font}",#{$default-fonts}
 	@else
-		font-family: $base-font-family
+		font-family: $default-fonts
 	@if $size
 		font-size: $size 
 	@if $colour
