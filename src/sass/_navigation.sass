@@ -90,6 +90,8 @@
 			z-index: 9999
 			backdrop-filter: blur(10px)
 			transform: translateX(0%)
+			+media-breakpoint-down(sm)
+				width: 50%
 			+media-breakpoint-down(xs)
 				top: $header-height / 1.5
 				width: 100%
@@ -106,6 +108,8 @@
 					letter-spacing: 1px
 					&:hover
 						border: none
+					+media-breakpoint-down(xs)
+						font-size: 1.8em 
 				&::before
 					content: ''
 					position: absolute

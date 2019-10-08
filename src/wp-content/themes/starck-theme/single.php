@@ -13,9 +13,15 @@ get_header();
 	<?php starck_breadcrumbs(); ?>
 	
 	<?php while ( have_posts() ) : the_post(); ?>
-		<?php get_template_part( 'entry' ); ?>
+		
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+			<?php get_template_part( 'entry' ); ?>
+		
+		</article>
+		
 		<?php if ( ( comments_open() || get_comments_number() ) && ! post_password_required() ) { comments_template( '', true ); } ?>
+		
 	<?php endwhile;?>
 
 	<?php get_template_part( 'nav', 'below-single' ); ?>

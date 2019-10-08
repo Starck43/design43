@@ -26,7 +26,10 @@ document.addEventListener('readystatechange', function(el) {
 			.done(navigation.style.visibility = "visible");
 			burger.classList.remove('hidden');
 		} else navigation.style.visibility = "visible";
-
+		var lazyLoadInstance = new LazyLoad({
+			elements_selector: ".lazy"
+		});
+	
 		if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
 			main_header.classList.add("visible");
@@ -67,10 +70,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			el.remove(); //delete main-header
 		});
 
-		//var lazyLoadInstance = new LazyLoad({
-			//elements_selector: ".lazy"
-		//});
-	
 	$(window).scroll( function() {
 		//addVisibleClass(document.body.querySelectorAll('article')); //viewport.js
 		//addVisibleClass(document.body.querySelectorAll('#copyright'));
