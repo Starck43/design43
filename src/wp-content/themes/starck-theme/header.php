@@ -4,8 +4,9 @@
 	<meta charset="<?php esc_attr( bloginfo( 'charset' ) ); ?>" />
 	<meta name="description" content="Гильдия дизайнеров Кировской области">
 	<meta name="viewport" content="width=device-width" />
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="icon" href="img/favicon.ico">
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<link rel="apple-touch-icon" href="apple-touch-favicon.png"/>
 	<?php wp_head(); ?>
 </head>
 

@@ -26,6 +26,7 @@ document.addEventListener('readystatechange', function(el) {
 			.done(navigation.style.visibility = "visible");
 			burger.classList.remove('hidden');
 		} else navigation.style.visibility = "visible";
+		
 		var lazyLoadInstance = new LazyLoad({
 			elements_selector: ".lazy"
 		});
