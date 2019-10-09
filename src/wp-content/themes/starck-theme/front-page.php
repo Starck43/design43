@@ -40,27 +40,23 @@
 					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/isupova.jpg" data-srcset="<?php echo $url; ?>/img/@1x/isupova.jpg 1x, <?php echo $url; ?>/img/@2x/isupova.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
 					<h2 class="member-title">Анна Исупова</h2>
 				</a></div>
-				<div id="member-9" class="member-container col-sm-6 col-md-2"><a href="serzhantova">
-					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/serzhantova.jpg" data-srcset="<?php echo $url; ?>/img/@1x/serzhantova.jpg 1x, <?php echo $url; ?>/img/@2x/serzhantova.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
-					<h2 class="member-title">Татьяна Сержантова</h2>
-				</a></div>
-				<div id="member-10" class="member-container col-sm-6 col-md-2"><a href="elsukova">
+				<div id="member-9" class="member-container col-sm-6 col-md-2"><a href="elsukova">
 					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/elsukova.jpg" data-srcset="<?php echo $url; ?>/img/@1x/elsukova.jpg 1x, <?php echo $url; ?>/img/@2x/elsukova.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
 					<h2 class="member-title">Екатерина Елсукова</h2>
 				</a></div>
-				<div id="member-11" class="member-container col-sm-6 col-md-2"><a href="https://vk.com/club36051787">
+				<div id="member-10" class="member-container col-sm-6 col-md-2"><a href="https://vk.com/club36051787">
 					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/orlov.jpg" data-srcset="<?php echo $url; ?>/img/@1x/orlov.jpg 1x, <?php echo $url; ?>/img/@2x/orlov.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
 					<h2 class="member-title">Сергей Орлов</h2>
 				</a></div>
-				<div id="member-12" class="member-container col-sm-6 col-md-2"><a href="strizhova">
+				<div id="member-11" class="member-container col-sm-6 col-md-2"><a href="strizhova">
 					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/strizhova.jpg" data-srcset="<?php echo $url; ?>/img/@1x/strizhova.jpg 1x, <?php echo $url; ?>/img/@2x/strizhova.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
 					<h2 class="member-title">Анна Стрижова</h2>
 				</a></div>
-				<div id="member-13" class="member-container col-sm-6 col-md-2"><a href="tregubova">
+				<div id="member-12" class="member-container col-sm-6 col-md-2"><a href="tregubova">
 					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/tregubova.jpg" data-srcset="<?php echo $url; ?>/img/@1x/tregubova.jpg 1x, <?php echo $url; ?>/img/@2x/tregubova.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
 					<h2 class="member-title">Ольга Трегубова</h2>
 				</a></div>
-				<div id="member-14" class="member-container col-sm-6 col-md-2"><a href="chulkina">
+				<div id="member-13" class="member-container col-sm-6 col-md-2"><a href="chulkina">
 					<img src="<?php echo $url; ?>/img/placeholder-300.png" data-src="<?php echo $url; ?>/img/@2x/chulkina.jpg" data-srcset="<?php echo $url; ?>/img/@1x/chulkina.jpg 1x, <?php echo $url; ?>/img/@2x/chulkina.jpg 2x" data-sizes="auto" width="300px" height="300px" alt="" class="member-image lazy">
 					<h2 class="member-title">Ирина Чулкина</h2>
 				</a></div>
