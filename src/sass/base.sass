@@ -140,8 +140,8 @@ html
 		overflow: scroll
 		overflow-x: hidden
 		::-webkit-scrollbar
-		width: 0px  /* remove scrollbar space */
-		background: transparent  /* optional: just make scrollbar invisible */
+			width: 0px  /* remove scrollbar space */
+			background: transparent  /* optional: just make scrollbar invisible */
 body
 	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
 	position: relative
@@ -156,7 +156,7 @@ body
 	overflow-x: hidden
 	+media-breakpoint-down(sm)	  
 		.element::-webkit-scrollbar
-			width: 0 !important
+			//width: 0 !important
 		.element
 			-ms-overflow-style: none
 		
