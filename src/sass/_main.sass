@@ -22,7 +22,7 @@ main
 		.site-branding
 			display: flex
 			margin: auto
-			transition: opacity 200ms ease
+			//transition: opacity 200ms ease
 			+media-breakpoint-down(xs)
 				flex-direction: column
 				align-items: center
@@ -57,7 +57,7 @@ main
 		#main-header
 			height: calc-height($header-height, $top-bar-height)
 			padding-bottom: $header-height / 2
-			transition: all 0.3s 0.5s ease-out
+			transition: all 0.1s ease-out
 			&.hidden
 				height: 0
 				.site-branding, #scroll-up
