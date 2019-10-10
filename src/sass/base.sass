@@ -100,7 +100,7 @@ img:not([src]):not([srcset])
 	//align-items: flex-end
 
 .hidden
-	display: none //!important
+	opacity: 0 //!important
 	
 .visible
 	opacity: 1 !important
@@ -132,20 +132,34 @@ img:not([src]):not([srcset])
 		
 html
 	//display: inline-table
+	position: relative
+	width: 100%
 	font-size: $base-font-size
 	-webkit-font-smoothing: antialiased
-
+	+media-breakpoint-down(sm)	  
+		overflow: scroll
+		overflow-x: hidden
+		::-webkit-scrollbar
+		width: 0px  /* remove scrollbar space */
+		background: transparent  /* optional: just make scrollbar invisible */
 body
 	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
 	position: relative
 	//display: flex
 	//flex-direction: column
 	min-height: 100vh
-	min-width: 320px
+	//min-width: 320px
+	//width: 100%
+	 
 	margin: 0
 	background-color: $body-bg
 	overflow-x: hidden
-
+	+media-breakpoint-down(sm)	  
+		.element::-webkit-scrollbar
+			width: 0 !important
+		.element
+			-ms-overflow-style: none
+		
 @import header
 @import main
 @import footer

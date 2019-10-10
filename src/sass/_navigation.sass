@@ -61,12 +61,6 @@
 		&.burger
 			flex-grow: 1
 			
-	&.inline-logo
-		//width: auto
-		&.burger
-			ul.menu
-				height: calc-height($header-height/1.5, $top-bar-height)
-
 	&.under-header
 		&.burger
 			ul.menu
@@ -77,25 +71,26 @@
 		ul.menu
 			position: fixed
 			//visibility: hidden
-			left: 100%
-			//right: 0
-			//bottom: 0
-			top: $header-height
 			width: max-content
-			padding: $gutter-20 $gutter-20 * 2 
+			height: auto
+			top: 0
+			bottom: 0
+			left: 100%
+			margin-top: $header-height
+			padding: $gutter-20 * 2 
 			flex-direction: column
-			justify-content: start
-			background-color: transparentize($theme-color, 0.2)
+			justify-content: space-evenly
+			background-color: transparentize($theme-color, 0.15)
 			transition: transform 300ms ease
 			z-index: 9999
 			backdrop-filter: blur(10px)
 			transform: translateX(0%)
 			+media-breakpoint-down(sm)
 				width: 50%
+				padding: $gutter-20
 			+media-breakpoint-down(xs)
-				top: $header-height / 1.5
+				margin-top: $header-height / 1.5
 				width: 100%
-				justify-content: space-evenly
 			li
 				position: relative
 				a
@@ -103,7 +98,7 @@
 					padding-bottom: 5px 
 					font-size: $burger-menu-font-size
 					font-weight: 500
-					line-height: $burger-menu-font-size * 2.5
+					line-height: $burger-menu-font-size
 					//color: $menu-link-color
 					letter-spacing: 1px
 					&:hover
@@ -152,11 +147,20 @@
 		#site-search-modal
 			right: $icon-size * 3 +5px
 			
-		#nav-menu
-			z-index: 10000
-				
-	#nav-search
-		font-size: $icon-font-size
+		#nav-burger
+			display: flex
+
+		#nav-search
+			display: flex
+			font-size: $icon-font-size
+
+	#nav-burger
+		display: none
+		z-index: 10000
+
+	#nav-burger, #nav-search
+		margin-left: 10px
+		
 		
 	#site-search-modal
 		position: absolute

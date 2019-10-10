@@ -478,9 +478,9 @@ if ( ! function_exists( 'starck_get_navigation' ) ) {
 			<?php
 			}
 
-			$burger_class = sprintf(' class="icon burger-icon%s"', starck_get_option( 'nav_burger' ) ?  '' : ' hidden' );
+			$burger_class = sprintf(' class="icon burger-icon%s"', starck_get_option( 'nav_burger' ) ?  ' show' : '' );
 			?>
-			<div id="nav-menu"<?php echo $burger_class; ?>><div class="burger-inner"></div></div>
+			<div id="nav-burger"<?php echo $burger_class; ?>><div class="burger-inner"></div></div>
 		</nav>
 		<?php
 	}

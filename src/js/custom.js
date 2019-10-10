@@ -18,23 +18,20 @@ document.addEventListener('readystatechange', function(el) {
 	if ( document.readyState === 'interactive' ) {
 		var main_header = this.querySelector("#main-header");
 		var navigation = this.querySelector("#header-nav");
+
 		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if ( width < 768 ) {
-			var burger = this.querySelector("#nav-menu");
-			//navigation.style.visibility = "hidden";
+			var burger = this.querySelector("#nav-burger");
 			$.when(navigation.classList.add('burger'))
 			.done(navigation.style.visibility = "visible");
-			burger.classList.remove('hidden');
+			//burger.classList.remove('hidden');
 		} else navigation.style.visibility = "visible";
 		
-		if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header') ) {
+		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
-			main_header.classList.add("visible");
-			//scrollup.fadeIn(1000);
+			main_header.classList.remove("hidden");
 			sessionStorage.setItem('main-header', main_header.id);
-			//document.removeEventListener('load', remove_header, true);
-		} else 
-		if (main_header.classList.contains("visible")) main_header.classList.remove("visible");
+		} //else main_header.classList.add("hidden");
 	}
 });
 
@@ -45,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 */
 	var navigation = $('#header-nav');
-	var burger = $('#nav-menu');
+	var burger = $('#nav-burger');
 	var scrollup = $('#scroll-up');
 	var search = $('#site-search-modal');
 	var back2top = $('#back-to-top');
@@ -77,41 +74,28 @@ document.addEventListener("DOMContentLoaded", function() {
 		//addVisibleClass(document.body.querySelectorAll('#copyright'));
 
 		back2top.topBtnToggle({
-			scrollTrigger: 1200,
+			scrollTrigger: 1000,
 			//debug: true,
 		});
-
-		if ( scrollup.length > 0 ) scrollup.fadeOut(200).remove();
-
 	});
 
-	$('a[href^="#"]').on('click', function (e) {	
+	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
 		var target = $(this).attr('href');
-		if ($(target).hasClass('animate')) $(target).removeClass('animate');
-		if (navigation.hasClass('burger')) burger.click();
-		var mh = $('#main-header');
-		timer = mh.hasClass('visible') ? 500 : 0;
-		$.when(
-			mh.removeClass('visible').delay(timer) 
-		).done( function() {
-			var top = $(target).offset().top;
-			$('html, body').animate({scrollTop: top}, 500+top/4);//800 - длительность скроллинга в мс
+		if ( window.location.pathname == '/' ) { //if home page
+			if ($(target).hasClass('animate')) $(target).removeClass('animate');
+			if (navigation.hasClass('burger')) burger.click(); //close burger menu on link clicking
+			var mh = $('#main-header');
+			timer = mh.hasClass('visible') ? 500 : 0;
+			$.when(
+				timer > 0 && mh.removeClass('visible').delay(timer) 
+			).done( function() {
+				var top = $(target).offset().top;
+				$('html, body').animate({scrollTop: top}, 500+top/4);//800 - длительность скроллинга в мс
 
-		});		
-	});
-
-	back2top.on('click', function (e) {		
-		// 700 - скорость задержки перемещения наверх (в миллисекундах)
-		e.preventDefault();
-		$('html,body').animate({scrollTop: 0}, 800);		
-	});
-
-	scrollup.on('click', function (e) {
-		var mc = document.body.querySelector('#main-container');
-		mc.scrollIntoView({block: "start", behavior: "smooth"});
-		//$('#scroll-up').fadeOut(200).remove();
-		//$('#main-header').removeClass('show');
+			});
+		} else 
+			window.location.href = '/'+target;	
 	});
 
 	burger.on('click', function (e) {
@@ -132,10 +116,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	$( window ).on( 'resize', function( e ) {
 		if ( $(this).width() < 768 ) {
 			navigation.addClass('burger');
-			burger.removeClass('hidden');
+			//burger.removeClass('hidden');
 		} else {
 			navigation.removeClass('burger');
-			burger.addClass('hidden');
+			//burger.addClass('hidden');
 		}
 
 	});
@@ -155,6 +139,19 @@ document.addEventListener("DOMContentLoaded", function() {
 	$('#searchform').on('submit', function (e) {
 		//идет поиск...
 		//можно вывести preloader с надписью
+	});
+
+	back2top.on('click', function (e) {		
+		// 700 - скорость задержки перемещения наверх (в миллисекундах)
+		e.preventDefault();
+		$('html,body').animate({scrollTop: 0}, 800);		
+	});
+
+	scrollup.on('click', function (e) {
+		var mc = document.body.querySelector('#main-container');
+		mc.scrollIntoView({block: "start", behavior: "smooth"});
+		//$('#scroll-up').fadeOut(200).remove();
+		//$('#main-header').removeClass('show');
 	});
 
 	//Adding an agent to HTML selector

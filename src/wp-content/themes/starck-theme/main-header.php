@@ -29,7 +29,7 @@ if ( !in_array( $main_header_appearence, ['disabled'] ) ) {
 			$header_class = sprintf('class="header-background parallax" style="background-image: url(%s)"', $image_url);
 		}
 	} else
-		$header_class = '';
+		$header_class = 'class="hidden"';
 	?>  
 	<header id="main-header" <?php echo $header_class; ?>>
 

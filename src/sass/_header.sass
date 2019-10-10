@@ -2,6 +2,7 @@
 #site-header
 	position: relative
 	display: block
+	min-width: 100% 
 	background-color: $header-bg
 	z-index: 1
 										
@@ -76,13 +77,6 @@
 			
 		ul.menu
 			@extend .bounded
-
-	#nav-menu
-		margin-left: 10px
-		//float: left
-		
-	#nav-search
-		@extend #nav-menu
 
 	#header-content
 		&.burger-menu
