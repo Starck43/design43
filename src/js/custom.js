@@ -27,22 +27,23 @@ document.addEventListener('readystatechange', function(el) {
 			burger.classList.remove('hidden');
 		} else navigation.style.visibility = "visible";
 		
-		var lazyLoadInstance = new LazyLoad({
-			elements_selector: ".lazy"
-		});
-	
 		if ( this.body.classList.contains('home') && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
 			main_header.classList.add("visible");
 			//scrollup.fadeIn(1000);
 			sessionStorage.setItem('main-header', main_header.id);
 			//document.removeEventListener('load', remove_header, true);
-		} else main_header.remove();
+		} else 
+		if (main_header.classList.contains("visible")) main_header.classList.remove("visible");
 	}
 });
 
 document.addEventListener("DOMContentLoaded", function() {
 
+/*	var lazyLoadInstance = new LazyLoad({
+		elements_selector: ".lazy"
+	});
+*/
 	var navigation = $('#header-nav');
 	var burger = $('#nav-menu');
 	var scrollup = $('#scroll-up');
@@ -87,8 +88,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	$('a[href^="#"]').on('click', function (e) {	
 		e.preventDefault();
 		var target = $(this).attr('href');
+		if ($(target).hasClass('animate')) $(target).removeClass('animate');
+		if (navigation.hasClass('burger')) burger.click();
 		var mh = $('#main-header');
-		$(target).removeClass('animate');
 		timer = mh.hasClass('visible') ? 500 : 0;
 		$.when(
 			mh.removeClass('visible').delay(timer) 

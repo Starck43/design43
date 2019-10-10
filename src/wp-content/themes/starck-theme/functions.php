@@ -4,14 +4,14 @@
 
 
 // reCAPTHCA registry
-add_action( 'wp_enqueue_scripts', 'add_recaptcha_js', 5, 1 );
+/*add_action( 'wp_enqueue_scripts', 'add_recaptcha_js', 5, 1 );
 function add_recaptcha_js() {
     // Регистрация reCAPTHCA api.js, version - null, in footer - false
 	wp_register_script( 'recaptcha', 'https://www.google.com/recaptcha/api.js?hl=ru', array(), null, false );
     // Подключение reCAPTHCA api.js
 	wp_enqueue_script( 'recaptcha' );
 }
-
+*/
 
 //$home_url = get_home_url( null, 'wp-admin/', 'https' ); //Example.com: https://example.com/wp-admin/
 $home_url = get_stylesheet_directory_uri(); // for theme-child URL //get_home_url();
@@ -55,7 +55,7 @@ wp_enqueue_style( 'vendors', $home_url . '/css/vendors.min.css');
 //wp_enqueue_style( 'font-awesome-styles', $home_url . '/plugins/awesome/css/font-awesome.min.css');
 
 // Функция проверки ответа сервера Google reCAPTCHA v2 (checkbox method)
-function verify_recaptcha_response() {
+/*function verify_recaptcha_response() {
 	$recaptcha_site_key = '6LcEq7wUAAAAAE9OJS3JV0Rdiei50YWtYglRHEqC'; // ключ сайта взят отсюда ---> https://www.google.com/recaptcha/admin/site/347839669/settings
 	$recaptcha_secret_key = '6LcEq7wUAAAAAL4XcOZMlLXFzOycVN9J_kXT9Ib7';  // секретный ключ взят отсюда ---> https://www.google.com/recaptcha/admin/
 	if ( isset ( $_POST['g-recaptcha-response'] ) ) {
@@ -80,4 +80,4 @@ function verify_recaptcha_response() {
 		$success = $decoded_response->success;
 	}
 	return $success;
-}
+}*/
