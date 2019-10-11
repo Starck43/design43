@@ -14,39 +14,27 @@ get_header();
 
 		<?php if ( have_posts() ) : ?>
 
-			<section class="post search-result found">
-
-				<header class="search-header">
-					<h1 class="search-title"><?php printf( esc_html__( 'Search Results for: %s', 'starck' ), get_search_query() ); ?></h1>
-				</header>
-
+			<header class="search-header">
+				<h1 class="search-title">Результат поиска</h1>
+			</header>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('post search-result found'); ?>>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php get_template_part( 'entry' ); ?>
 				<?php endwhile; ?>
-
 				<?php get_template_part( 'nav', 'below' ); ?>
-
-			</section>
-
+			</article>
 		<?php else : ?>
 
-			<section class="post-0 no-result not-found">
-
-				<header class="search-header">
-					<h1 class="search-title"><?php esc_html_e( 'Nothing Found', 'starck' ); ?></h1>
-				</header>
-
-				<div class="entry-content">
-					<p><?php esc_html_e( 'Sorry, nothing matched your search. Please try again.', 'starck' ); ?></p>
-					<?php get_search_form(); ?>
-				</div>
-
-			</section>
+			<div class="entry-content post-0 no-result not-foun">
+				<p><?php esc_html_e( 'Sorry, nothing matched your search. Please try again.', 'starck' ); ?></p>
+				<?php get_search_form(); ?>
+			</div>
 
 		<?php endif; ?>
 
+		<div class="search-query">Поисковый запрос: <span><?php echo esc_html__( get_search_query() ); ?></span></div>
 		<div class="goto-back">
-			<a href = "#" <?php echo 'onclick="javascript:history.back(); return false;"'?>><i class="fa fa-angle-left"></i><?php esc_html_e( 'Go back', 'starck' ); ?></a>
+			<a href = "#" <?php echo 'onclick="javascript:history.back(); return false;"'?>><i class="icon fa fa-angle-left"></i><span><?php esc_html_e( 'Вернуться назад', 'starck' ); ?></span></a>
 		</div>
 
 	</section>

@@ -77,10 +77,10 @@ img:not([src]):not([srcset])
 		
 
 .container
-	//margin-left: $gutter-30
-	//margin-right: $gutter-30
-
-
+	margin-top: $gutter-20
+	margin-bottom: $gutter-20
+	padding-left: 0 !important 
+	padding-right: 0 !important
 		
 .bounded
 	max-width: $container_max_w
@@ -145,8 +145,8 @@ html
 body
 	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
 	position: relative
-	//display: flex
-	//flex-direction: column
+	display: flex
+	flex-direction: column
 	min-height: 100vh
 	//min-width: 320px
 	//width: 100%
@@ -154,11 +154,6 @@ body
 	margin: 0
 	background-color: $body-bg
 	overflow-x: hidden
-	+media-breakpoint-down(sm)	  
-		.element::-webkit-scrollbar
-			//width: 0 !important
-		.element
-			-ms-overflow-style: none
 		
 @import header
 @import main

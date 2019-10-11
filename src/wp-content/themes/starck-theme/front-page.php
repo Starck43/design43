@@ -65,26 +65,46 @@
 		<article id="about">
 			<header id="about-header"><h1 class="title">О гильдии</h1></header>
 			<div id="about-content">
-				<p>Создана Гильдия дизайнеров Кировской области при <a href="http://www.vcci.ru">ВЯТСКОЙ ТОРГОВО-ПРОМЫШЛЕННОЙ ПАЛАТЕ</a> (ГДКО при ВТПП).</p>
-				<p>Данная организация ставит своей целью защитить профессию, выработать основные нормы осуществления дизайнерской деятельности, создать рекомендованный прейскурант.</p>
-				<p>Управление деятельностью ГДКО при ВТПП осуществляется через коллективный орган – СОВЕТ ГИЛЬДИИ.</p>
-				<p>Чтобы стать членом Гильдия дизайнеров Кировской области при Вятской торгово-промышленной палате, необходимо ознакомиться с <a href="codex">КОДЕКСОМ ПРОФЕССИОНАЛЬНОЙ ЭТИКИ</a>, <a href="admission">ПОЛОЖЕНИЕМ О ПРИЕМЕ</a> и НАПИСАТЬ ПИСЬМО со своими координатами, в котором указать, что Вы принимаете на себя исполнение норм данного кодекса. Совет рассмотрит Ваше заявление и известит Вас о решении. Никакой добрый заказчик и никто кроме Вас самих и созданной Вами Организации не будет защищать ваши права.</p>
-				<p><b>Органы управления:</b></p>
-				<p>Высшим органом Гильдии дизайнеров Кировской области является Общее собрание. В период между общими собраниями управление делами Гильдии осуществляет Совет, который избирается на пять лет.
-				</p>
+				<?php
+				$query = new WP_Query( 'category_name=about-us' ); //выведем только посты с рубрикой О гильдии
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) {
+						$query->the_post();
+
+						edit_post_link();
+
+						the_content();
+					}
+					wp_reset_postdata();
+				} 
+				?>
+	
 				<p><b>В Совет Гильдии входят:</b></p>
-				<div><a href="andreevsky"><h5 class="member-title">Андрей Андреевский</h5></a> <span>(Председатель гильдии)</span></div>
-				<div><a href="atnagulova"><h5 class="member-title">Ольга Атнагулова</h5></a></div>
-				<div><a href="kigel"><h5 class="member-title">Ирина Кигель</h5></a></div>
-				<div><a href="laletin"><h5 class="member-title">Антон Лалетин</h5></a></div>
-				<div><a href="rozhnev"><h5 class="member-title">Олег Рожнев</h5></a></div>
+				<div><a href="andreevsky" target="_ blank"><h5 class="member-title">Андрей Андреевский</h5></a> <span>(Председатель гильдии)</span></div>
+				<div><a href="atnagulova" target="_ blank"><h5 class="member-title">Ольга Атнагулова</h5></a></div>
+				<div><a href="kigel" target="_ blank"><h5 class="member-title">Ирина Кигель</h5></a></div>
+				<div><a href="laletin" target="_ blank"><h5 class="member-title">Антон Лалетин</h5></a></div>
+				<div><a href="rozhnev" target="_ blank"><h5 class="member-title">Олег Рожнев</h5></a></div>
 			</div>
 		</article>
 		<article id="news">
-			<header id="news-header"><h1 class="title">Новости</h1></header>
-			<div id="news-content">
-				<?php get_template_part( 'entry' ); ?>
-			</div>
+			<?php
+			$query = new WP_Query( 'category_name=news' ); //выведем только посты с рубрикой Новости
+			if ( $query->have_posts() ) {
+				?>
+				<header id="news-header"><h1 class="title">Новости</h1></header>
+				<div id="news-content">
+				<?php
+				while ( $query->have_posts() ) {
+					$query->the_post();
+					get_template_part( 'entry' );
+				}
+				?>
+				</div>
+				<?php
+				wp_reset_postdata();
+			} 
+			?>
 		</article>
 		<article id="documents">
 			<header id="documents-header"><h1 class="title">Документы</h1></header>

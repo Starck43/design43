@@ -59,7 +59,6 @@ input[type="submit"]
 	height: $icon-size
 	//padding: 5px
 	margin: 0
-	color: $menu-icon-color
 	background-color: transparent
 	opacity: 0.7
 	font-size: 1.2em
@@ -271,3 +270,12 @@ input[type="submit"]
 
 	.wpforms-recaptcha-container
 		float: right
+		+media-breakpoint-down(xs)
+			.g-recaptcha div
+				@include push--auto
+
+	.wpforms-submit-container
+		+media-breakpoint-down(xs)
+			margin-top: $gutter-20
+			clear: both
+			text-align: center

@@ -1,11 +1,13 @@
 // Main styles
-main
+#main
 	position: relative
 	display: block
 	width: 100% 
-	//flex: auto
 	@include push--auto
 	clear: both
+	background-color: $main-bg 
+	flex: auto
+	z-index: 2 
 	
 	&.bounded
 
@@ -66,8 +68,11 @@ main
 	#main-container
 		display: flex
 		max-width: $container_max-w 
-		padding: $gutter-20*2 0
+		//padding: $gutter-20*2 0
 		//background-color: $main-bg
+		.icon
+			border-radius: 50%
+			border: 1px solid
 		
 		.breadcrumbs
 			margin-bottom: $gutter-20 * 2
@@ -85,9 +90,20 @@ main
 				
 			&.float-right
 				margin-left: $gutter-20/2
+			>*
+				padding-left: $gutter-20 * 2
+				padding-right: $gutter-20 * 2
+				+media-breakpoint-down(sm)
+					padding-left: $gutter-30
+					padding-right: $gutter-30
+				+media-breakpoint-down(xs)
+					padding-left: $gutter-20 / 2
+					padding-right: $gutter-20 / 2
 
 			article
-				padding:  $gutter-20 $gutter-30 * 2
+				padding-top: $gutter-20 * 2
+				padding-bottom: $gutter-20 * 2
+				
 				opacity: 0
 				transition: opacity 1.5s ease-out
 				&.animate
@@ -98,11 +114,15 @@ main
 					background-color: $main-bg 
 				&:nth-child(even)
 					background-color: $main-2-bg
-					
+
 				+media-breakpoint-down(sm)
-					padding: $gutter-30 / 2
+					padding-top: $gutter-30
+					padding-bottom: $gutter-30
+
 				+media-breakpoint-down(xs)
-					padding: $gutter-20 / 2
+					padding-top: $gutter-20
+					padding-bottom: $gutter-20
+
 				img
 					display: block
 					@extend %img
@@ -173,7 +193,7 @@ main
 				+media-breakpoint-down(sm)
 					flex-direction: column
 					.document-link
-				 		margin: 10px 0
+				 		margin: $gutter-20 / 4 0
 
 			#about-content
 				text-align: justify
@@ -204,6 +224,7 @@ main
 			box-sizing: border-box
 
 .entry-content
+	margin-bottom: $gutter-20
 	li
 		@extend p
 		list-style-type: square
@@ -242,13 +263,42 @@ nav
 			width: 100%
 			.nav-previous
 				float: left
+
 			.nav-next
 				float: right
+				+media-breakpoint-down(xs)
+					border-right: 3px solid
+
 			div
-				padding: 5px 0
-				&:hover
-					transition:  200ms all linear
-					border-bottom: 3px solid $link-color-hover
+				a
+					display: flex
+					align-items: center
+					transition: color 100ms ease
+					span:not(.meta-nav)
+						padding: 5px
+						text-transform: uppercase
+
 				.meta-nav
 					display: inline-block
+
+.search
+	.search-query
+		display: inline-block
+		margin: $gutter-20 0
+		color: $base-text-color
+		//border: 1px solid $theme-color 
+		letter-spacing: 0.5px 
+		span
+			margin-left: 5px
+			font-weight: 600
+			text-decoration: underline 
+		 
+	.goto-back
+		a
+			display: flex
+			align-items: center
+			span
+				margin: 0 $gutter-20/2
+
+		
 // <!-- End Main -->
