@@ -35,6 +35,9 @@ get_header(); ?>
 			?>
 
 		<?php endwhile;?>
+		<div class="goto-back">
+			<a href = "/" <?php echo 'onclick="javascript:history.back(); return false;"'?>><i class="icon fa fa-angle-left"></i><span><?php esc_html_e( 'Вернуться назад', 'starck' ); ?></span></a>
+		</div>
 
 	</section>
 

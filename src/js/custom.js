@@ -29,7 +29,8 @@ document.addEventListener('readystatechange', function(el) {
 		
 		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
-			main_header.classList.remove("hidden");
+			$.when(main_header.classList.remove("hidden"))
+			.done($('#main-header .site-branding').addClass('visible'));
 			sessionStorage.setItem('main-header', main_header.id);
 		} //else main_header.classList.add("hidden");
 	}
@@ -86,9 +87,9 @@ document.addEventListener("DOMContentLoaded", function() {
 			if ($(target).hasClass('animate')) $(target).removeClass('animate');
 			if (navigation.hasClass('burger')) burger.click(); //close burger menu on link clicking
 			var mh = $('#main-header');
-			timer = mh.hasClass('visible') ? 500 : 0;
+			timer = mh ? 500 : 0;
 			$.when(
-				timer > 0 && mh.removeClass('visible').delay(timer) 
+				timer > 0 && mh.removeClass('visible').delay(timer).remove()
 			).done( function() {
 				var top = $(target).offset().top;
 				$('html, body').animate({scrollTop: top}, 500+top/4);//800 - длительность скроллинга в мс

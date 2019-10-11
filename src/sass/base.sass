@@ -77,8 +77,9 @@ img:not([src]):not([srcset])
 		
 
 .container
-	margin-top: $gutter-20
-	margin-bottom: $gutter-20
+	//margin-top: $gutter-20
+	//margin-bottom: $gutter-20
+	margin-bottom: $footer-height * 4
 	padding-left: 0 !important 
 	padding-right: 0 !important
 		
@@ -132,6 +133,7 @@ img:not([src]):not([srcset])
 		
 html
 	//display: inline-table
+	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
 	position: relative
 	width: 100%
 	font-size: $base-font-size
@@ -143,8 +145,8 @@ html
 			width: 0px  /* remove scrollbar space */
 			background: transparent  /* optional: just make scrollbar invisible */
 body
-	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
 	position: relative
+	//opacity: 0
 	display: flex
 	flex-direction: column
 	min-height: 100vh
@@ -154,7 +156,9 @@ body
 	margin: 0
 	background-color: $body-bg
 	overflow-x: hidden
-		
+	&:not(.home)
+		.container
+			margin-top: $gutter-20		
 @import header
 @import main
 @import footer
