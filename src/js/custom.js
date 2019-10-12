@@ -10,8 +10,12 @@ function hide_compact_header() {
 	
 }
 function show_compact_header() {
-	$('#branding').show();
+	$('#branding').fadeIn(800);
 	$('#header-nav').removeClass('align-center').addClass('align-right');
+}
+
+function remove_main_header(el) {
+	el.delay(1000).queue(function () {el.remove()})
 }
 
 document.addEventListener('readystatechange', function(el) {
@@ -44,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
 */
 	var navigation = $('#header-nav');
 	var burger = $('#nav-burger');
+	var mainheader = $('#main-header');
 	var scrollup = $('#scroll-up');
 	var search = $('#site-search-modal');
 	var back2top = $('#back-to-top');
@@ -66,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		.on('exit', el => {
 			//el.style.opacity = 0;
 			show_compact_header();
-			//el.classList.remove('visible');
+			//el.classList.add('hidden');
 			el.remove(); //delete main-header
 		});
 
@@ -80,23 +85,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		});
 	});
 
+
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
 		var target = $(this).attr('href');
-		if ( window.location.pathname == '/' ) { //if home page
+		if ( window.location.pathname == '/' && window.location.search == '' ) { //if home page
 			if ($(target).hasClass('animate')) $(target).removeClass('animate');
 			if (navigation.hasClass('burger')) burger.click(); //close burger menu on link clicking
-			var mh = $('#main-header');
-			timer = mh ? 500 : 0;
-			$.when(
-				timer > 0 && mh.removeClass('visible').delay(timer).remove()
-			).done( function() {
-				var top = $(target).offset().top;
-				$('html, body').animate({scrollTop: top}, 500+top/4);//800 - длительность скроллинга в мс
 
-			});
-		} else 
-			window.location.href = '/'+target;	
+			var top = $(target).offset().top;
+			$('html, body').animate({scrollTop: top}, 500+top/4); //800 - длительность скроллинга в мс
+			remove_main_header(mainheader);
+			
+		} else {
+			//target = target.replace(/[^A-Za-z]/g, "");
+			location.replace('/'+target);
+		}
 	});
 
 	burger.on('click', function (e) {
@@ -149,10 +153,20 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	scrollup.on('click', function (e) {
-		var mc = document.body.querySelector('#main-container');
-		mc.scrollIntoView({block: "start", behavior: "smooth"});
-		//$('#scroll-up').fadeOut(200).remove();
-		//$('#main-header').removeClass('show');
+//		var mc = document.body.querySelector('#main-container');
+//		$.when($('#main-header').addClass('hidden').delay(2000).remove())
+//		.done( mc.scrollIntoView({block: "start", behavior: "smooth"}) );
+		mainheader
+			.children('.site-branding').removeClass('visible')
+			.delay(1000)
+			//.end()
+			.queue( function() {
+				mainheader.slideUp(800)
+			})
+			//.addClass("hidden")
+			.queue( function() {
+					remove_main_header(mainheader);
+			});
 	});
 
 	//Adding an agent to HTML selector

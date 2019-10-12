@@ -24,7 +24,7 @@
 			display: flex
 			margin: auto
 			opacity: 0
-			transition: all 1.5s ease-out
+			transition: all 1.2s ease-out
 			+media-breakpoint-down(xs)
 				flex-direction: column
 				align-items: center
@@ -59,8 +59,8 @@
 		#main-header
 			height: calc-height($header-height, $top-bar-height)
 			padding-bottom: $header-height / 2
-			transition: opacity 100ms ease-out
 			&.hidden
+				transition: all 500ms linear, opacity 300ms 300ms linear
 				height: 0
 				padding-bottom: 0
 
