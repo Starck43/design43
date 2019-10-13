@@ -53,6 +53,7 @@ input[type="submit"]
 		color: $button-text-hover
 
 .icon
+	font-family: "fontello"
 	position: relative
 	display: flex
 	width: $icon-size
@@ -144,7 +145,7 @@ input[type="submit"]
 
 
 #back-to-top
-	$btn-size: $icon-size * 1.5
+	$btn-size: $icon-size * 1.2
 	position: fixed
 	display: flex
 	align-items: center
@@ -158,9 +159,10 @@ input[type="submit"]
 	color: darken($theme-color, 0%)
 	border: 1px solid $theme-color
 	border-radius: $btn-size / 1.5
-	transition: all 700ms cubic-bezier(0.61, 0.67, 0.1, 1.01)
+	transition: bottom 700ms cubic-bezier(0.61, 0.67, 0.1, 1.01)
 	z-index: 9999
 	&:hover
+		transition: all 300ms linear
 		color: white
 		background: $theme-color
 		border-color: $theme-color
@@ -171,46 +173,7 @@ input[type="submit"]
 	+media-breakpoint-down(md)
 		left: $gutter-20 / 2
 
-/* Font Awesome for a project */
 
-.fa-spinner::before 
-	content: "\f110" 
-
-.fa-angle-left::before
-	content: "\f104" 
-
-.arrow-down::before 
-	content: "\f078" 
-
-.arrow-left::before 
-	content: "\f053" 
-
-.arrow-right::before 
-	content: "\f054" 
-
-.arrow-up::before 
-	content: "\f077"
-
-.fa-long-arrow-alt-down:before
-	content: "\f309"
-
-.fa-long-arrow-alt-left:before
-	content: "\f30a"
-
-.fa-long-arrow-alt-right:before
-	content: "\f30b"
-
-.fa-long-arrow-alt-up:before
-	content: "\f30c"
-
-.fa-search::before
-	content: "\f002"
-
-.fa-file:before
-	content: "\f15b"
-
-.fa-file-alt:before
-	content: "\f15c"
 
 //WP Forms plugin's styles
 .wpforms-container

@@ -72,8 +72,8 @@
 		//padding: $gutter-20*2 0
 		//background-color: $main-bg
 		.icon
-			border-radius: 50%
-			border: 1px solid
+			//border-radius: 50%
+			//border: 1px solid
 		
 		.breadcrumbs
 			margin-bottom: $gutter-20 * 2
@@ -94,22 +94,20 @@
 
 			&.search
 				margin-top: $gutter-20
-				>div, >header
+				>div, nav, header
 					+media-breakpoint-up(lg)
 						padding-left: 0
 						padding-right: 0
-				.search-query
-					display: inline-block
+				>div
 					margin: $gutter-20 0
 					color: $base-text-color
 					//border: 1px solid $theme-color 
 					letter-spacing: 0.5px 
 					span
-						margin-left: 5px
 						font-weight: 600
 						text-decoration: underline
 
-			article
+			>article
 				padding-top: $gutter-20
 				padding-bottom: $gutter-20 * 2
 				opacity: 0
@@ -170,10 +168,7 @@
 						max-width: 20%
 					
 				.member-title
-					display: inline-block
-					width: 100%
-					//margin: 0.6em 0
-					text-align: center
+					line-height: 1.25em 
 
 			>*
 				padding-left: $gutter-20 * 2
@@ -238,8 +233,6 @@
 					display: flex
 					margin-right: auto
 					align-items: center
-					span
-						margin: 0 $gutter-20/2
 				
 		#main-sidebar
 			width: 25%
@@ -285,33 +278,37 @@
 			max-height: 100px
 			max-width: 100% 
 	
-nav
-	.post-navigation
-		padding: $gutter-20 0
-		.screen-reader-text
-			display: none
-		.nav-links
-			display: inline-block
-			width: 100%
-			.nav-previous
-				float: left
+.navigation
+	padding: $gutter-20 0
+	.screen-reader-text
+		//display: none
+		text-align: center
+	.nav-links
+		display: flex
+		width: 100%
+		padding: $gutter-20/2 0
+		border-top: 1px solid $base-border-color
+		border-bottom: 1px solid $base-border-color
+		justify-content: center
+		.nav-previous
+			margin-right: auto
+		.nav-next
+			margin-left: auto
+		a
+			display: flex
+			align-items: center
+		.nav-previous,
+		.nav-next,
+		.page-numbers
+			padding:  $gutter-20/2
 
-			.nav-next
-				float: right
-				+media-breakpoint-down(xs)
-					border-right: 3px solid
+			display: flex
+			align-items: center
+			transition: color 100ms ease
+			span:not(.meta-nav)
+				padding: 5px
+				text-transform: uppercase
 
-			div
-				a
-					display: flex
-					align-items: center
-					transition: color 100ms ease
-					span:not(.meta-nav)
-						padding: 5px
-						text-transform: uppercase
-
-				.meta-nav
-					display: inline-block
 
 
 

@@ -6,7 +6,6 @@ add_action('admin_head', 'add_custom_admin_styles');
 function add_custom_admin_styles() {
 	echo '<style>
 		.wp-block {max-width: 1100px}
-		#wpfooter {position: relative}
 		.column-post_thumb {width: 80px;}
 		#gallery-image .button {margin: 5px 0 20px;}
 		.postbox-gallery-block {cursor: pointer;}
@@ -130,7 +129,7 @@ add_filter( 'excerpt_more', 'starck_excerpt_read_more_link' );
 function starck_excerpt_read_more_link( $more ) {
 	if ( ! is_admin() ) {
 		global $post;
-		return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">...</a>';
+		return ' <a href="' . esc_url( get_permalink( $post->ID ) ) . '" class="more-link">... [ещё]</a>';
 	}
 }
 
@@ -474,7 +473,7 @@ if ( ! function_exists( 'starck_get_navigation' ) ) {
 			?>
 				<div id="site-search-modal"><?php get_search_form(); ?></div>
 
-				<div id="nav-search" class="icon"><i class="fa fa-search"></i></div>
+				<div id="nav-search" class="icon"><i class="fa icon-search"></i></div>
 			<?php
 			}
 
@@ -501,7 +500,7 @@ function starck_back_to_top() {
 
 	if ( starck_get_option('back_to_top') ) {
 		?>
-		<a id="back-to-top" title="Вернуться наверх" rel="nofollow" href="/"><i class="fa arrow-up"></i></a>
+		<a id="back-to-top" title="Вернуться наверх" rel="nofollow" href="/"><i class="icon fa icon-up-open-mini"></i></a>
 		<?php
 	}
 }

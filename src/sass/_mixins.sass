@@ -1,12 +1,12 @@
 // mixins
-@mixin font($f-name, $f-style, $f-weight, $f-url)
+@mixin font($f-name, $f-style, $f-weight, $f-url, $url:none)
 	@font-face
 		font-family: $f-name
 		font-style: $f-style
 		@if $f-weight != 0
 			font-weight: $f-weight
 		font-display: auto
-		src: url($f-url) format('woff2')
+		src: url($f-url) if($url != none, #{','} $url format('woff2'), format('woff2'))
 
 //Убираем единицы измерения у чисел
 @function strip-units($size)

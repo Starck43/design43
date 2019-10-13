@@ -1,0 +1,112 @@
+{
+  "name": "",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "9bd60140934a1eb9236fd7a8ab1ff6ba",
+      "css": "spin4",
+      "code": 59444,
+      "src": "fontelico"
+    },
+    {
+      "uid": "9dd9e835aebe1060ba7190ad2b2ed951",
+      "css": "search",
+      "code": 59392,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "a30a32d49f80bb534c062ae1743ef433",
+      "css": "down-thin",
+      "code": 59393,
+      "src": "entypo"
+    },
+    {
+      "uid": "8d8f4722d16e95290858eaf294d9d830",
+      "css": "left-thin",
+      "code": 59394,
+      "src": "entypo"
+    },
+    {
+      "uid": "ef3eda51383ce050517892df3fc05ffc",
+      "css": "right-thin",
+      "code": 59395,
+      "src": "entypo"
+    },
+    {
+      "uid": "0805cca616b3c12714f35af4d0912c10",
+      "css": "up-open-big",
+      "code": 59396,
+      "src": "entypo"
+    },
+    {
+      "uid": "004882ab2d5c418c5b2060e80596279b",
+      "css": "right-open-big",
+      "code": 59397,
+      "src": "entypo"
+    },
+    {
+      "uid": "884cfc3e6e2d456dd2a2ca0dbb9e6337",
+      "css": "left-open-big",
+      "code": 59398,
+      "src": "entypo"
+    },
+    {
+      "uid": "289b5f92f23acf1059c93fbf401c1ad5",
+      "css": "down-open-big",
+      "code": 59399,
+      "src": "entypo"
+    },
+    {
+      "uid": "c16a63e911bc47b46dc2a7129d2f0c46",
+      "css": "down-small",
+      "code": 59400,
+      "src": "typicons"
+    },
+    {
+      "uid": "85ef733b1e280809e8443f5f0167b5c2",
+      "css": "doc",
+      "code": 59401,
+      "src": "typicons"
+    },
+    {
+      "uid": "9e251fb8e9e1c71ab09683468e0479a3",
+      "css": "up-open-mini",
+      "code": 59402,
+      "src": "entypo"
+    },
+    {
+      "uid": "f11c9e95ae5eaa84d193e8fa1d38c6f9",
+      "css": "down-open-mini",
+      "code": 59403,
+      "src": "entypo"
+    },
+    {
+      "uid": "592717bd601645d61517d2a584d04127",
+      "css": "left-open-mini",
+      "code": 59404,
+      "src": "entypo"
+    },
+    {
+      "uid": "37f6cfbb4062ed0d01b351ec35c334ff",
+      "css": "right-open-mini",
+      "code": 59405,
+      "src": "entypo"
+    },
+    {
+      "uid": "t7uz7sms69yuckjmkp1zqggwr4jkw0o9",
+      "css": "doc-1",
+      "code": 59406,
+      "src": "modernpics"
+    },
+    {
+      "uid": "7141927f949e757c7e218cf70d9dceb4",
+      "css": "doc-2",
+      "code": 61514,
+      "src": "mfglabs"
+    }
+  ]
+}

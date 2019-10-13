@@ -1,0 +1,44 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="search" unicode="&#xe800;" d="M643 386q0 103-73 176t-177 74-177-74-73-176 73-177 177-73 177 73 73 177z m286-465q0-29-22-50t-50-21q-30 0-50 21l-191 191q-100-69-223-69-80 0-153 31t-125 84-84 125-31 153 31 152 84 126 125 84 153 31 153-31 125-84 84-126 31-152q0-123-69-223l191-191q21-21 21-51z" horiz-adv-x="928.6" />
+
+<glyph glyph-name="down-thin" unicode="&#xe801;" d="M500 100l-250-240-250 240 162 0 0 740 176 0 0-740 162 0z" horiz-adv-x="500" />
+
+<glyph glyph-name="left-thin" unicode="&#xe802;" d="M240 100l-240 250 240 250 0-160 740 0 0-178-740 0 0-162z" horiz-adv-x="980" />
+
+<glyph glyph-name="right-thin" unicode="&#xe803;" d="M742 100l0 162-742 0 0 178 742 0 0 160 238-250z" horiz-adv-x="980" />
+
+<glyph glyph-name="up-open-big" unicode="&#xe804;" d="M804 130l-372 358-370-358q-26-22-50 0-24 24 0 50l396 390q26 26 48 0l396-390q24-26 0-50-26-22-48 0z" horiz-adv-x="864" />
+
+<glyph glyph-name="right-open-big" unicode="&#xe805;" d="M13-20l358 370-358 372q-26 26 0 48 26 26 48 0l392-394q24-26 0-50l-392-394q-22-26-48 0-26 22 0 48z" horiz-adv-x="465" />
+
+<glyph glyph-name="left-open-big" unicode="&#xe806;" d="M452-20q26-26 0-48-26-26-48 0l-392 394q-24 24 0 50l392 394q22 26 48 0 26-22 0-48l-358-372z" horiz-adv-x="465" />
+
+<glyph glyph-name="down-open-big" unicode="&#xe807;" d="M63 570l370-356 372 356q22 26 48 0 26-22 0-48l-396-392q-22-22-48 0l-396 392q-26 26 0 48 24 24 50 0z" horiz-adv-x="866" />
+
+<glyph glyph-name="down-small" unicode="&#xe808;" d="M505 346q15-15 15-37t-15-37l-245-245-245 245q-15 15-15 37t15 37 37 15 37-15l120-119 0 395q0 21 15 36t36 15 37-15 16-36l0-395 120 119q15 15 36 15t36-15z" horiz-adv-x="520" />
+
+<glyph glyph-name="doc" unicode="&#xe809;" d="M818 595q16-16 16-36l0-521q0-65-46-111t-110-46l-522 0q-65 0-110 46t-46 111l0 625q0 65 46 110t110 46l417 0q22 0 37-15z m-110-36l-135 134 0-56q0-32 23-55t55-23l57 0z m-30-574q21 0 36 16t15 37l0 469-78 0q-53 0-92 38t-38 92l0 78-365 0q-21 0-37-15t-15-37l0-625q0-21 15-37t37-16l522 0z" horiz-adv-x="834" />
+
+<glyph glyph-name="up-open-mini" unicode="&#xe80a;" d="M62 230q-26-22-50 0-24 24 0 50l196 190q26 26 48 0l196-190q24-26 0-50-24-22-50 0l-170 158z" horiz-adv-x="464" />
+
+<glyph glyph-name="down-open-mini" unicode="&#xe80b;" d="M405 470q22 26 48 0 26-22 0-48l-196-192q-22-22-48 0l-196 192q-26 26 0 48 24 24 50 0l170-156z" horiz-adv-x="466" />
+
+<glyph glyph-name="left-open-mini" unicode="&#xe80c;" d="M252 180q26-26 0-48-26-26-48 0l-192 194q-24 24 0 50l192 194q22 26 48 0 26-22 0-48l-156-172z" horiz-adv-x="265" />
+
+<glyph glyph-name="right-open-mini" unicode="&#xe80d;" d="M13 180l158 170-158 172q-26 26 0 48 26 26 48 0l192-194q24-26 0-50l-192-194q-22-26-48 0-26 22 0 48z" horiz-adv-x="265" />
+
+<glyph glyph-name="doc-1" unicode="&#xe80e;" d="M0 730l419 0 205-210 0-550-624 0 0 760z m90-90l0-580 444 0 0 430-161 0 0 150-283 0z m61-251l318 0 0-35-318 0 0 35z m0-100l318 0 0-35-318 0 0 35z m0-100l318 0 0-35-318 0 0 35z" horiz-adv-x="624" />
+
+<glyph glyph-name="spin4" unicode="&#xe834;" d="M498 850c-114 0-228-39-320-116l0 0c173 140 428 130 588-31 134-134 164-332 89-495-10-29-5-50 12-68 21-20 61-23 84 0 3 3 12 15 15 24 71 180 33 393-112 539-99 98-228 147-356 147z m-409-274c-14 0-29-5-39-16-3-3-13-15-15-24-71-180-34-393 112-539 185-185 479-195 676-31l0 0c-173-140-428-130-589 31-134 134-163 333-89 495 11 29 6 50-12 68-11 11-27 17-44 16z" horiz-adv-x="1001" />
+
+<glyph glyph-name="doc-2" unicode="&#xf04a;" d="M0-31v761q0 37 26 62t61 26h356q3 0 6 0h0q38-3 61-26l255-245q10-12 16-24 2-5 2-7 1-1 2-5t3-6q2-11 2-21v-515q0-36-25-62t-62-26h-616q-36 0-61 26t-26 62z m87 0h616v465h-133q-73 0-124 52t-52 124v120h-307v-761z m396 641q0-36 25-62t62-25h118l-205 194v-107z" horiz-adv-x="790.5" />
+</font>
+</defs>
+</svg>

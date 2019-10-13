@@ -57,7 +57,7 @@ if ( !in_array( $main_header_appearence, ['disabled'] ) ) {
 		<?php 
 		if ( starck_get_option( 'scroll_up' ) ) {
 			?>
-			<div id="scroll-up" alt="Пролистать"><i class="icon fa fa-long-arrow-alt-down"></i></div>
+			<div id="scroll-up" alt="Пролистать"><i class="icon fa icon-down-small"></i></div>
 			<?php 
 		}
 		?>

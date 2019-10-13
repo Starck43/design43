@@ -78,13 +78,6 @@
 					wp_reset_postdata();
 				} 
 				?>
-	
-				<p><b>В Совет Гильдии входят:</b></p>
-				<div><a href="andreevsky" target="_ blank"><h5 class="member-title">Андрей Андреевский</h5></a> <span>(Председатель гильдии)</span></div>
-				<div><a href="atnagulova" target="_ blank"><h5 class="member-title">Ольга Атнагулова</h5></a></div>
-				<div><a href="kigel" target="_ blank"><h5 class="member-title">Ирина Кигель</h5></a></div>
-				<div><a href="laletin" target="_ blank"><h5 class="member-title">Антон Лалетин</h5></a></div>
-				<div><a href="rozhnev" target="_ blank"><h5 class="member-title">Олег Рожнев</h5></a></div>
 			</div>
 		</article>
 		<article id="news">
@@ -109,9 +102,9 @@
 		<article id="documents">
 			<header id="documents-header"><h1 class="title">Документы</h1></header>
 			<div id="documents-content">
-				<a href="admission" class="document-link"><i class="fa fa-stack fa-file-alt"></i><h2>Положение о приеме в гильдию дизайнеров кировской области</h2></a>
-				<a href="codex" class="document-link"><i class="fa fa-stack fa-file-alt"></i><h2>Кодекс профессиональной этики</h2></a>
-				<a href="price" class="document-link"><i class="fa fa-stack fa-file-alt"></i><h2>Рекомендуемый прейскурант</h2></a>
+				<a href="admission" class="document-link"><i class="icon fa-stack icon-doc"></i><h2>Положение о приеме в гильдию дизайнеров кировской области</h2></a>
+				<a href="codex" class="document-link"><i class="icon fa-stack icon-doc"></i><h2>Кодекс профессиональной этики</h2></a>
+				<a href="price" class="document-link"><i class="icon fa-stack icon-doc"></i><h2>Рекомендуемый прейскурант</h2></a>
 			</div>
 		</article>
 		<div id="contacts">
