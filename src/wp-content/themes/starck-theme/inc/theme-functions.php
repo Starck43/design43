@@ -7,67 +7,11 @@ function add_custom_admin_styles() {
 	echo '<style>
 		.wp-block {max-width: 1100px}
 		.column-post_thumb {width: 80px;}
-		#gallery-image .button {margin: 5px 0 20px;}
-		.postbox-gallery-block {cursor: pointer;}
-		.postbox-gallery-image {
-			position: relative;
-			display: inline-block;
-			margin: 0 1% 1% 0;
-			max-width: 9%;
-		}
-		.postbox-gallery-image img {width: 100%; height: auto;}
-		.postbox-gallery-image .gallery-del-image {
-			position: absolute; 
-			right: 4px; 
-			top: 4px;
-			border-radius: 2px;
-			background: rgba(255,255,255,.8);
-			width: 20px;
-			height: 20px;
-			text-align: center;
-			font-size: 12px;
-		}
-		.postbox-gallery-caption, .postbox-gallery-caption-link {display: block; padding-top: 20px;}
 	</style>';
-}
-
- /* Add the media uploader script */
-add_action('admin_enqueue_scripts', 'media_upload_enqueue');
-function media_upload_enqueue() {
-	//global $type_post;
-	//if( in_array($type_post, ['post','page']) ) {
-		if (function_exists('wp_enqueue_media')) {
-			wp_enqueue_media();
-		}
-		if ( file_exists( dirname( __FILE__ ) . '/js/media-upload.js' )) {
-			wp_enqueue_script('media_admin_scripts', get_template_directory_uri() . '/inc/js/media-upload.js', array('jquery'), true);
-		}
-	//}
 }
 
 add_action( 'after_setup_theme', 'starck_setup' );
 function starck_setup() {
-	load_theme_textdomain( 'starck', get_template_directory() . '/languages' );
-
-	//добавление фонового изображения через настройки темы
-	add_theme_support( 'custom-background', array(
-		'default-color'          => '#fff',
-		'wp-head-callback'       => '_custom_background_cb',
-	) );
-
-	add_theme_support( 'custom-header', array(
-		'width'					=> 1920,
-		'height'				=> 1080,
-		'flex-height'			=> true,
-		'flex-width'			=> true,
-		'default-repeat'		=> 'no-repeat',
-		'default-position-x'	=> 'center',
-		'default-attachment'	=> 'fixed',
-		//'header-text'			=> true,
-		'uploads'				=> true,
-		'default-image'			=>  get_stylesheet_directory_uri() . '/img/header.jpg',
-		'wp-head-callback'		=> '',
-	) );
 
 	//добавление опции установки логотипа через настройки темы
 	add_theme_support( 'custom-logo', array(
@@ -81,15 +25,13 @@ function starck_setup() {
 	) );
 
 	add_theme_support( 'title-tag' );
-	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'gallery', 'video', 'quote', 'link', 'status' ) );
-	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
+	add_theme_support( 'html5', array( 'search-form', 'gallery', 'caption' ) );
 	add_theme_support( 'align-wide' );
 	add_theme_support( 'editor-color-palette', array() );
 	//add_theme_support( 'woocommerce' );
 
-	add_image_size( 'category-thumb', 300, 9999 ); // 450 в ширину и без ограничения в высоту
+	add_image_size( 'category-thumb', 450, 9999 ); // 450 в ширину и без ограничения в высоту
 	add_image_size( 'mini-thumbnail', 100, 100, true ); // Кадрирование изображения
 	set_post_thumbnail_size( 300, 300 ); // размер миниатюры поста по умолчанию
 
@@ -98,7 +40,6 @@ function starck_setup() {
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'starck' ),
-		'secondary' => __( 'Secondary Menu', 'starck' ),
 	) );
 
 }
@@ -133,73 +74,10 @@ function starck_excerpt_read_more_link( $more ) {
 	}
 }
 
-add_filter( 'intermediate_image_sizes_advanced', 'starck_image_insert_override' );
-function starck_image_insert_override( $sizes ) {
-	unset( $sizes['medium_large'] );
-	return $sizes;
-}
-
-add_action( 'wp_head', 'starck_pingback_header' );
-function starck_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s" />' . "\n", esc_url( get_bloginfo( 'pingback_url' ) ) );
-	}
-}
-
-add_action( 'comment_form_before', 'starck_enqueue_comment_reply_script' );
-function starck_enqueue_comment_reply_script() {
-	if ( get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-}
-
-function starck_custom_pings( $comment ) {
-	?>
-	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>"><?php echo comment_author_link(); ?></li>
-	<?php
-}
-
-add_filter( 'get_comments_number', 'starck_comment_count', 0 );
-function starck_comment_count( $count ) {
-	if ( ! is_admin() ) {
-		global $id;
-		$get_comments = get_comments( 'status=approve&post_id=' . $id );
-		$comments_by_type = separate_comments( $get_comments );
-		return count( $comments_by_type['comment'] );
-	} else {
-		return $count;
-	}
-}
-
-if ( ! function_exists( 'starck_get_link_url' ) ) {
-	/**
-	 * Return the post URL.
-	 *
-	 * @return string The Link format URL.
-	 */
-	function starck_get_link_url() {
-		$has_url = get_url_in_content( get_the_content() );
-
-		return $has_url ? $has_url : apply_filters( 'the_permalink', get_permalink() );
-	}
-}
-
 add_action ('wp_print_styles','remove_styles',100);
 function remove_styles() {				
 	wp_deregister_style('starck-theme-google-font'); 
 }
-/**
- * Check if the logo and site branding are active.
- *
-
-function starck_has_logo_site_branding() {
-	if ( get_theme_mod( 'custom_logo' ) && !starck_get_option( 'hide_title' ) ) {
-		return true;
-	} else {
-		return false;
-	}
-}
- */
 
 if ( ! function_exists( 'starck_widgets_init' ) ) {
 	add_action( 'widgets_init', 'starck_widgets_init' );
@@ -212,8 +90,7 @@ if ( ! function_exists( 'starck_widgets_init' ) ) {
 			'header' => __( 'Header', 'starck' ),
 			'top-bar' => __( 'Top Bar','starck' ),
 			'footer-1' => __( 'Footer 1', 'starck' ),
-			'footer-2' => __( 'Footer 2', 'starck' ),
-			'footer-3' => __( 'Footer 3', 'starck' ),
+
 		);
 
 		foreach ( $widgets as $id => $name ) {
@@ -227,18 +104,6 @@ if ( ! function_exists( 'starck_widgets_init' ) ) {
 			) );
 		}
 	}
-}
-
-add_filter( 'widget_text', 'widget_execute_php', 99 );
-function widget_execute_php($widget_content)
-{
-	if (strpos($widget_content, '<' . '?') !== false) {
-		ob_start();
-		eval('?' . '>' . $widget_content);
-		$widget_content = ob_get_contents();
-		ob_end_clean();
-		}
-	return $widget_content;
 }
 
 add_filter('manage_posts_columns','posts_columns',5);
@@ -418,8 +283,6 @@ if ( ! function_exists( 'starck_get_footer_widgets' ) ) {
 			<!-- footer-widgets -->
 			<?php
 			if ( $widgets >= 1 ) { starck_add_footer_widget( 1 ); }
-			if ( $widgets >= 2 ) { starck_add_footer_widget( 2 ); }
-			if ( $widgets >= 3 ) { starck_add_footer_widget( 3 ); }
 			?>
 		</div>
 		<?php
@@ -455,15 +318,10 @@ if ( ! function_exists( 'starck_get_navigation' ) ) {
 		$primary_args = array( 
 			'theme_location' => 'primary',
 			//'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul><div id="menu-icon" class="burger-menu">&#9776;</div>',
-			'link_after' => '<i class="fa"></i>', // Add element icon after link for each menu item
+			//'link_after' => '<i class="icon"></i>', // Add element icon after link for each menu item
 			'container' => ''
 		);
-		/*
-		$secondary_args = array( 
-			'theme_location' => 'secondary',
-			'fallback_cb' => '__return_empty_string', // show additional menu only if it exists
-		);
-		*/
+
 		?>
 		<nav id="header-nav" <?php starck_navigation_class( $nav_burger ? 'burger' : '' ); ?> role="navigation">
 			<?php
@@ -473,7 +331,7 @@ if ( ! function_exists( 'starck_get_navigation' ) ) {
 			?>
 				<div id="site-search-modal"><?php get_search_form(); ?></div>
 
-				<div id="nav-search" class="icon"><i class="fa icon-search"></i></div>
+				<div id="nav-search"><i class="icon icon-search"></i></div>
 			<?php
 			}
 

@@ -19,18 +19,25 @@
 		position: relative
 		display: flex
 		background-color: $header-bg
+		align-items: center
 
 		.site-branding
 			display: flex
-			margin: auto
+			//height: 100% 
+			margin: 0 auto 0 //$header-height
 			opacity: 0
 			transition: all 1.2s ease-out
 			+media-breakpoint-down(xs)
-				flex-direction: column
-				align-items: center
+				//margin-top: -$header-height-min / 2
+				//margin-bottom: $header-height-min 
+				//flex-direction: column
+				//align-items: center
 				//margin-bottom:  $header-height / 2
+				.site-logo
+					////margin-bottom: unset  !important
 				.branding-title
-					text-align: center
+					//margin: unset !important
+					//text-align: center
 					
 			.site-logo
 				width: $logo-big-width
@@ -38,6 +45,9 @@
 				margin-bottom: auto
 				+media-breakpoint-down(xs)
 					height: $logo-big-width + 15px
+					margin: auto
+					width: 160px
+					height: 160px
 				img
 					@extend %img
 
@@ -46,7 +56,8 @@
 				margin: auto 20px 0
 				color: #FFF
 				letter-spacing: 0.5px
-
+				+media-breakpoint-down(xs)
+					margin-top: $gutter-20/2
 				h1.site-title
 					margin-bottom: 0.2em
 					font-weight: normal 
@@ -57,23 +68,21 @@
 
 	&.nav-inline-logo
 		#main-header
-			height: calc-height($header-height, $top-bar-height)
-			padding-bottom: $header-height / 2
+			height: 100vh //calc-height($header-height)
+			margin-top: -$header-height
+			+media-breakpoint-down(xs)
+				margin-top: -$header-height-min
+				//height: calc-height($header-height-min)
 			&.hidden
-				transition: all 500ms linear, opacity 300ms 300ms linear
+				transition: height 500ms linear, opacity 300ms 300ms linear
 				height: 0
-				padding-bottom: 0
+				//padding-bottom: 0
 
 					
 
 	#main-container
 		display: flex
 		max-width: $container_max-w 
-		//padding: $gutter-20*2 0
-		//background-color: $main-bg
-		.icon
-			//border-radius: 50%
-			//border: 1px solid
 		
 		.breadcrumbs
 			margin-bottom: $gutter-20 * 2
@@ -154,6 +163,7 @@
 							opacity: 1
 
 					.member-title
+						text-align: center
 						+media-breakpoint-down(lg)
 							font-size: 1.3em
 						+media-breakpoint-down(md)
@@ -192,6 +202,7 @@
 					margin: 0  $gutter-20 / 2
 					padding: $gutter-20
 					text-align: center
+					font-style: italic
 					background-color: transparentize($main-bg, 0.1)
 					box-shadow: 0 0 10px #eee
 					border-radius: 3px
@@ -211,6 +222,9 @@
 				text-align: justify
 				a
 					display: inline-block
+					font-size: 1.2em
+					letter-spacing: .5px
+
 				+media-breakpoint-down(xs)
 					span
 						display: block
@@ -249,6 +263,8 @@
 		//max-width: unset
 		+media-breakpoint-down(xs)
 			width: 100%
+	p
+		text-align: justify
 
 	li
 		@extend p

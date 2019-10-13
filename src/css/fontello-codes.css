@@ -1,18 +1,62 @@
 
-.icon-search:before { content: '\e800'; } /* '' */
-.icon-down-thin:before { content: '\e801'; } /* '' */
-.icon-left-thin:before { content: '\e802'; } /* '' */
-.icon-right-thin:before { content: '\e803'; } /* '' */
-.icon-up-open-big:before { content: '\e804'; } /* '' */
-.icon-right-open-big:before { content: '\e805'; } /* '' */
-.icon-left-open-big:before { content: '\e806'; } /* '' */
-.icon-down-open-big:before { content: '\e807'; } /* '' */
-.icon-down-small:before { content: '\e808'; } /* '' */
-.icon-doc:before { content: '\e809'; } /* '' */
-.icon-up-open-mini:before { content: '\e80a'; } /* '' */
-.icon-down-open-mini:before { content: '\e80b'; } /* '' */
-.icon-left-open-mini:before { content: '\e80c'; } /* '' */
-.icon-right-open-mini:before { content: '\e80d'; } /* '' */
-.icon-doc-1:before { content: '\e80e'; } /* '' */
-.icon-spin4:before { content: '\e834'; } /* '' */
-.icon-doc-2:before { content: '\f04a'; } /* '' */
+@font-face {
+  font-family: 'fontello';
+  src: url('../fonts/fontello.eot?45897082');
+  src: url('../fonts/fontello.eot?45897082#iefix') format('embedded-opentype'),
+       url('../fonts/fontello.woff2?45897082') format('woff2'),
+       url('../fonts/fontello.woff?45897082') format('woff'),
+       url('../fonts/fontello.ttf?45897082') format('truetype'),
+       url('../fonts/fontello.svg?45897082#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-search:before { content: '\e800'; }
+.icon-down-thin:before { content: '\e801'; }
+.icon-left-thin:before { content: '\e802'; }
+.icon-right-thin:before { content: '\e803'; }
+.icon-up-open-big:before { content: '\e804'; }
+.icon-right-open-big:before { content: '\e805'; }
+.icon-left-open-big:before { content: '\e806'; }
+.icon-down-open-big:before { content: '\e807'; }
+.icon-down-small:before { content: '\e808'; }
+.icon-doc:before { content: '\e809'; }
+.icon-up-open-mini:before { content: '\e80a'; }
+.icon-down-open-mini:before { content: '\e80b'; }
+.icon-left-open-mini:before { content: '\e80c'; }
+.icon-right-open-mini:before { content: '\e80d'; }
+.icon-doc-1:before { content: '\e80e'; }
+.icon-spin4:before { content: '\e834'; }
+.icon-doc-2:before { content: '\f04a'; }
+
+.fa {
+  margin: auto;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1; }
+
+.fa-stack {
+  height: 2em;
+  line-height: 2em;
+  position: relative;
+  vertical-align: middle;
+  width: auto; }
+
+.fa-stack-1x,
+.fa-stack-2x {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%; }
+
+.fa-stack-1x {
+  line-height: inherit; }
+
+.fa-stack-2x {
+  font-size: 2em; }
+
+.fa-inverse {
+  color: #fff; }

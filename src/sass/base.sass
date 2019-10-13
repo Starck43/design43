@@ -16,15 +16,70 @@
 @import mixins
 @import fonts
 @import vars
-@import reset
-@import controls
+
+html
+	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
+	//display: inline-table
+	position: relative
+	width: 100%
+	font-size: $base-font-size
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+	-webkit-font-smoothing: antialiased
+	+media-breakpoint-down(sm)	  
+		overflow: scroll
+		overflow-x: hidden
+		::-webkit-scrollbar
+			width: 0px  /* remove scrollbar space */
+			background: transparent  /* optional: just make scrollbar invisible */
+body
+	//position: relative
+	//opacity: 0
+	display: flex
+	flex-direction: column
+	min-height: 100vh
+	//min-width: 320px
+	//width: 100%
+	 
+	margin: 0
+	background-color: $body-bg
+	overflow-x: hidden
+	&:not(.home)
+		.container
+			margin-top: $gutter-20
+			
+h1 
+	font: normal bold 2.2em/1.2 $base-font-family, Arial
+	margin: 0 0 20px 0
+	color: $page-title-color 
+
+
+h2  
+	font: normal normal 1.5em/1.2 $base-font-family, Arial
+	margin: 1em 0
+
+
+h3 
+	font: normal bold 1.4em/1.2 $base-font-family, Arial
+	margin: 0 0 0.5em 0
+
+
+h4 
+	font: normal bold 1.3em/1.2 $base-font-family, Arial
+	margin: 0 0 0.5em 0
+
+
+h5 
+	font: normal bold 1.2em/1.1 $base-font-family, Arial
+	margin: 0 0 0.5em 0
 
 p
 	margin: $base-line-height 0 0.5em
 	letter-spacing: 0.5px
 	line-height: $base-line-height
-	//font-size: 1.2em 
-	
+	font-size: 1.1em 
+	+media-breakpoint-down(xs)
+	font-size: 1.2em
 a
 	//display: block
 	text-decoration: none
@@ -40,48 +95,30 @@ ul
 	margin: 0
 	padding-bottom: 1em
 pre
-	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
-	letter-spacing: 1px 
+	@include font-settings(Roboto Condensed, $base-text-color, 1em, false, false, $base-line-height)
+	letter-spacing: .5px
+	font-size: 1em 
 	line-height: $base-line-height
 	margin: 0
 	padding: $gutter-20 $gutter-20 / 2
 	background-color: $main-2-bg
+
 %img
 	width: 100%
 	height: auto
 
 // Avoid empty images to appear as broken
-
 img:not([src]):not([srcset])
 	visibility: hidden
-	
-.header-background
-	background-size: cover
-	background-repeat: no-repeat
-	background-position: 50% 50%
-	//background-attachment: fixed
-	
-.grid
-	display: grid
-	grid-gap: $gutter-20
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
-	//grid-template-columns: 1fr 1fr
-	//grid-template-areas: "left right"
-	margin: 0
-	
-	> div:first-child
-		grid-area: left
-	> div:last-child
-		grid-area: right
-
 		
 
 .container
+	@include push--auto
+	margin-bottom: $footer-height * 4
 	//margin-top: $gutter-20
 	//margin-bottom: $gutter-20
-	margin-bottom: $footer-height * 4
-	padding-left: 0 !important 
-	padding-right: 0 !important
+	//padding-left: 0 !important 
+	//padding-right: 0 !important
 		
 .bounded
 	max-width: $container_max_w
@@ -112,55 +149,11 @@ img:not([src]):not([srcset])
 .modal
 	position: fixed
 	width: 100% 
-	overflow-y: scroll	
-
-.preloader
-	position: fixed
-	left: 0
-	right: 0
-	top: 0
-	bottom: 0
-	background-color: $preloader-bg
-
-	z-index: 10000
-	i
-		position: absolute
-		left: 50%
-		top: 50%
-		transform: translate(-50%, -50%)
-		font-size: 3em
-		color: $preloader-color
-
-
-html
-	//display: inline-table
-	position: relative
-	width: 100%
-	font-size: $base-font-size
-	-webkit-font-smoothing: antialiased
-	+media-breakpoint-down(sm)	  
-		overflow: scroll
-		overflow-x: hidden
-		::-webkit-scrollbar
-			width: 0px  /* remove scrollbar space */
-			background: transparent  /* optional: just make scrollbar invisible */
-body
-	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
-	position: relative
-	//opacity: 0
-	display: flex
-	flex-direction: column
-	min-height: 100vh
-	//min-width: 320px
-	//width: 100%
-	 
-	margin: 0
-	background-color: $body-bg
-	overflow-x: hidden
-	&:not(.home)
-		.container
-			margin-top: $gutter-20		
+	overflow-y: hidden	
+	
+@import media
 @import header
 @import main
 @import footer
-@import media
+@import controls
+@import reset

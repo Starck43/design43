@@ -7,36 +7,3 @@
  * Font Awesome Free 5.10.1 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
-.fa {
-  margin: auto;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  line-height: 1; }
-
-.fa-stack {
-  height: 2em;
-  line-height: 2em;
-  position: relative;
-  vertical-align: middle;
-  width: auto; }
-
-.fa-stack-1x,
-.fa-stack-2x {
-  left: 0;
-  position: absolute;
-  text-align: center;
-  width: 100%; }
-
-.fa-stack-1x {
-  line-height: inherit; }
-
-.fa-stack-2x {
-  font-size: 2em; }
-
-.fa-inverse {
-  color: #fff; }
-
-  

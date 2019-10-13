@@ -1,18 +1,19 @@
 // Header styles
 #site-header
-	position: relative
+	position: sticky
+	top: 0
 	display: block
 	min-width: 100% 
 	background-color: $header-bg
 	z-index: 3
-										
+									
 	#header-container
 		display: flex
 		width: 100% 
 		height: $header-height
 		align-items: center
 		+media-breakpoint-down(xs)
-			height: $header-height/1.5
+			height: $header-height-min
 
 	
 	.branding-right
@@ -23,10 +24,10 @@
 										
 	#branding
 		display: block
-		margin: $gutter-20
+		margin: auto $gutter-20
 		width: $logo-width
 		+media-breakpoint-down(xs)
-			width: $logo-width / 1.5
+			width: $logo-width / 1.6
 
 		img
 			@extend %img
@@ -69,6 +70,10 @@
 			margin: auto
 			flex-wrap: wrap
 			flex: auto
+			+media-breakpoint-down(xs)
+				position: absolute
+				left: 0
+				right: 0
 
 	&.bounded
 		.container

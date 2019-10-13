@@ -666,22 +666,3 @@ if ( ! function_exists( 'starck_customize_register' ) ) {
 
 	}
 }
-
-if ( ! function_exists( 'starck_customizer_live_preview' ) ) {
-	add_action( 'customize_preview_init', 'starck_customizer_live_preview', 100 );
-	/**
-	 * Add custom live preview scripts
-	 */
-	function starck_customizer_live_preview() {
-
-		wp_enqueue_script( 'starck-themecustomizer', trailingslashit( get_template_directory_uri() ) . 'inc/js/customizer-live-preview.js', array( 'customize-preview' ), STARCK_VERSION, true );
-
-		wp_localize_script( 'starck-themecustomizer', 'starck_live_preview', array(
-			'mobile' => apply_filters( 'starck_mobile_media_query', '(max-width:768px)' ),
-			'tablet' => apply_filters( 'starck_tablet_media_query', '(min-width: 769px) and (max-width: 1024px)' ),
-			'desktop' => apply_filters( 'starck_desktop_media_query', '(min-width:1025px)' ),
-			'contentLeft' => 40,
-			'contentRight' => 40,
-		) );
-	}
-}

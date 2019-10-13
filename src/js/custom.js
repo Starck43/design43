@@ -156,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //		var mc = document.body.querySelector('#main-container');
 //		$.when($('#main-header').addClass('hidden').delay(2000).remove())
 //		.done( mc.scrollIntoView({block: "start", behavior: "smooth"}) );
+		$(this).fadeOut('slow');
 		mainheader
 			.children('.site-branding').removeClass('visible')
 			.delay(1000)
