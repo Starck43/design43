@@ -11,6 +11,7 @@ var gulp 		 = require('gulp'),
     uglify       = require('gulp-uglify-es').default, // Подключаем плагин для сжатия JS
     jsRequires   = require('gulp-resolve-dependencies'), // Подключаем пакет для импортирования скриптов через //@requires *.js
     postcss      = require("gulp-postcss"),
+    combineCSS   = require('gulp-group-css-media-queries'),  // Объединяет все @media
     cssImport    = require('postcss-import'),   // Подключаем пакет для импортирования кода css, прописанного через @import '*.css' 
     cleanCSS     = require('gulp-clean-css'), // Подключаем пакет для минификации CSS с объединением одинаковых медиа запросов
     sourcemaps   = require('gulp-sourcemaps'), // Подключаем пакет sourcemaps для нахождения исходных стилей и скриптов в режиме dev-tool браузера
@@ -44,9 +45,10 @@ gulp.task('styles', function() { // таск 'styles' обработает вс�
 		Его подключают через @import 'part' в файле *.sass 
 	*/
 	.pipe(concat('main.min.css')) // Объединяем все найденные файлы в один
+	.pipe(combineCSS()) //Объединяем медиа запросы
 	.pipe(autoprefixer({
 		grid: true,
-		overrideBrowserslist: ['last 2 versions']
+		overrideBrowserslist: ['last 3 versions']
 	})) // Создаем префиксы
 //	.pipe(sourcemaps.write()) //пропишем sourcemap
     .pipe(cleanCSS({level:2})) // Сжимаем CSS файл
@@ -64,6 +66,11 @@ gulp.task('vendors-styles', function() { // таск обработает все
 		])
 	.pipe(postcss([ cssImport ])) // Импортируем стили, прописанные через команду @import в начале файла
 	.pipe(concat('vendors.min.css')) // Объединяем все найденные файлы в один
+	.pipe(combineCSS()) //Объединяем медиа запросы
+	.pipe(autoprefixer({
+		grid: true,
+		overrideBrowserslist: ['last 3 versions']
+	})) // Создаем префиксы
 	.pipe(cleanCSS({level:2})) // Сжимаем CSS файл
 	.pipe(gulp.dest(path.dest+'css')) // Выгружаем результат в папку dest::/css
 	.pipe(browserSync.stream()); // Обновляем CSS на странице при изменении

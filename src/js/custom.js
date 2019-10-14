@@ -1,7 +1,7 @@
 /*
  * Custom scripts library
  *
- * @version 1.0.5
+ * @version 1.8
  */
 
 function hide_compact_header() {
@@ -21,22 +21,23 @@ function remove_main_header(el) {
 document.addEventListener('readystatechange', function(el) {
 	if ( document.readyState === 'interactive' ) {
 		var main_header = this.querySelector("#main-header");
-		var navigation = this.querySelector("#header-nav");
+		//var navigation = this.querySelector("#header-nav");
 
-		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+/*		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if ( width < 768 ) {
 			var burger = this.querySelector("#nav-burger");
 			$.when(navigation.classList.add('burger'))
 			.done(navigation.style.visibility = "visible");
 			//burger.classList.remove('hidden');
-		} else navigation.style.visibility = "visible";
+		} else */
+		//navigation.style.visibility = "visible";
 		
 		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
 			$.when(main_header.classList.remove("hidden"))
 			.done($('#main-header .site-branding').addClass('visible'));
 			sessionStorage.setItem('main-header', main_header.id);
-		} //else main_header.classList.add("hidden");
+		} else main_header && main_header.remove();
 	}
 });
 
@@ -46,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		elements_selector: ".lazy"
 	});
 */
-	var navigation = $('#header-nav');
+	var navigation = $('#header-nav').css('opacity','1');
 	var burger = $('#nav-burger');
 	var mainheader = $('#main-header');
 	var scrollup = $('#scroll-up');
@@ -91,7 +92,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		var target = $(this).attr('href');
 		if ( window.location.pathname == '/' && window.location.search == '' ) { //if home page
 			if ($(target).hasClass('animate')) $(target).removeClass('animate');
-			if (navigation.hasClass('burger')) burger.click(); //close burger menu on link clicking
+			//if (navigation.hasClass('burger')) 
+				burger.click(); //close burger menu on link clicking
 
 			var top = $(target).offset().top;
 			$('html, body').animate({scrollTop: top}, 500+top/4); //800 - длительность скроллинга в мс
@@ -118,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		if( e.keyCode == 27 && burger.hasClass('active') ) burger.click(); // close burger menu on esc key
 	});
 
-	$( window ).on( 'resize', function( e ) {
+/*	$( window ).on( 'resize', function( e ) {
 		if ( $(this).width() < 768 ) {
 			navigation.addClass('burger');
 			//burger.removeClass('hidden');
@@ -127,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			//burger.addClass('hidden');
 		}
 
-	});
+	});*/
 
 	$('#searchform-close').on('click', function (e) {
 		var field_s = search.find('#s');

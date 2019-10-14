@@ -1,6 +1,7 @@
 
 @font-face {
   font-family: 'fontello';
+  font-display: swap;
   src: url('../fonts/fontello.eot?45897082');
   src: url('../fonts/fontello.eot?45897082#iefix') format('embedded-opentype'),
        url('../fonts/fontello.woff2?45897082') format('woff2'),

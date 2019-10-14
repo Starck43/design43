@@ -8,36 +8,17 @@
 	flex: auto
 	z-index: 2 
 	
-	&.bounded
-
-			
-	&.left-sidebar
-		#main-container
-			flex-direction: row-reverse 
-			
 	#main-header
 		position: relative
 		display: flex
 		background-color: $header-bg
 		align-items: center
-
 		.site-branding
 			display: flex
 			//height: 100% 
 			margin: 0 auto 0 //$header-height
 			opacity: 0
-			transition: all 1.2s ease-out
-			+media-breakpoint-down(xs)
-				//margin-top: -$header-height-min / 2
-				//margin-bottom: $header-height-min 
-				//flex-direction: column
-				//align-items: center
-				//margin-bottom:  $header-height / 2
-				.site-logo
-					////margin-bottom: unset  !important
-				.branding-title
-					//margin: unset !important
-					//text-align: center
+			transition: all 1.2s 300ms ease-in
 					
 			.site-logo
 				width: $logo-big-width
@@ -56,6 +37,7 @@
 				margin: auto 20px 0
 				color: #FFF
 				letter-spacing: 0.5px
+				//@include animation(branding, 800ms 800ms ease-in, fade-In )
 				+media-breakpoint-down(xs)
 					margin-top: $gutter-20/2
 				h1.site-title
@@ -76,30 +58,29 @@
 			&.hidden
 				transition: height 500ms linear, opacity 300ms 300ms linear
 				height: 0
+				margin-top: 0
 				//padding-bottom: 0
-
-					
 
 	#main-container
 		display: flex
 		max-width: $container_max-w 
 		
-		.breadcrumbs
-			margin-bottom: $gutter-20 * 2
-			font-size: .8em   
-			
 		#content
-			float: left
-			width: 100%
-			//padding: 0 $gutter-20
-			background-color: $content-bg
-			
-			&.float-left
-				width: $content-width
-				margin-right: $gutter-20/2
-				
-			&.float-right
-				margin-left: $gutter-20/2
+			p
+				text-align: justify
+				margin: $base-line-height 0 0.5em
+
+			li
+				list-style-type: square
+				margin: $base-line-height/2 0 0
+
+			p,li
+				letter-spacing: 0.5px
+				line-height: $base-line-height
+				font-size: 1.1em 
+				word-break: break-word
+				+media-breakpoint-down(xs)
+					font-size: 1.2em
 
 			&.search
 				margin-top: $gutter-20
@@ -222,7 +203,7 @@
 				text-align: justify
 				a
 					display: inline-block
-					font-size: 1.2em
+					font-size: 1em
 					letter-spacing: .5px
 
 				+media-breakpoint-down(xs)
@@ -247,14 +228,6 @@
 					display: flex
 					margin-right: auto
 					align-items: center
-				
-		#main-sidebar
-			width: 25%
-			float: left
-			padding: $gutter-20/2
-			background-color: $sidebar-bg 
-			border: 1px solid $border-color
-			box-sizing: border-box
 
 .entry-content
 	margin-bottom: $gutter-20
@@ -263,14 +236,7 @@
 		//max-width: unset
 		+media-breakpoint-down(xs)
 			width: 100%
-	p
-		text-align: justify
-
-	li
-		@extend p
-		list-style-type: square
-		margin: $base-line-height/2 0 0
-		
+	
 	.price-expire
 		font-size: 0.8em
 		text-align: right
@@ -324,9 +290,5 @@
 			span:not(.meta-nav)
 				padding: 5px
 				text-transform: uppercase
-
-
-
-
 		
 // <!-- End Main -->

@@ -1,10 +1,10 @@
 <?php
-define( 'STARCK_VERSION', '1.0.5' );
-
 
 add_action('admin_head', 'add_custom_admin_styles');
 function add_custom_admin_styles() {
 	echo '<style>
+		#wpcontent {height:auto}
+		#wpfooter {position: relative;}
 		.wp-block {max-width: 1100px}
 		.column-post_thumb {width: 80px;}
 	</style>';

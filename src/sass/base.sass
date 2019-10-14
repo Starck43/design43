@@ -73,13 +73,6 @@ h5
 	font: normal bold 1.2em/1.1 $base-font-family, Arial
 	margin: 0 0 0.5em 0
 
-p
-	margin: $base-line-height 0 0.5em
-	letter-spacing: 0.5px
-	line-height: $base-line-height
-	font-size: 1.1em 
-	+media-breakpoint-down(xs)
-	font-size: 1.2em
 a
 	//display: block
 	text-decoration: none
@@ -117,13 +110,10 @@ img:not([src]):not([srcset])
 	margin-bottom: $footer-height * 4
 	//margin-top: $gutter-20
 	//margin-bottom: $gutter-20
-	//padding-left: 0 !important 
-	//padding-right: 0 !important
+	+media-breakpoint-down(xs)
+		padding-left: 0 !important 
+		padding-right: 0 !important
 		
-.bounded
-	max-width: $container_max_w
-	//padding: 0 $gutter-20/2
-	@include push--auto
 
 .align-left
 	justify-content: flex-start

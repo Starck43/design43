@@ -4,7 +4,7 @@
 	<meta charset="<?php esc_attr( bloginfo( 'charset' ) ); ?>" />
 	<meta name="description" content="Гильдия дизайнеров Кировской области, лучшие дизайнеры Кирова, цены на услуги дизайнера, дизайнер интерьера">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="icon" href="favicon.png">
 	<link rel="apple-touch-icon" href="apple-touch-favicon.png">
@@ -25,17 +25,17 @@
 	?>
 	<header id="site-header" <?php starck_header_class(['site-header',$background_class]); echo $header_img_attr; ?>>
 
-		<?php if ( 'enabled' === starck_get_option( 'top_bar_layout_setting' ) ) starck_get_top_bar(); ?>
 
 		<!-- header-container -->
 		<div id="header-container" class="<?php echo 'branding-' . starck_get_option( 'branding_alignment' ); ?>">
+	
 			<?php
 			$nav_position = starck_get_option( 'nav_position_setting' );
 			if ( in_array($nav_position, ['above', 'below']) ) {
 				// navigation
 				starck_get_navigation();
 			}
-			?>		
+			?>	
 			<section id="branding" <?php starck_branding_class('site-branding'); ?>>
 				<?php
 				$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -66,12 +66,6 @@
 		<!-- end header container -->
 
 	</header>
-
-	<?php 
-	if ( 'under' == $nav_position ) { 
-		starck_get_navigation();
-	}
-	?>
 
 	<!-- main -->
 	<main id="main" <?php starck_main_class('main'); ?> role="main">

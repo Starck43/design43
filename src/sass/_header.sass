@@ -1,7 +1,7 @@
 // Header styles
 #site-header
-	position: sticky
-	top: 0
+	position: relative
+	//top: 0
 	display: block
 	min-width: 100% 
 	background-color: $header-bg
@@ -15,13 +15,6 @@
 		+media-breakpoint-down(xs)
 			height: $header-height-min
 
-	
-	.branding-right
-		flex-direction: row-reverse
-		
-	.branding-center
-		flex-direction: column
-										
 	#branding
 		display: block
 		margin: auto $gutter-20
@@ -31,38 +24,6 @@
 
 		img
 			@extend %img
-			
-		&.align-center
-			margin: auto
-			padding-bottom: $nav-height
-
-			a
-				justify-content: center
-
-		&.align-right
-			flex-direction: row-reverse
-
-
-		&.align-vertical
-			flex-direction: column
-
-			a
-				justify-content: center
-				
-			#branding-logo,
-			#branding-title
-				@include push--auto 
-
-	&.nav-below-logo
-		//height: #{strip-units($header-height) + strip-units($nav-height)}px
-		#header-container
-			flex-wrap: wrap-reverse
-
-	&.nav-above-logo
-		//height: #{strip-units($header-height) + strip-units($nav-height)}px
-		#header-container
-			flex-wrap: wrap
-
 			
 	&.nav-inline-logo
 		#header-content
@@ -75,26 +36,11 @@
 				left: 0
 				right: 0
 
-	&.bounded
-		.container
-			padding-left: 0
-			padding-right: 0
-			
-		ul.menu
-			@extend .bounded
 
 	#header-content
 		&.burger-menu
 			display: inline-block
-			.widget
-				float: left
 
-/*.home
-	#header-nav
-		margin-right: auto
-	#site-header
-		#branding
-			display: none*/
 			
 @import navigation
 // <!-- End Header -->

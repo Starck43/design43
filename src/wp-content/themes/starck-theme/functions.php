@@ -1,4 +1,5 @@
 <?php
+define( 'STARCK_VERSION', '1.8' );
 
 //!-- START ENQUEUE ACTION
 
@@ -8,8 +9,8 @@ $main_css_file = 'main.min.css';
 if ( !file_exists( dirname( __FILE__ ) . '/css/' . $main_css_file )) $main_css_file = 'main.css';
 
 // STYLES registry
-wp_enqueue_style( 'starck-theme', $home_url . '/css/' . $main_css_file);
-wp_enqueue_style( 'vendors', $home_url . '/css/vendors.min.css');
+wp_enqueue_style( 'starck-theme', $home_url . '/css/' . $main_css_file, array(), STARCK_VERSION);
+wp_enqueue_style( 'vendors', $home_url . '/css/vendors.min.css', array(), STARCK_VERSION);
 
 // reCAPTHCA registry
 /*add_action( 'wp_enqueue_scripts', 'add_recaptcha_js', 5, 1 );
@@ -33,11 +34,11 @@ function starck_scripts_add() {
 		wp_enqueue_script('jquery', $home_url . '/js/jquery.min.js');
 	}	
 	if ( file_exists( dirname( __FILE__ ) . '/js/vendors.min.js' )) {
-		wp_register_script('vendors', $home_url . '/js/vendors.min.js', array('jquery'), null, true);
+		wp_register_script('vendors', $home_url . '/js/vendors.min.js', array('jquery'), STARCK_VERSION, true);
 		wp_enqueue_script('vendors');
 	}
 	if ( file_exists( dirname( __FILE__ ) . '/js/custom.min.js' )) {
-		wp_register_script('starck-theme', $home_url . '/js/custom.min.js', array('jquery'), null, true);
+		wp_register_script('starck-theme', $home_url . '/js/custom.min.js', array('jquery'), STARCK_VERSION, true);
 		wp_enqueue_script('starck-theme');
 	}
 }
