@@ -23,14 +23,8 @@ document.addEventListener('readystatechange', function(el) {
 		var main_header = this.querySelector("#main-header");
 		//var navigation = this.querySelector("#header-nav");
 
-/*		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		if ( width < 768 ) {
-			var burger = this.querySelector("#nav-burger");
-			$.when(navigation.classList.add('burger'))
-			.done(navigation.style.visibility = "visible");
-			//burger.classList.remove('hidden');
-		} else */
-		//navigation.style.visibility = "visible";
+		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if ( width < 768 ) $('#nav-burger').addClass('burger');
 		
 		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
@@ -47,20 +41,17 @@ document.addEventListener("DOMContentLoaded", function() {
 		elements_selector: ".lazy"
 	});
 */
-	var navigation = $('#header-nav').css('opacity','1');
-	var burger = $('#nav-burger');
+	var navigation = $('#header-nav').css('opacity', 1);
+	
 	var mainheader = $('#main-header');
 	var scrollup = $('#scroll-up');
 	var search = $('#site-search-modal');
 	var back2top = $('#back-to-top');
 
-	//$('body').fadeIn(200);
-	// Adding class after full DOM loading for applying CSS animation
-/*	$.when( $('#dom-preloader').find('i').removeClass('fa-spin').end().delay(500).fadeOut('slow') )
-	.done( function() { 
-		$('#dom-preloader').remove(); 
-	});		
-*/
+	// This hides the address bar:
+	window.scrollTo(0, 1);
+
+
 	// inView.js appearance effect on scrolling from screen bottom
 	inView('article')
 		.on('enter', el => {
@@ -72,14 +63,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		.on('exit', el => {
 			//el.style.opacity = 0;
 			show_compact_header();
-			//el.classList.add('hidden');
 			el.remove(); //delete main-header
 		});
 
 	$(window).scroll( function() {
-		//addVisibleClass(document.body.querySelectorAll('article')); //viewport.js
-		//addVisibleClass(document.body.querySelectorAll('#copyright'));
-
 		back2top.topBtnToggle({
 			scrollTrigger: 1000,
 			//debug: true,
@@ -105,11 +92,12 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
-	burger.on('click', function (e) {
-		burger.toggleClass('active');
-		$('#menu-top').toggleClass('active');
-		$(document.body).toggleClass('modal');
-
+	burger = $('#nav-burger').on('click', function (e) {
+		if (burger.hasClass('burger')) {
+			burger.toggleClass('active');
+			$('#menu-top').toggleClass('active');
+			$(document.body).toggleClass('modal');
+		}
 	});
 
 	$( document ).on( 'keyup', function( e ) {

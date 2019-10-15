@@ -183,7 +183,7 @@ input[type="submit"]
 	max-width: 600px
 	@include push--auto
 	text-align: left
-	padding: $gutter-20 / 2 
+	//padding: $gutter-20 / 2 
 
 	.wpforms-one-half, .wpforms-field
 		margin-bottom: 20px
@@ -237,8 +237,11 @@ input[type="submit"]
 	.wpforms-recaptcha-container
 		float: right
 		+media-breakpoint-down(xs)
-			.g-recaptcha div
-				@include push--auto
+			display: flex
+			width: 100% 
+			.g-recaptcha
+				margin: auto
+
 
 	.wpforms-submit-container
 		+media-breakpoint-down(xs)

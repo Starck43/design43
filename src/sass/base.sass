@@ -26,11 +26,12 @@ html
 	-ms-text-size-adjust: 100%
 	-webkit-text-size-adjust: 100%
 	-webkit-font-smoothing: antialiased
-	+media-breakpoint-down(sm)	  
+	+media-breakpoint-down(md)
+		font-size: 14px
 		overflow: scroll
 		overflow-x: hidden
 		::-webkit-scrollbar
-			width: 0px  /* remove scrollbar space */
+			//width: 0px  /* remove scrollbar space */
 			background: transparent  /* optional: just make scrollbar invisible */
 body
 	//position: relative
@@ -49,19 +50,21 @@ body
 			margin-top: $gutter-20
 			
 h1 
-	font: normal bold 2.2em/1.2 $base-font-family, Arial
+	font: normal bold 2.4em/1.2 $base-font-family, Arial
 	margin: 0 0 20px 0
 	color: $page-title-color 
+	letter-spacing: -0.5px
 
 
 h2  
-	font: normal normal 1.5em/1.2 $base-font-family, Arial
+	font: normal normal 1.6em/1.2 $base-font-family, Arial
 	margin: 1em 0
 
 
 h3 
 	font: normal bold 1.4em/1.2 $base-font-family, Arial
 	margin: 0 0 0.5em 0
+	letter-spacing: -0.5px
 
 
 h4 
@@ -88,12 +91,11 @@ ul
 	margin: 0
 	padding-bottom: 1em
 pre
-	@include font-settings(Roboto Condensed, $base-text-color, 1em, false, false, $base-line-height)
-	letter-spacing: .5px
-	font-size: 1em 
-	line-height: $base-line-height
 	margin: 0
 	padding: $gutter-20 $gutter-20 / 2
+	font-family: inherit
+	font-size: 1em 
+	letter-spacing: 1px
 	background-color: $main-2-bg
 
 %img
@@ -108,11 +110,9 @@ img:not([src]):not([srcset])
 .container
 	@include push--auto
 	margin-bottom: $footer-height * 4
-	//margin-top: $gutter-20
-	//margin-bottom: $gutter-20
-	+media-breakpoint-down(xs)
-		padding-left: 0 !important 
-		padding-right: 0 !important
+	max-width: $container_max-w 
+	padding-left: 0 !important 
+	padding-right: 0 !important
 		
 
 .align-left

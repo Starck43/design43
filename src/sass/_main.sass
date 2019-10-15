@@ -62,10 +62,9 @@
 				//padding-bottom: 0
 
 	#main-container
-		display: flex
-		max-width: $container_max-w 
-		
+
 		#content
+			word-break: break-word
 			p
 				text-align: justify
 				margin: $base-line-height 0 0.5em
@@ -75,10 +74,10 @@
 				margin: $base-line-height/2 0 0
 
 			p,li
+				font-size: 1.2em
+				font-weight: 300
 				letter-spacing: 0.5px
 				line-height: $base-line-height
-				font-size: 1.1em 
-				word-break: break-word
 				+media-breakpoint-down(xs)
 					font-size: 1.2em
 
@@ -129,6 +128,8 @@
 
 				.member-container
 					margin: $gutter-20 0
+					+media-breakpoint-down(sm)
+						padding: 0 30px 
 					//overflow: hidden
 					img
 						display: block
@@ -145,21 +146,19 @@
 
 					.member-title
 						text-align: center
-						+media-breakpoint-down(lg)
-							font-size: 1.3em
-						+media-breakpoint-down(md)
-							font-size: 1.2em
+						white-space: pre-line
+						//+media-breakpoint-between(xs,md)
 						+media-breakpoint-down(sm)
-							font-size: 1.6em
+							white-space: normal
 						+media-breakpoint-down(xs)
 							font-size: 1.8em
-							
-					+media-breakpoint-up(md)
+							h1
+								font-size: 2.2em
+
+					+media-breakpoint-up(lg)
 						flex: 0 0 20%
 						max-width: 20%
-					
-				.member-title
-					line-height: 1.25em 
+
 
 			>*
 				padding-left: $gutter-20 * 2
@@ -168,8 +167,8 @@
 					padding-left: $gutter-30
 					padding-right: $gutter-30
 				+media-breakpoint-down(xs)
-					padding-left: $gutter-20 / 2
-					padding-right: $gutter-20 / 2
+					padding-left: $gutter-20
+					padding-right: $gutter-20
 									
 			#documents-content
 				display: flex
@@ -197,30 +196,25 @@
 				+media-breakpoint-down(sm)
 					flex-direction: column
 					.document-link
-				 		margin: $gutter-20 / 4 0
+				 		margin: $gutter-20 / 2 0
 
 			#about-content
 				text-align: justify
-				a
-					display: inline-block
-					font-size: 1em
-					letter-spacing: .5px
-
 				+media-breakpoint-down(xs)
 					span
 						display: block
 						margin-bottom: 1.5em
+					
+				.member-title
+					font-size: 1.2em
+					line-height: 1.25em 
+					letter-spacing: .5px
+
 			#news-content
 				.entry-summary
 					a
 						margin: 0 auto $gutter-20
 						width: 100%
-
-			#contacts
-				padding: $gutter-30 0
-				@extend #contacts-content
-			#contacts-content
-				text-align: center
 		 
 			.goto-back
 				display: inline-block
@@ -247,11 +241,13 @@
 			tr:first-child
 				background-color: darken(white, 5%) 
 			td
-				padding: 10px
+				padding: 1%
+				&:first-child,
+				&:last-child
+					min-width: 20%
+					max-width: 150px 
 				&:last-child
 					text-align: right
-					width: 150px 
-					min-width: 100px 
 
 .page
 	.entry-content

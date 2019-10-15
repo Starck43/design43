@@ -1,6 +1,6 @@
 {
   "name": "design43.ru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "design43 project",
   "main": "wp-install.js",
   "scripts": {
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/Starck43/design43#readme",
   "devDependencies": {
-    "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
@@ -44,7 +43,7 @@
     "fs-extra": "^8.1.0",
     "in-view": "^0.6.1",
     "jquery": "^3.4.1",
-    "magnific-popup": "^1.1.0",
+    "bootstrap": "^4.3.1",
     "modernizr": "^3.7.1",
     "popper.js": "^1.14.7",
     "unzipper": "^0.10.3"

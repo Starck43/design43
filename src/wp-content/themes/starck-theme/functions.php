@@ -1,5 +1,5 @@
 <?php
-define( 'STARCK_VERSION', '1.8' );
+define( 'STARCK_VERSION', '1.8.5' );
 
 //!-- START ENQUEUE ACTION
 
