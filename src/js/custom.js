@@ -25,7 +25,7 @@ document.addEventListener('readystatechange', function(el) {
 
 		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if ( width < 768 ) $('#nav-burger').addClass('burger');
-		
+		//main_header.scrollIntoView({block: "end", behavior: "smooth"});		
 		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
 			$.when(main_header.classList.remove("hidden"))
@@ -42,15 +42,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 */
 	var navigation = $('#header-nav').css('opacity', 1);
-	
+	var burger = $('#nav-burger');
 	var mainheader = $('#main-header');
 	var scrollup = $('#scroll-up');
 	var search = $('#site-search-modal');
 	var back2top = $('#back-to-top');
 
 	// This hides the address bar:
-	window.scrollTo(0, 1);
-
+	//window.scrollTo(0, 1);
+	//alert(document.documentElement.clientHeight);
 
 	// inView.js appearance effect on scrolling from screen bottom
 	inView('article')
@@ -78,8 +78,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		e.preventDefault();
 		var target = $(this).attr('href');
 		if ( window.location.pathname == '/' && window.location.search == '' ) { //if home page
-			if ($(target).hasClass('animate')) $(target).removeClass('animate');
-			//if (navigation.hasClass('burger')) 
+			//if ($(target).hasClass('animate')) $(target).removeClass('animate');
+			if (burger.hasClass('burger')) 
 				burger.click(); //close burger menu on link clicking
 
 			var top = $(target).offset().top;
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
-	burger = $('#nav-burger').on('click', function (e) {
+	burger.on('click', function (e) {
 		if (burger.hasClass('burger')) {
 			burger.toggleClass('active');
 			$('#menu-top').toggleClass('active');
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 	});
 
-	$( document ).on( 'keyup', function( e ) {
+	$( document ).on( 'keyup', function (e) {
 		e.preventDefault();
 		if( e.keyCode == 27 && search.is(':visible') )
 			search.fadeToggle(300) //close search form

@@ -125,15 +125,15 @@ input[type="submit"]
 	display: block
 	width: 30px
 	height: 45px
-	bottom: 50px
+	bottom: 30px
 	left: 50%
 	color: #FFF 
 	//background-color: transparentize($theme-color, 0.5)
 	transition: all 200ms ease
 	border-radius: 15px
 	transform: translateX(-50%)
-	+media-breakpoint-down(xs)	
-		bottom: 30px
+	//+media-breakpoint-down(xs)	
+		//bottom: 30px
 	.icon
 		margin-top: 2px
 		width: auto
@@ -145,7 +145,10 @@ input[type="submit"]
 		//border: 1px solid white
 		box-shadow: inset 0 0 0 1px $theme-color
 
-
+html
+	&.mobile
+		#scroll-up
+			bottom: 60px
 
 #back-to-top
 	$btn-size: $icon-size * 1.2
