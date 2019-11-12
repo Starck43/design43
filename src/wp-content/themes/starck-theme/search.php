@@ -26,7 +26,7 @@ global $wp_query;
 		<?php else : ?>
 
 			<div class="entry-content post-0 no-result not-found">
-				<p><?php esc_html_e( 'Sorry, nothing matched your search. Please try again.', 'starck' ); ?></p>
+				<p>Извините, но по Вашему запросу ничего не найдено! Попробуйте снова</p>
 				<?php get_search_form(); ?>
 			</div>
 

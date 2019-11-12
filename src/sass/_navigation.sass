@@ -4,11 +4,13 @@
 	position: relative
 	opacity: 0
 	display: flex
-	//width: 100%
 	height: $nav-height
 	padding: 0 $gutter-20
 	align-items: center
 	transition: opacity 300ms 300ms ease-in
+	+media-breakpoint-down(xs)
+		width: 100%
+
 	ul.menu
 		display: flex
 		position: relative
@@ -48,8 +50,7 @@
 	&.align-center
 		margin-right: auto
 		margin-left: auto
-		+media-breakpoint-down(sm)
-			flex: auto
+
 
 	#nav-burger
 		display: none
@@ -127,6 +128,7 @@
 
 				
 	+media-breakpoint-down(sm)
+		flex: auto
 		//justify-content: flex-end
 		ul.menu
 			position: fixed
@@ -140,7 +142,10 @@
 			padding: $gutter-20 * 2 
 			flex-direction: column
 			justify-content: space-evenly
-			background-color: transparentize($theme-color, 0.15)
+			background-color: transparentize($theme-color, 0.05)
+			@supports (backdrop-filter: blur(10px))
+				background-color: transparentize($body-bg, 0.3)
+				backdrop-filter: blur(10px)
 			transition: transform 300ms ease
 			z-index: 9999
 			backdrop-filter: blur(10px)

@@ -12,7 +12,9 @@ get_header();
 
 	<?php starck_breadcrumbs(); ?>
 	
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php 
+		//query_posts('category_name=news&order=ASC');
+		while ( have_posts() ) : the_post(); ?>
 		
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

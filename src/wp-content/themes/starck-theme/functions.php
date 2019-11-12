@@ -1,6 +1,7 @@
 <?php
-define( 'STARCK_VERSION', '1.8.6' );
+define( 'STARCK_VERSION', '1.8.8' );
 
+//@header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
 //!-- START ENQUEUE ACTION
 
 //$home_url = get_home_url( null, 'wp-admin/', 'https' ); //Example.com: https://example.com/wp-admin/

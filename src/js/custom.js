@@ -14,10 +14,6 @@ function show_compact_header() {
 	$('#header-nav').removeClass('align-center').addClass('align-right');
 }
 
-function remove_main_header(el) {
-	el.delay(1000).queue(function () {el.remove()})
-}
-
 document.addEventListener('readystatechange', function(el) {
 	if ( document.readyState === 'interactive' ) {
 		var main_header = this.querySelector("#main-header");
@@ -47,23 +43,25 @@ document.addEventListener("DOMContentLoaded", function() {
 	var scrollup = $('#scroll-up');
 	var search = $('#site-search-modal');
 	var back2top = $('#back-to-top');
-
-	// This hides the address bar:
+	var top = 0;
+	// This hides the address bar PROBABLY:
 	//window.scrollTo(0, 1);
-	//alert(document.documentElement.clientHeight);
 
 	// inView.js appearance effect on scrolling from screen bottom
 	inView('article')
 		.on('enter', el => {
 			//el.style.opacity = 0.5;
-			el.classList.add('visible');
+			if (!el.classList.contains('visible')) el.classList.add('visible');
 		});
 
 	inView('#main-header')
-		.on('exit', el => {
+		.once('exit', el => {
 			//el.style.opacity = 0;
 			show_compact_header();
-			el.remove(); //delete main-header
+			if (top == 0) {
+				el.remove(); //delete main-header
+				mainheader = null;
+			}
 		});
 
 	$(window).scroll( function() {
@@ -82,10 +80,16 @@ document.addEventListener("DOMContentLoaded", function() {
 			if (burger.hasClass('burger')) 
 				burger.click(); //close burger menu on link clicking
 
-			var top = $(target).offset().top;
-			$('html, body').animate({scrollTop: top}, 500+top/4); //800 - длительность скроллинга в мс
-			remove_main_header(mainheader);
-			
+			top = $(target).offset().top;
+			var during_time = 500+top/4
+			$('html, body').animate({scrollTop: top}, during_time); //during_time - длительность скроллинга в мс
+			if (mainheader)
+				mainheader
+				.delay(during_time)
+				.queue( function() {
+					mainheader.remove();
+					mainheader = null;
+				});
 		} else {
 			//target = target.replace(/[^A-Za-z]/g, "");
 			location.replace('/'+target);
@@ -95,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	burger.on('click', function (e) {
 		if (burger.hasClass('burger')) {
 			burger.toggleClass('active');
-			$('#menu-top').toggleClass('active');
+			$('ul.menu').toggleClass('active');
 			$(document.body).toggleClass('modal');
 		}
 	});
@@ -108,16 +112,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		if( e.keyCode == 27 && burger.hasClass('active') ) burger.click(); // close burger menu on esc key
 	});
 
-/*	$( window ).on( 'resize', function( e ) {
-		if ( $(this).width() < 768 ) {
-			navigation.addClass('burger');
-			//burger.removeClass('hidden');
-		} else {
-			navigation.removeClass('burger');
-			//burger.addClass('hidden');
-		}
-
-	});*/
 
 	$('#searchform-close').on('click', function (e) {
 		var field_s = search.find('#s');
@@ -126,14 +120,9 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 	$('#nav-search').on('click', function (e) {
-		if ( !search.attr('display','none') && search.find('#s').val() ) {
+		if ( search.is(':visible') && search.find('#s').val() ) {
 			$('#searchform').submit(); 
 		} else search.fadeToggle(300);
-	});
-
-	$('#searchform').on('submit', function (e) {
-		//идет поиск...
-		//можно вывести preloader с надписью
 	});
 
 	back2top.on('click', function (e) {		
@@ -156,7 +145,8 @@ document.addEventListener("DOMContentLoaded", function() {
 			})
 			//.addClass("hidden")
 			.queue( function() {
-					remove_main_header(mainheader);
+				mainheader.remove();
+				mainheader = null;
 			});
 	});
 

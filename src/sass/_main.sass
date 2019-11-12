@@ -95,6 +95,8 @@
 					span
 						font-weight: 600
 						text-decoration: underline
+				.entry >*
+					@extend #news-content
 
 			>article
 				padding-top: $gutter-20
@@ -199,7 +201,7 @@
 				 		margin: $gutter-20 / 2 0
 
 			#about-content
-				text-align: justify
+				@extend #news-content
 				+media-breakpoint-down(xs)
 					span
 						display: block
@@ -211,6 +213,9 @@
 					letter-spacing: .5px
 
 			#news-content
+				text-align: justify
+				max-width: 800px 
+				margin: auto 
 				.entry-summary
 					a
 						margin: 0 auto $gutter-20
