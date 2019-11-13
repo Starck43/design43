@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			entries.forEach(function(entry) {
 				if (entry.isIntersecting) {
 					let lazyImage = entry.target;
-					lazyImage.src = lazyImage.dataset.src;
-					lazyImage.srcset = lazyImage.dataset.srcset;
+					lazyImage.src = lazyImage.dataset.src || lazyImage.getAttribute('src');
+					lazyImage.srcset = lazyImage.dataset.srcset || lazyImage.getAttribute('srcset');
 					lazyImage.classList.remove('lazy');
 					lazyImageObserver.unobserve(lazyImage);
 				}
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		lazyImages.forEach(function(lazyImage) {
 			lazyImageObserver.observe(lazyImage);
 			lazyImage.onload = function(){
-				this.parentElement.classList.add('visible'); //for transition effect
+				this.parentElement.classList.contains('hidden') && this.parentElement.classList.remove('hidden'); //for transition effect
 				this.classList.add('loaded'); //for transition effect
 			}
 		});
@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 		lazyImages.forEach(function(lazyImage) {
-			lazyImage.src = lazyImage.dataset.src;
-			lazyImage.srcset = lazyImage.dataset.srcset;
+			lazyImage.src = lazyImage.dataset.src || lazyImage.getAttribute('src');
+			lazyImage.srcset = lazyImage.dataset.srcset || lazyImage.getAttribute('srcset');
 		});
 		lazyBackgrounds.forEach(function(lazyBackground) {
 			lazyBackground.classList.add('visible');

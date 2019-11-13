@@ -1,7 +1,7 @@
 /*
  * Custom scripts library
  *
- * @version 1.8
+ * @version 1.9
  */
 
 function hide_compact_header() {
@@ -17,15 +17,14 @@ function show_compact_header() {
 document.addEventListener('readystatechange', function(el) {
 	if ( document.readyState === 'interactive' ) {
 		var main_header = this.querySelector("#main-header");
-		//var navigation = this.querySelector("#header-nav");
+		var burger = this.querySelector("#nav-burger");
 
 		var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		if ( width < 768 ) $('#nav-burger').addClass('burger');
+		if ( width < 768 ) burger.classList.add('burger');
 		//main_header.scrollIntoView({block: "end", behavior: "smooth"});		
 		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
-			$.when(main_header.classList.remove("hidden"))
-			.done($('#main-header .site-branding').addClass('visible'));
+			main_header.classList.remove("hidden");
 			sessionStorage.setItem('main-header', main_header.id);
 		} else main_header && main_header.remove();
 	}
@@ -44,8 +43,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	var search = $('#site-search-modal');
 	var back2top = $('#back-to-top');
 	var top = 0;
+	if ( mainheader ) mainheader.children('.site-branding').removeClass('hidden');
 	// This hides the address bar PROBABLY:
 	//window.scrollTo(0, 1);
+
+	function main_header_slide_up() {
+		$(window).scrollTop(0);
+		mainheader.children('.site-branding').addClass('hidden')
+		.delay(1000)
+		//.end()
+		.queue( function() {
+			mainheader.slideUp(800, function() {
+				mainheader.remove();
+			});
+		});		
+	}
 
 	// inView.js appearance effect on scrolling from screen bottom
 	inView('article')
@@ -58,38 +70,32 @@ document.addEventListener("DOMContentLoaded", function() {
 		.once('exit', el => {
 			//el.style.opacity = 0;
 			show_compact_header();
-			if (top == 0) {
-				el.remove(); //delete main-header
-				mainheader = null;
-			}
+			if (top == 0) el.remove(); //delete main-header
 		});
 
 	$(window).scroll( function() {
+		if ( mainheader.is(':visible') ) main_header_slide_up();
 		back2top.topBtnToggle({
 			scrollTrigger: 1000,
 			//debug: true,
 		});
 	});
 
-
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
 		var target = $(this).attr('href');
 		if ( window.location.pathname == '/' && window.location.search == '' ) { //if home page
 			//if ($(target).hasClass('animate')) $(target).removeClass('animate');
-			if (burger.hasClass('burger')) 
-				burger.click(); //close burger menu on link clicking
+			if (burger.hasClass('burger')) burger.click(); //close burger menu on link clicking
 
 			top = $(target).offset().top;
-			var during_time = 500+top/4
-			$('html, body').animate({scrollTop: top}, during_time); //during_time - длительность скроллинга в мс
-			if (mainheader)
-				mainheader
-				.delay(during_time)
-				.queue( function() {
-					mainheader.remove();
-					mainheader = null;
-				});
+
+			if (mainheader.is(':visible')) {
+				top -= mainheader.outerHeight(true);
+				mainheader.slideUp(500+top/4, function() {mainheader.remove()});
+			}
+
+			$('html, body').animate({scrollTop: top},  500+top/4)  // длительность анимации скроллинга в мс
 		} else {
 			//target = target.replace(/[^A-Za-z]/g, "");
 			location.replace('/'+target);
@@ -135,19 +141,8 @@ document.addEventListener("DOMContentLoaded", function() {
 //		var mc = document.body.querySelector('#main-container');
 //		$.when($('#main-header').addClass('hidden').delay(2000).remove())
 //		.done( mc.scrollIntoView({block: "start", behavior: "smooth"}) );
-		$(this).fadeOut('slow');
-		mainheader
-			.children('.site-branding').removeClass('visible')
-			.delay(1000)
-			//.end()
-			.queue( function() {
-				mainheader.slideUp(800)
-			})
-			//.addClass("hidden")
-			.queue( function() {
-				mainheader.remove();
-				mainheader = null;
-			});
+		$(this).fadeOut(600);
+		main_header_slide_up();
 	});
 
 	//Adding an agent to HTML selector

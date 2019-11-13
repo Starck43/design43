@@ -44,6 +44,22 @@ function starck_setup() {
 
 }
 
+add_filter( 'get_custom_logo', 'change_logo_class' );
+function change_logo_class( $html ) {
+
+    $html = str_replace( 'src', 'data-src', $html );
+    $html = str_replace( '"custom-logo"', '"custom-logo lazy"', $html );
+    
+    return $html;
+}
+
+/*add_filter( 'wp_get_attachment_image_attributes', function( $attr ) {
+    if( isset( $attr['class'] )  && 'custom-logo' === $attr['class'] )
+        $attr['class'] = 'custom-logo lazy';
+
+    return $attr;
+} );
+*/
 add_filter( 'document_title_separator', 'starck_document_title_separator' );
 function starck_document_title_separator( $sep ) {
 	$sep = '|';

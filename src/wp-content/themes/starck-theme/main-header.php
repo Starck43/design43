@@ -33,7 +33,7 @@ if ( !in_array( $main_header_appearence, ['disabled'] ) ) {
 	?>  
 	<header id="main-header" <?php echo $header_class; ?>>
 
-		<section class="site-branding align-center">
+		<section class="site-branding align-center hidden">
 			<?php
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
 			if ( $custom_logo_id ) {

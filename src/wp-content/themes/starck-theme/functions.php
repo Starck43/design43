@@ -1,5 +1,5 @@
 <?php
-define( 'STARCK_VERSION', '1.8.8' );
+define( 'STARCK_VERSION', '1.9.0' );
 
 //@header( 'Content-Type: text/html; charset=' . get_option( 'blog_charset' ) );
 //!-- START ENQUEUE ACTION
