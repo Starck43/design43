@@ -4,6 +4,7 @@
 /**/*.DS_Store
 /resources/
 /backup/
+/media/
 /src/wordpress/
 /src/wp-config.php
 /src/wp-content
