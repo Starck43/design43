@@ -5,10 +5,10 @@
 /resources/
 /backup/
 /media/
-/src/wordpress/
-/src/wp-config.php
-/src/wp-content
-!/src/wp-content/themes/
-gulpfile.js
+**/wp-config.php
+**/sftp-config.json
 *.sublime-project
 *.sublime-workspace
+/src/wordpress
+/src/wp-content
+!/src/wp-content/themes/

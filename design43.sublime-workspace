@@ -19,15 +19,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "src/index.html",
-			"settings":
-			{
-				"buffer_size": 1995,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -86,11 +77,11 @@
 	},
 	"expanded_folders":
 	[
-		"/F/PROJECTS/WEB/design43.ru",
-		"/F/PROJECTS/WEB/design43.ru/src"
+		"/Users/admin/Projects/43design"
 	],
 	"file_history":
 	[
+		"/Users/admin/Projects/43design/src/index.html",
 		"/F/PROJECTS/WEB/design43.ru/gulpfile.js",
 		"/F/PROJECTS/WEB/start-web-project/src/sass/jcarousel/jcarousel.sass",
 		"/F/PROJECTS/WEB/start-web-project/src/sass/_footer.sass",
@@ -217,8 +208,7 @@
 		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/templates/theme-parts/content-no-results.php",
 		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/templates/theme-parts/loop-search.php",
 		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/single-product/price.php",
-		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/archive-product.php",
-		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/ftpsync.settings"
+		"/E/Мои документы/YandexDisk/Проекты/artservice43.ru/themes/phlox-artservice/archive-product.php"
 	],
 	"find":
 	{
@@ -245,90 +235,18 @@
 		[
 		],
 		"reverse": false,
+		"scrollbar_highlights": true,
 		"show_context": true,
 		"use_buffer2": true,
+		"use_gitignore": true,
 		"whole_word": true,
 		"wrap": false
 	},
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "src/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								98,
-								98
-							]
-						],
-						"settings":
-						{
-							"color_helper.box_height": 20,
-							"color_helper.color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"allowed_colors":
-								[
-									"rgb",
-									"gray",
-									"hsl",
-									"hwb",
-									"graya",
-									"rgba",
-									"hsla",
-									"webcolors",
-									"hex",
-									"hex_compressed",
-									"hwba",
-									"hexa",
-									"hexa_compressed"
-								],
-								"compress_hex_output": true,
-								"current_ext": ".html",
-								"current_syntax": "HTML/HTML",
-								"enabled": true,
-								"last_updated": 1569482335.28,
-								"scan_completion_scopes":
-								[
-								],
-								"scan_scopes":
-								[
-									"meta.declaration-list.css -support.type.property-name.css -comment -string",
-									"meta.property-value.css -comment -string",
-									"meta.value.css -comment -string",
-									"meta.tag.inline.any.html string.quoted -constant.character.entity.html",
-									"meta.tag.any.html meta.attribute-with-value.style.html"
-								],
-								"use_hex_argb": false
-							},
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -363,6 +281,14 @@
 		]
 	},
 	"menu_visible": true,
+	"output.SFTP":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
