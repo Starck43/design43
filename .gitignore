@@ -12,3 +12,4 @@
 /src/wordpress
 /src/wp-content
 !/src/wp-content/themes/
+/src/img/
