@@ -1,262 +1,262 @@
 //Control selectors
 
 ::placeholder
-	color: #666
+    color: #666
 
 ::selection //когда выделяем текст на странице
-	background-color: $accent
-	color: #fff
+    background-color: $accent
+    color: #fff
 
 input, textarea
-	@include font-settings(false, $button-text-color, 1em, false, 300, 1.25)
-	width: 100%
-	//margin-top: 3px
-	padding: 5px 10px
-	border-radius: 3px 
-	border: 1px solid $base-border-color 
-	outline: none
-	resize: vertical
-	&:focus
-		border-color: $theme-color
-		outline-offset: 0
-	&:-webkit-autofill
-		box-shadow: inset 0 0 0 50px transparentize($theme-color, 0) !important /* Цвет фона */	
+    @include font-settings(false, $button-text-color, 1em, false, 300, 1.25)
+    width: 100%
+    //margin-top: 3px
+    padding: 5px 10px
+    border-radius: 3px
+    border: 1px solid $base-border-color
+    outline: none
+    resize: vertical
+    &:focus
+        border-color: $theme-color
+        outline-offset: 0
+    &:-webkit-autofill
+        box-shadow: inset 0 0 0 50px transparentize($theme-color, 0) !important /* Цвет фона */
 
 input[type="checkbox"]
-	width: auto
+    width: auto
 input
-	line-height: 30px
-	
+    line-height: 30px
+
 .search-submit
-	visibility: hidden	
-	
+    visibility: hidden
+
 select
-	background-color: transparent
-		
+    background-color: transparent
+
 button
-	border: none 	
+    border: none
 .button,
 input[type="submit"]
-	position: relative
-	min-height: $button-h
-	line-height: 1 //$button-h   
-	width: max-content
-	padding: 5px 20px
-	margin-left: 5px 
-	@include font-settings(false, $button-text-color, 0.85em, uppercase, 500, false)
-	background-color: transparentize($theme-color, 1)
-	box-shadow: inset 0 0 0 1px $theme-color
-	border-radius: 3px
-	transition: background-color 500ms ease 
-	cursor: pointer
-	&:hover
-		background-color: transparentize($theme-color, 0.5)
-		color: $button-text-hover
+    position: relative
+    min-height: $button-h
+    line-height: 1 //$button-h
+    width: max-content
+    padding: 5px 20px
+    margin-left: 5px
+    @include font-settings(false, $button-text-color, 0.85em, uppercase, 500, false)
+    background-color: transparentize($theme-color, 1)
+    box-shadow: inset 0 0 0 1px $theme-color
+    border-radius: 3px
+    transition: background-color 500ms ease
+    cursor: pointer
+    &:hover
+        background-color: transparentize($theme-color, 0.5)
+        color: $button-text-hover
 
 .icon
-	font-family: "fontello"
-	font-style: inherit 
-	position: relative
-	display: flex
-	width: $icon-size
-	height: $icon-size
-	//padding: 5px
-	margin: 0
-	background-color: transparent
-	opacity: 0.7
-	font-size: 1.2em
-	text-align: center
-	text-transform: none
-	justify-content: center
-	align-items: center
-	overflow: visible
-	cursor: pointer
-	transition: opacity 200ms ease
-					
-	&:hover
-		opacity: 1
-		//color: $theme-color 
-			
-.burger-icon	
-	.burger-inner
-		@extend %burger-line
-		top: 50%
-		transform: translateY(-50%)
-		//transition: all 100ms cubic-bezier(.55,.055,.675,.19)
+    font-family: "fontello"
+    font-style: inherit
+    position: relative
+    display: flex
+    width: $icon-size
+    height: $icon-size
+    //padding: 5px
+    margin: 0
+    background-color: transparent
+    opacity: 0.7
+    font-size: 1.2em
+    text-align: center
+    text-transform: none
+    justify-content: center
+    align-items: center
+    overflow: visible
+    cursor: pointer
+    transition: opacity 200ms ease
 
-		&::before
-			content: ""
-			@extend %burger-line
-			top: -10px
-			left: 0
-			transition: top 100ms ease 150ms, opacity 100ms ease
-			
-		&::after
-			content: ""
-			@extend %burger-line
-			bottom: -10px
-			left: 0
-			transition: bottom 100ms ease 150ms, transform 100ms cubic-bezier(.55,.055,.675,.19)
+    &:hover
+        opacity: 1
+        //color: $theme-color
 
-	&.active
-		.burger-inner
-			transition: all 150ms cubic-bezier(.215,.61,.355,1)
-			transform: rotate(45deg)
-			
-			&::before
-				top: 0
-				opacity: 0
-				transition: top 100ms ease,opacity 100ms ease 150ms
-				
-			&::after
-				bottom: 0
-				transition: bottom 100ms ease,transform 100ms cubic-bezier(.215,.61,.355,1) 150ms
-				transform: rotate(-90deg)
+.burger-icon
+    .burger-inner
+        @extend %burger-line
+        top: 50%
+        transform: translateY(-50%)
+        //transition: all 100ms cubic-bezier(.55,.055,.675,.19)
 
-		
+        &::before
+            content: ""
+            @extend %burger-line
+            top: -10px
+            left: 0
+            transition: top 100ms ease 150ms, opacity 100ms ease
+
+        &::after
+            content: ""
+            @extend %burger-line
+            bottom: -10px
+            left: 0
+            transition: bottom 100ms ease 150ms, transform 100ms cubic-bezier(.55,.055,.675,.19)
+
+    &.active
+        .burger-inner
+            transition: all 150ms cubic-bezier(.215,.61,.355,1)
+            transform: rotate(45deg)
+
+            &::before
+                top: 0
+                opacity: 0
+                transition: top 100ms ease,opacity 100ms ease 150ms
+
+            &::after
+                bottom: 0
+                transition: bottom 100ms ease,transform 100ms cubic-bezier(.215,.61,.355,1) 150ms
+                transform: rotate(-90deg)
+
+
 %burger-line
-	position: absolute
-	width: $icon-size
-	height: 3px
-	border-radius: 3px
-	background-color: $menu-icon-color
+    position: absolute
+    width: $icon-size
+    height: 3px
+    border-radius: 3px
+    background-color: $menu-icon-color
 
 #scroll-up
-	position: absolute
-	display: block
-	width: 30px
-	height: 45px
-	bottom: 30px
-	left: 50%
-	color: #FFF 
-	//background-color: transparentize($theme-color, 0.5)
-	transition: all 200ms ease
-	border-radius: 15px
-	transform: translateX(-50%)
-	//+media-breakpoint-down(xs)	
-		//bottom: 30px
-	.icon
-		margin-top: 2px
-		width: auto
-		font-size: 1.6em 
-		@include animation(scroll-up, 1.3s infinite ease, no-fade, 0, -3px, 0, 6px)
-			//animation-iteration-count: infinite
-	&:hover
-		background: transparentize($theme-color, 0)
-		//border: 1px solid white
-		box-shadow: inset 0 0 0 1px $theme-color
+    position: absolute
+    display: block
+    width: 30px
+    height: 45px
+    bottom: 30px
+    left: 50%
+    color: #FFF
+    //background-color: transparentize($theme-color, 0.5)
+    transition: all 200ms ease
+    border-radius: 15px
+    transform: translateX(-50%)
+    //+media-breakpoint-down(xs)
+        //bottom: 30px
+    .icon
+        margin-top: 2px
+        width: auto
+        font-size: 1.6em
+        @include animation(scroll-up, 1.3s infinite ease, no-fade, 0, -3px, 0, 6px)
+            //animation-iteration-count: infinite
+    &:hover
+        background: transparentize($theme-color, 0)
+        //border: 1px solid white
+        box-shadow: inset 0 0 0 1px $theme-color
 
 html
-	&.mobile
-		#scroll-up
-			bottom: 60px
+    &.mobile
+        #scroll-up
+            bottom: 55px
 
 #back-to-top
-	$btn-size: $icon-size * 1.2
-	position: fixed
-	display: flex
-	align-items: center
-	justify-content: center
-	bottom: $btn-size * -1.2
-	left: 60px
-	width: $btn-size
-	height: $btn-size
-	font-size: $icon-font-size
-	//background: transparentize($theme-color, 0.8)
-	color: darken($theme-color, 0%)
-	border: 1px solid $theme-color
-	border-radius: $btn-size / 1.5
-	transition: bottom 700ms cubic-bezier(0.61, 0.67, 0.1, 1.01)
-	z-index: 9999
-	&:hover
-		transition: all 300ms linear
-		color: white
-		background: $theme-color
-		border-color: $theme-color
-	&.show
-		bottom: $btn-size * 1
-	+media-breakpoint-down(lg)
-		left: $gutter-20
-	+media-breakpoint-down(md)
-		left: $gutter-20 / 2
+    $btn-size: $icon-size * 1.2
+    position: fixed
+    display: flex
+    align-items: center
+    justify-content: center
+    bottom: $btn-size * -1.2
+    left: 60px
+    width: $btn-size
+    height: $btn-size
+    font-size: $icon-font-size
+    //background: transparentize($theme-color, 0.8)
+    color: darken($theme-color, 0%)
+    border: 1px solid $theme-color
+    border-radius: math.div($btn-size, 1.5)
+    transition: bottom 700ms cubic-bezier(0.61, 0.67, 0.1, 1.01)
+    z-index: 9999
+    &:hover
+        transition: all 300ms linear
+        color: white
+        background: $theme-color
+        border-color: $theme-color
+    &.show
+        bottom: $btn-size * 1
+    +media-breakpoint-down(lg)
+        left: $gutter-20
+    +media-breakpoint-down(md)
+        left: math.div($gutter-20, 2)
 
 #searchform
-	display: flex
-	max-width: 600px
+    display: flex
+    max-width: 600px
 
 //WP Forms plugin's styles
 .wpforms-container
-	max-width: 600px
-	@include push--auto
-	text-align: left
-	//padding: $gutter-20 / 2 
+    max-width: 600px
+    @include push--auto
+    text-align: left
+    //padding: math.div($gutter-20, 2)
 
-	.wpforms-one-half, .wpforms-field
-		margin-bottom: 20px
-		ul
-			padding-inline-start: 0
-			li
-				font-size: 1em !important
-				margin: 0 !important
-				list-style-type: none !important
-		+media-breakpoint-down(xs)	
-			margin-bottom: 15px
+    .wpforms-one-half, .wpforms-field
+        margin-bottom: 20px
+        ul
+            padding-inline-start: 0
+            li
+                font-size: 1em !important
+                margin: 0 !important
+                list-style-type: none !important
+        +media-breakpoint-down(xs)
+            margin-bottom: 15px
 
-	.wpforms-field
-		clear: both
+    .wpforms-field
+        clear: both
 
-	.wpforms-one-half
-		width: 48%
-		float: right
-		&.wpforms-first
-			float: left
-		+media-breakpoint-down(xs)	
-			position: relative
-			width: 100%
-			&:first-child
-				margin-bottom: 30px
-			&.wpforms-first
-				label
-					display: none
-			label
-				position: absolute
-				left: 0
-				top: -$base-font-size
-	.wpforms-field-sublabel
-		display: none
-		+media-breakpoint-down(xs)
-			display: block
+    .wpforms-one-half
+        width: 48%
+        float: right
+        &.wpforms-first
+            float: left
+        +media-breakpoint-down(xs)
+            position: relative
+            width: 100%
+            &:first-child
+                margin-bottom: 30px
+            &.wpforms-first
+                label
+                    display: none
+            label
+                position: absolute
+                left: 0
+                top: -$base-font-size
+    .wpforms-field-sublabel
+        display: none
+        +media-breakpoint-down(xs)
+            display: block
 
-	.wpforms-sublabel-hide, .wpforms-field-hp
-		display: none
+    .wpforms-sublabel-hide, .wpforms-field-hp
+        display: none
 
-	label
-		font-weight: bold
+    label
+        font-weight: bold
 
-	textarea
-		height: 150px
+    textarea
+        height: 150px
 
-	.wpforms-required-label
-		color: red
+    .wpforms-required-label
+        color: red
 
-	.wpforms-confirmation-container
-		padding: 20px
-		border: 1px solid #bbb
-		border-radius: 3px
-		p
-			margin: 1em 0 
+    .wpforms-confirmation-container
+        padding: 20px
+        border: 1px solid #bbb
+        border-radius: 3px
+        p
+            margin: 1em 0
 
-	.wpforms-recaptcha-container
-		float: right
-		+media-breakpoint-down(xs)
-			display: flex
-			width: 100% 
-			.g-recaptcha
-				margin: auto
+    .wpforms-recaptcha-container
+        float: right
+        +media-breakpoint-down(xs)
+            display: flex
+            width: 100%
+            .g-recaptcha
+                margin: auto
 
 
-	.wpforms-submit-container
-		+media-breakpoint-down(xs)
-			padding-top: $gutter-20
-			clear: both
-			text-align: center
+    .wpforms-submit-container
+        +media-breakpoint-down(xs)
+            padding-top: $gutter-20
+            clear: both
+            text-align: center

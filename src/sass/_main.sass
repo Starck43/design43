@@ -1,296 +1,323 @@
+@use "sass:math"
+
 // Main styles
 #main
-	position: relative
-	display: block
-	width: 100%
-	clear: both
-	background-color: $main-bg 
-	flex: auto
-	z-index: 2 
-	
-	#main-header
-		position: relative
-		display: flex
-		background-color: $header-bg
-		align-items: center
-		.site-branding
-			display: flex
-			//height: 100% 
-			margin: 0 auto 0 //$header-height
-			//opacity: 0
-			transition: all .8s 200ms ease-in
-			//@include animation(branding, 1.2s 0s ease-out, both, fade-In )
-					
-			.site-logo
-				width: $logo-big-width
-				height: $logo-big-width + 35px
-				margin-bottom: auto
-				+media-breakpoint-down(xs)
-					height: $logo-big-width + 15px
-					margin: auto
-					width: 160px
-					height: 160px
-				img
-					@extend %img
+    position: relative
+    display: block
+    width: 100%
+    clear: both
+    background-color: $main-bg
+    flex: auto
+    z-index: 2
 
-			.branding-title
-				width: $logo-big-width  
-				margin: auto 20px 0
-				color: #FFF
-				letter-spacing: 0.5px
-				//@include animation(branding, 800ms 800ms ease-in, fade-In )
-				+media-breakpoint-down(xs)
-					margin-top: $gutter-20/2
-				h1.site-title
-					margin-bottom: 0.2em
-					font-weight: normal 
-					color: #FFF
+    #main-header
+        position: relative
+        display: flex
+        flex-direction: column
+        background-color: $header-bg
+        align-items: center
 
-				.site-description
-					font-size: 1.33em
+        &.with_cover
+            > img
+                height: 0
+                object-fit: contain
+                width: 100%
+                min-height: 80%
+                flex: auto
 
-	&.nav-inline-logo
-		#main-header
-			height: 100vh //calc-height($header-height)
-			margin-top: -$header-height
-			+media-breakpoint-down(xs)
-				margin-top: -$header-height-min
-				//height: calc-height($header-height-min)
-			&.hidden
-				transition: height 500ms linear, opacity 300ms 300ms linear
-				height: 0
-				margin-top: 0
-				//padding-bottom: 0
+            .site-branding
+                height: 20%
+                min-height: 100px
+                max-height: 140px
+                padding: 2rem
+                justify-content: flex-start
+                align-items: center
 
-	#main-container
+                .site-logo
+                    height: 100%
+                    img
+                        width: auto
+                        height: 100%
 
-		#content
-			word-break: break-word
-			p
-				text-align: justify
-				margin: $base-line-height 0 0.5em
-
-			li
-				list-style-type: square
-				margin: $base-line-height/2 0 0
-
-			p,li
-				font-size: 1.2em
-				font-weight: 300
-				letter-spacing: 0.5px
-				line-height: $base-line-height
-				+media-breakpoint-down(xs)
-					font-size: 1.2em
-
-			&.search
-				margin-top: $gutter-20
-				>div, nav, header
-					+media-breakpoint-up(lg)
-						padding-left: 0
-						padding-right: 0
-				>div
-					margin: $gutter-20 0
-					color: $base-text-color
-					//border: 1px solid $theme-color 
-					letter-spacing: 0.5px 
-					span
-						font-weight: 600
-						text-decoration: underline
-				.entry >*
-					@extend #news-content
-
-			>article
-				padding-top: $gutter-20
-				padding-bottom: $gutter-20 * 2
-				opacity: 0
-				transition: opacity 1.5s ease-out
-
-				&.animate
-					&.visible:not(:first-child())
-						@include animation(article, .8s .2s ease-in-out both, no-fade, 0, 300px )	
-
-				&:nth-child(odd)
-					background-color: $main-bg 
-				&:nth-child(even)
-					background-color: $main-2-bg
-
-				+media-breakpoint-down(sm)
-					padding-top: $gutter-30
-					padding-bottom: $gutter-30
-
-				+media-breakpoint-down(xs)
-					padding-top: $gutter-20
-					padding-bottom: $gutter-20
-						
-				.title
-					text-align: center
-					padding: $gutter-20 0
-					+media-breakpoint-down(xs)
-						padding-bottom: 0
+            .branding-title
+                font-size: 0.7rem
 
 
-				.member-container
-					margin: $gutter-20 0
-					+media-breakpoint-down(sm)
-						padding: 0 30px 
-					//overflow: hidden
-					img
-						display: block
-						@extend %img
-						max-width: 300px
-						margin: auto
-						border-radius: 50%
-						background-color: $base-shadow-color
-						//opacity: 0.1
-						transition: opacity 800ms ease-out 
-						&.loaded
-							box-shadow: 0 18px 36px -10px $base-shadow-color
-							opacity: 1
+        &:not(.with_cover)
+            .site-logo img
+                @extend %img
 
-					.member-title
-						text-align: center
-						white-space: pre-line
-						//+media-breakpoint-between(xs,md)
-						+media-breakpoint-down(sm)
-							white-space: normal
-						+media-breakpoint-down(xs)
-							font-size: 1.8em
-							h1
-								font-size: 2.2em
+            .site-branding
+                transition: all .8s 200ms ease-in
 
-					+media-breakpoint-up(lg)
-						flex: 0 0 20%
-						max-width: 20%
+        .site-branding
+            display: flex
+            gap: 1rem
+            width: 100%
+            margin: auto
+            //opacity: 0
+
+        .branding-title
+            color: #FFF
+            letter-spacing: 0.5px
+            //@include animation(branding, 800ms 800ms ease-in, fade-In )
+            +media-breakpoint-down(xs)
+                margin-top: math.div($gutter-20, 2)
+            h1.site-title
+                margin-bottom: 0.2em
+                font-weight: normal
+                color: #FFF
 
 
-			>*
-				padding-left: $gutter-20 * 2
-				padding-right: $gutter-20 * 2
-				+media-breakpoint-down(sm)
-					padding-left: $gutter-30
-					padding-right: $gutter-30
-				+media-breakpoint-down(xs)
-					padding-left: $gutter-20
-					padding-right: $gutter-20
-									
-			#documents-content
-				display: flex
-				justify-content: center
-				margin-bottom: $gutter-20
-				+media-breakpoint-down(xs)
-					margin-bottom: $gutter-20
-				 		
-				.document-link
-					width: 100% 
-					margin: 0  $gutter-20 / 2
-					padding: $gutter-20
-					text-align: center
-					font-style: italic
-					background-color: transparentize($main-bg, 0.1)
-					box-shadow: 0 0 10px #eee
-					border-radius: 3px
-					i
-						font-size: 2.2em
-					h2
-						font-size: 1.2em
-						line-height: 1.3
-						color: $base-text-color 
+    &.nav-inline-logo
+        #main-header
+            height: calc(100vh - $header-height)
+            +media-breakpoint-down(xs)
+                height: calc(100vh - $header-height-min)
 
-				+media-breakpoint-down(sm)
-					flex-direction: column
-					.document-link
-				 		margin: $gutter-20 / 2 0
+            &.hidden
+                transition: height 500ms linear, opacity 300ms 300ms linear
+                height: 0
+                margin-top: 0
+                //padding-bottom: 0
 
-			#about-content
-				@extend #news-content
-				+media-breakpoint-down(xs)
-					span
-						display: block
-						margin-bottom: 1.5em
-					
-				.member-title
-					font-size: 1.2em
-					line-height: 1.25em 
-					letter-spacing: .5px
+    #main-container
 
-			#news-content
-				text-align: justify
-				max-width: 800px 
-				margin: auto 
-				.entry-summary
-					a
-						margin: 0 auto $gutter-20
-						width: 100%
-		 
-			.goto-back
-				display: inline-block
-				a
-					display: flex
-					margin-right: auto
-					align-items: center
+        #content
+            word-break: break-word
+            p
+                text-align: justify
+                margin: $base-line-height 0 0.5em
+
+            li
+                list-style-type: square
+                margin: math.div($base-line-height, 2) 0 0
+
+            p,li
+                font-size: 1.2em
+                font-weight: 300
+                letter-spacing: 0.5px
+                line-height: $base-line-height
+                +media-breakpoint-down(xs)
+                    font-size: 1.2em
+
+            &.search
+                margin-top: $gutter-20
+                >div, nav, header
+                    +media-breakpoint-up(lg)
+                        padding-left: 0
+                        padding-right: 0
+                >div
+                    margin: $gutter-20 0
+                    color: $base-text-color
+                    //border: 1px solid $theme-color
+                    letter-spacing: 0.5px
+                    span
+                        font-weight: 600
+                        text-decoration: underline
+                .entry >*
+                    @extend #news-content
+
+            >article
+                padding-top: $gutter-20
+                padding-bottom: $gutter-20 * 2
+                opacity: 0
+                transition: opacity 1.2s ease-out
+
+                &.animate
+                    &.visible:not(:first-child())
+                        @include animation(article, .6s .2s ease-out both, no-fade, 0, 300px )
+
+                &:nth-child(odd)
+                    background-color: $main-bg
+                &:nth-child(even)
+                    background-color: $main-2-bg
+
+                +media-breakpoint-down(sm)
+                    padding-top: $gutter-30
+                    padding-bottom: $gutter-30
+
+                +media-breakpoint-down(xs)
+                    padding-top: $gutter-20
+                    padding-bottom: $gutter-20
+
+                .title
+                    text-align: center
+                    padding: $gutter-20 0
+                    +media-breakpoint-down(xs)
+                        padding-bottom: 0
+
+
+                .member-container
+                    margin: $gutter-20 0
+                    +media-breakpoint-down(sm)
+                        padding: 0 30px
+                    //overflow: hidden
+                    img
+                        display: block
+                        @extend %img
+                        max-width: 320px
+                        margin: auto
+                        border-radius: 50%
+                        background-color: $base-shadow-color
+                        //opacity: 0.1
+                        transition: all 500ms ease-out
+                        &.loaded
+                            box-shadow: 0 18px 36px -10px $base-shadow-color
+                            opacity: 1
+
+
+                    .member-title
+                        text-align: center
+                        white-space: pre-line
+                        transition: all 500ms ease-in-out
+
+                        //+media-breakpoint-between(xs,md)
+                        +media-breakpoint-down(sm)
+                            white-space: normal
+                        +media-breakpoint-down(xs)
+                            font-size: 1.8em
+                            h1
+                                font-size: 2.2em
+
+                    +media-breakpoint-up(lg)
+                        flex: 0 0 20%
+                        max-width: 20%
+
+                    &:hover
+                        .member-image
+                            transform: scale(1.3)
+                        .member-title
+                            transform: translateY(50%)
+
+            >*
+                padding-left: $gutter-20 * 2
+                padding-right: $gutter-20 * 2
+                +media-breakpoint-down(sm)
+                    padding-left: $gutter-30
+                    padding-right: $gutter-30
+                +media-breakpoint-down(xs)
+                    padding-left: $gutter-20
+                    padding-right: $gutter-20
+
+            #documents-content
+                display: flex
+                justify-content: center
+                margin-bottom: $gutter-20
+                +media-breakpoint-down(xs)
+                    margin-bottom: $gutter-20
+
+                .document-link
+                    width: 100%
+                    margin: 0  math.div($gutter-20, 2)
+                    padding: $gutter-20
+                    text-align: center
+                    font-style: italic
+                    background-color: transparentize($main-bg, 0.1)
+                    box-shadow: 0 0 10px #eee
+                    border-radius: 3px
+                    i
+                        font-size: 2.2em
+                    h2
+                        font-size: 1.2em
+                        line-height: 1.3
+                        color: $base-text-color
+
+                +media-breakpoint-down(sm)
+                    flex-direction: column
+                    .document-link
+                        margin: math.div($gutter-20, 2) 0
+
+            #about-content
+                @extend #news-content
+                +media-breakpoint-down(xs)
+                    span
+                        display: block
+                        margin-bottom: 1.5em
+
+                .member-title
+                    font-size: 1.2em
+                    line-height: 1.25em
+                    letter-spacing: .5px
+
+            #news-content
+                text-align: justify
+                max-width: 800px
+                margin: auto
+                article:not(:last-child)
+                    margin-bottom: 2em
+
+                .entry-summary
+                    a
+                        margin: 0 auto $gutter-20
+                        width: 100%
+
+            .goto-back
+                display: inline-block
+                a
+                    display: flex
+                    margin-right: auto
+                    align-items: center
 
 .entry-content
-	margin-bottom: $gutter-20
-	img
-		width: auto
-		//max-width: unset
-		+media-breakpoint-down(xs)
-			width: 100%
-	
-	.price-expire
-		font-size: 0.8em
-		text-align: right
-	
-	table
-		tbody
-			vertical-align: baseline
-			tr:first-child
-				background-color: darken(white, 5%) 
-			td
-				padding: 1%
-				&:first-child,
-				&:last-child
-					min-width: 20%
-					max-width: 150px 
-				&:last-child
-					text-align: right
+    margin-bottom: $gutter-20
+    img
+        width: 100%
+        height: auto
+        max-width: 450px
+
+    .price-expire
+        font-size: 0.8em
+        text-align: right
+
+    table
+        tbody
+            vertical-align: baseline
+            tr:first-child
+                background-color: darken(white, 5%)
+            td
+                padding: 1%
+                &:first-child,
+                &:last-child
+                    min-width: 20%
+                    max-width: 150px
+                &:last-child
+                    text-align: right
 
 .page
-	.entry-content
-		>img
-			width: auto !important
-			max-height: 100px
-			max-width: 100% 
-	
-.navigation
-	padding: $gutter-20 0
-	.screen-reader-text
-		//display: none
-		text-align: center
-	.nav-links
-		display: flex
-		width: 100%
-		padding: $gutter-20/2 0
-		border-top: 1px solid $base-border-color
-		border-bottom: 1px solid $base-border-color
-		justify-content: center
-		.nav-previous
-			margin-right: auto
-		.nav-next
-			margin-left: auto
-		a
-			display: flex
-			align-items: center
-		.nav-previous,
-		.nav-next,
-		.page-numbers
-			padding:  $gutter-20/2
+    .entry-content
+        >img
+            max-width: 250px
 
-			display: flex
-			align-items: center
-			transition: color 100ms ease
-			span:not(.meta-nav)
-				padding: 5px
-				text-transform: uppercase
-		
+.navigation
+    padding: $gutter-20 0
+    .screen-reader-text
+        //display: none
+        text-align: center
+    .nav-links
+        display: flex
+        width: 100%
+        padding: math.div($gutter-20, 2) 0
+        border-top: 1px solid $base-border-color
+        border-bottom: 1px solid $base-border-color
+        justify-content: center
+        .nav-previous
+            margin-right: auto
+        .nav-next
+            margin-left: auto
+        a
+            display: flex
+            align-items: center
+        .nav-previous,
+        .nav-next,
+        .page-numbers
+            padding:  math.div($gutter-20, 2)
+
+            display: flex
+            align-items: center
+            transition: color 100ms ease
+            span:not(.meta-nav)
+                padding: 5px
+                text-transform: uppercase
+
 // <!-- End Main -->

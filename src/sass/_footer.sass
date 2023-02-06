@@ -1,43 +1,43 @@
 // Footer styles
 #site-footer
-	position: absolute
-	display: block
-	width: 100%
-	height: $footer-height 
-	bottom: 0
-	//flex-shrink: 0
-	z-index: 4
-	
-	#footer-container
-		overflow: hidden
-		background: $footer-bg
-		font-size: 0.8em 
-		//color: #FFF
-		.footer-widgets
+    position: absolute
+    display: block
+    width: 100%
+    height: $footer-height
+    bottom: 0
+    //flex-shrink: 0
+    z-index: 4
 
-			display: flex
-			//justify-content: space-around
-			padding: $gutter-20 / 2	 
-			
-			.footer-widget
-				//display: flex
-				width: 100%
-				margin:  0 0 auto
-				//justify-content: center
-				//align-items: start
-				&:nth-child(n)
-					text-align: center
-				&:first-child
-					text-align: left
-				&:last-child
-					text-align: right
+    #footer-container
+        overflow: hidden
+        background: $footer-bg
+        font-size: 0.8em
+        //color: #FFF
+        .footer-widgets
 
-				table
-					margin: auto 
+            display: flex
+            //justify-content: space-around
+            padding: math.div($gutter-20, 2)
 
-		#copyright
-			//background: $body-bg
-			padding: $gutter-20 / 2
-			text-align: center
+            .footer-widget
+                //display: flex
+                width: 100%
+                margin:  0 0 auto
+                //justify-content: center
+                //align-items: start
+                &:nth-child(n)
+                    text-align: center
+                &:first-child
+                    text-align: left
+                &:last-child
+                    text-align: right
+
+                table
+                    margin: auto
+
+        #copyright
+            //background: $body-bg
+            padding: math.div($gutter-20, 2)
+            text-align: center
 
 // <!-- End Footer -->

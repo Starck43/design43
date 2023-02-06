@@ -1,3 +1,5 @@
+@use "sass:math"
+
 @import "../../node_modules/bootstrap/scss/mixins/_breakpoints.scss" // Bootstrap Breakpoints mixin
 // @import "../../node_modules/bootstrap/scss/bootstrap-grid.scss" // Bootstrap Grid
 // @import "../../node_modules/bootstrap/scss/bootstrap-reboot.scss" // Bootstrap Reboot collection
@@ -18,134 +20,132 @@
 @import vars
 
 html
-	@include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
-	//display: inline-table
-	position: relative
-	width: 100%
-	font-size: $base-font-size
-	-ms-text-size-adjust: 100%
-	-webkit-text-size-adjust: 100%
-	-webkit-font-smoothing: antialiased
-	+media-breakpoint-down(md)
-		overflow: scroll
-		overflow-x: hidden
-		::-webkit-scrollbar
-			//width: 0px  /* remove scrollbar space */
-			background: transparent  /* optional: just make scrollbar invisible */
-	+media-breakpoint-down(sm)
-		font-size: 14px
+    @include font-settings(Roboto Condensed, $base-text-color, 1rem, false, false, $base-line-height)
+    //display: inline-table
+    position: relative
+    width: 100%
+    font-size: $base-font-size
+    -ms-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%
+    -webkit-font-smoothing: antialiased
+    +media-breakpoint-down(md)
+        overflow: scroll
+        overflow-x: hidden
+        ::-webkit-scrollbar
+            //width: 0px  /* remove scrollbar space */
+            background: transparent  /* optional: just make scrollbar invisible */
+    +media-breakpoint-down(sm)
+        font-size: 14px
 
 body
-	//position: relative
-	//opacity: 0
-	display: flex
-	flex-direction: column
-	min-height: 100vh
-	//min-width: 320px
-	//width: 100%
-	 
-	margin: 0
-	background-color: $body-bg
-	overflow-x: hidden
-	&:not(.home)
-		.container
-			margin-top: $gutter-20
-			
-h1 
-	font: normal bold 2.4em/1.2 $base-font-family, Arial
-	margin: 0 0 20px 0
-	color: $page-title-color 
-	letter-spacing: -0.5px
+    display: flex
+    flex-direction: column
+    width: 100vw
+    min-height: 100vh
+    margin: 0
+    background-color: $body-bg
+    overflow-x: hidden
+    &:not(.home)
+        .container
+            margin-top: $gutter-20
+
+h1
+    font: normal bold 2.4em/1.2 $base-font-family, Arial
+    margin: 0 0 20px 0
+    color: $page-title-color
+    letter-spacing: -0.5px
 
 
-h2  
-	font: normal normal 1.6em/1.2 $base-font-family, Arial
-	margin: 1em 0
+h2
+    font: normal normal 1.5em/1.2 $base-font-family, Arial
+    margin: 1em 0
 
 
-h3 
-	font: normal bold 1.4em/1.2 $base-font-family, Arial
-	margin: 0 0 0.5em 0
-	letter-spacing: -0.5px
+h3
+    font: normal bold 1.4em/1.2 $base-font-family, Arial
+    margin: 0 0 0.5em 0
+    letter-spacing: -0.5px
 
 
-h4 
-	font: normal bold 1.3em/1.2 $base-font-family, Arial
-	margin: 0 0 0.5em 0
+h4
+    font: normal bold 1.3em/1.2 $base-font-family, Arial
+    margin: 0 0 0.5em 0
 
 
-h5 
-	font: normal bold 1.2em/1.1 $base-font-family, Arial
-	margin: 0 0 0.5em 0
+h5
+    font: normal bold 1.2em/1.1 $base-font-family, Arial
+    margin: 0 0 0.5em 0
 
 a
-	//display: block
-	text-decoration: none
-	cursor: pointer
-	//font-weight: bold
-	color: $link-color
-	&:hover
-	 	color: $link-color-hover
-	 	
-li
-	list-style-type: none /* Убираем глобально маркеры */
+    //display: block
+    text-decoration: none
+    cursor: pointer
+    //font-weight: bold
+    color: $link-color
+    &:hover
+        color: $link-color-hover
+
 ul
-	margin: 0
-	padding-bottom: 1em
+    margin: 0
+    padding-bottom: 1em
+
+li
+    list-style-type: none /* Убираем глобально маркеры */
+
 pre
-	margin: 0
-	padding: $gutter-20 $gutter-20 / 2
-	font-family: inherit
-	font-size: 1em 
-	letter-spacing: 1px
-	background-color: $main-2-bg
+    margin: 0
+    padding: $gutter-20 math.div($gutter-20, 2)
+    font-family: inherit
+    font-size: 1em
+    letter-spacing: 1px
+    background-color: $main-2-bg
 
 %img
-	width: 100%
-	height: auto
+    width: 100%
+    height: auto
 
 // Avoid empty images to appear as broken
 img:not([src]):not([srcset])
-	visibility: hidden
-		
+    visibility: hidden
+
 
 .container
-	@include push--auto
-	margin-bottom: $footer-height * 4
-	max-width: $container_max-w 
-	padding-left: 0 !important 
-	padding-right: 0 !important
-		
+    @include push--auto
+    margin-bottom: $footer-height * 4
+    max-width: $container_max-w
+    padding-left: 0 !important
+    padding-right: 0 !important
+
 
 .align-left
-	justify-content: flex-start
-	//align-items: flex-start
-	
+    justify-content: flex-start
+    //align-items: flex-start
+
 .align-center
-	justify-content: center		
-	//align-items: center
+    justify-content: center
+    //align-items: center
 
 .align-right
-	justify-content: flex-end
-	//align-items: flex-end
+    justify-content: flex-end
+    //align-items: flex-end
 
 .hidden
-	opacity: 0 //!important
-	
+    opacity: 0 //!important
+
 .visible
-	opacity: 1 !important
+    opacity: 1 !important
 
 .show
-	display: flex !important
+    display: flex !important
 
 .loaded
-	visibility: visible 
+    visibility: visible
 
 .modal
-	position: fixed
-	width: 100% 
-	overflow-y: hidden	
-	
+    position: fixed
+    width: 100%
+    overflow-y: hidden
+
 @import media
 @import header
 @import main
