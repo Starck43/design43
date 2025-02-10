@@ -25,7 +25,7 @@ document.addEventListener('readystatechange', function(el) {
 		if ( window.location.pathname =='/' && !sessionStorage.getItem('main-header') ) {
 			hide_compact_header();
 			main_header.classList.remove("hidden");
-			sessionStorage.setItem('main-header', main_header.id);
+			// sessionStorage.setItem('main-header', main_header.id);
 		} else main_header && main_header.remove();
 	}
 });
